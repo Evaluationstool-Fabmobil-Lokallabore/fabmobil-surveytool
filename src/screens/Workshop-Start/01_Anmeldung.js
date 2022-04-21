@@ -1,4 +1,4 @@
-import WeiterButton from "../components/WeiterButton";
+import WeiterButton from "../../components/WeiterButton";
 
 function Screen() {
   return (

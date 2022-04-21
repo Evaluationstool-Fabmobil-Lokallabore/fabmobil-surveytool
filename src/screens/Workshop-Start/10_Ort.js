@@ -1,5 +1,4 @@
-import Fabutton from "../components/Fabutton";
-import DoubleColumnContainer from "../components/DoubleColumnContainer";
+import Fabutton from "../../components/Fabutton";
 
 function Screen() {
   return (

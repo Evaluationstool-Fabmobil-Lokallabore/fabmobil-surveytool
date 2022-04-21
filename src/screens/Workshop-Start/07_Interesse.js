@@ -1,13 +1,13 @@
-import WeiterButton from "../components/WeiterButton";
-import ClickablePicto from "../components/ClickablePicto";
-import pictoTiefzieh from "../assets/FM-Emoji_ohneRand12.png";
-import pictoPlotter from "../assets/FM-Emoji_ohneRand21.png";
-import pictoRobo from "../assets/FM-Emoji_ohneRand32.png";
-import pictoScan from "../assets/FM-Emoji_ohneRand15.png";
-import picto3DPrint from "../assets/FM-Emoji_ohneRand33.png";
-import pictoVR from "../assets/FM-Emoji_ohneRand11.png";
-import pictoLaser from "../assets/FM-Emoji_ohneRand34.png";
-import pictoStickmaschine from "../assets/FM-Emoji_ohneRand50.png";
+import WeiterButton from "../../components/WeiterButton";
+import ClickablePicto from "../../components/ClickablePicto";
+import pictoTiefzieh from "../../assets/pictograms/FM-Emoji_ohneRand12.png";
+import pictoPlotter from "../../assets/pictograms/FM-Emoji_ohneRand21.png";
+import pictoRobo from "../../assets/pictograms/FM-Emoji_ohneRand32.png";
+import pictoScan from "../../assets/pictograms/FM-Emoji_ohneRand15.png";
+import picto3DPrint from "../../assets/pictograms/FM-Emoji_ohneRand33.png";
+import pictoVR from "../../assets/pictograms/FM-Emoji_ohneRand11.png";
+import pictoLaser from "../../assets/pictograms/FM-Emoji_ohneRand34.png";
+import pictoStickmaschine from "../../assets/pictograms/FM-Emoji_ohneRand50.png";
 
 function Screen() {
   return (

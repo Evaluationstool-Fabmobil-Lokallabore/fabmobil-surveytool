@@ -1,5 +1,5 @@
-import FabTextinput from "../components/FabTextinput";
-import WeiterButton from "../components/WeiterButton";
+import FabTextinput from "../../components/FabTextinput";
+import WeiterButton from "../../components/WeiterButton";
 
 function Screen() {
   return (

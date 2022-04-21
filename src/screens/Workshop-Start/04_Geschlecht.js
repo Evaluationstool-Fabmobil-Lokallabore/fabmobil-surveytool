@@ -1,7 +1,7 @@
-import DoubleColumnContainer from "../components/DoubleColumnContainer";
-import Fabutton from "../components/Fabutton";
-import FabTextinput from "../components/FabTextinput";
-import WeiterButton from "../components/WeiterButton";
+import DoubleColumnContainer from "../../components/DoubleColumnContainer";
+import Fabutton from "../../components/Fabutton";
+import FabTextinput from "../../components/FabTextinput";
+import WeiterButton from "../../components/WeiterButton";
 
 function Screen() {
   return (

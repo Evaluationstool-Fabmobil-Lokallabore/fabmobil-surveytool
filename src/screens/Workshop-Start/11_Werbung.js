@@ -1,4 +1,4 @@
-import Fabutton from "../components/Fabutton";
+import Fabutton from "../../components/Fabutton";
 
 function Screen() {
   return (

@@ -1,5 +1,5 @@
-import Fabutton from "../components/Fabutton";
-import WeiterButton from "../components/WeiterButton";
+import Fabutton from "../../components/Fabutton";
+import WeiterButton from "../../components/WeiterButton";
 
 function Screen() {
   return (
