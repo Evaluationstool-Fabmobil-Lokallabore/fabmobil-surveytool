@@ -1,4 +1,6 @@
 import WeiterButton from "../../components/WeiterButton";
+import RobiGif from "../../components/RobiGif";
+import robiAuftrittWinken from "../../assets/robi-gifs/Robi_auftritt+winken-min.gif";
 
 function Screen() {
   return (
@@ -14,6 +16,7 @@ function Screen() {
         </p>
       </div>
       <WeiterButton text="klar" navigateTo="/alter" />
+      <RobiGif src={robiAuftrittWinken} style={{ bottom: 0 }} />
     </>
   );
 }

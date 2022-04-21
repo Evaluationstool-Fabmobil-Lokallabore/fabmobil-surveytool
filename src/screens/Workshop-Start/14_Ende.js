@@ -13,7 +13,7 @@ function Screen() {
         <RobiGif style={{ left: 0, bottom: 130 }} />
       </div>
 
-      <WeiterButton text="fertig" />
+      <WeiterButton text="fertig" navigateTo={"/"} />
     </>
   );
 }
