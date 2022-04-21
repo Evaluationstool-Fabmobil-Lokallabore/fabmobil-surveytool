@@ -1,12 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
 /* Global styling variables */
 html {
   --color-background: #ddbbfc;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 24px;
+}
+
 .App {
   display: flex;
   flex-direction: column;
-  text-align: center;
   height: 100vh;
 }
 
@@ -21,12 +31,52 @@ html {
 
 .Main {
   background-color: var(--color-background);
-  flex: 1;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex: 1;
+  flex-direction: column;
+  justify-content: normal;
+  padding: 15px;
+  padding-bottom: 140px;
 }
 
 .Header__Logo {
   max-height: 85%;
+}
+
+.Fabutton {
+  background-color: white;
+  border: 2px solid black;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 10px 19px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.DoubleColumnContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.DoubleColumnContainer > div {
+  flex-basis: 50%;
+  margin-bottom: 21px;
+}
+
+.DoubleColumnContainer > div:nth-child(even) {
+  border-left: none;
+}
+
+.WeiterButton {
+  width: 172px;
+  position: fixed;
+  bottom: 40px;
+  right: 17px;
+}
+
+.ClickablePicto {
+  cursor: pointer;
+  width: 109px;
 }

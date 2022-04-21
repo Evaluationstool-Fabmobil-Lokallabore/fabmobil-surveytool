@@ -1,5 +1,5 @@
-function Main(props) {
-  return <div className="Main">{props.children}</div>;
+function Main({ children }) {
+  return <div className="Main">{children}</div>;
 }
 
 export default Main;
