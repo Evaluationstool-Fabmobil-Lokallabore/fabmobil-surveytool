@@ -1,23 +1,28 @@
+import { useNavigate } from "react-router-dom";
 import Fabutton from "../../components/Fabutton";
 import RobiGif from "../../components/RobiGif";
 import robiLongarmslide from "../../assets/robi-gifs/Robi_longarmslide-min.gif";
 
 function Screen() {
+  const navigate = useNavigate();
+  const nextRoute = "/werbung";
   return (
     <>
       <div>
         <p>Wo bist du gerade?</p>
       </div>
-      <Fabutton>Grundschule</Fabutton>
-      <Fabutton>Förderschule</Fabutton>
-      <Fabutton>Oberschule</Fabutton>
-      <Fabutton>Gymnasium</Fabutton>
-      <Fabutton>Berufsschule</Fabutton>
-      <Fabutton>Soziokultureller Ort</Fabutton>
-      <Fabutton>Festival</Fabutton>
-      <Fabutton>Konferenz</Fabutton>
-      <Fabutton>Aktionstage</Fabutton>
-      <Fabutton>Andere</Fabutton>
+      <Fabutton onClick={() => navigate(nextRoute)}>Grundschule</Fabutton>
+      <Fabutton onClick={() => navigate(nextRoute)}>Förderschule</Fabutton>
+      <Fabutton onClick={() => navigate(nextRoute)}>Oberschule</Fabutton>
+      <Fabutton onClick={() => navigate(nextRoute)}>Gymnasium</Fabutton>
+      <Fabutton onClick={() => navigate(nextRoute)}>Berufsschule</Fabutton>
+      <Fabutton onClick={() => navigate(nextRoute)}>
+        Soziokultureller Ort
+      </Fabutton>
+      <Fabutton onClick={() => navigate(nextRoute)}>Festival</Fabutton>
+      <Fabutton onClick={() => navigate(nextRoute)}>Konferenz</Fabutton>
+      <Fabutton onClick={() => navigate(nextRoute)}>Aktionstage</Fabutton>
+      <Fabutton onClick={() => navigate(nextRoute)}>Andere</Fabutton>
 
       <RobiGif
         src={robiLongarmslide}

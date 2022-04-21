@@ -10,7 +10,7 @@ function Screen() {
         <p>Welche Erwartungen hast du an deine Zeit bei uns im Fabmobil?</p>
       </div>
       <FabTextinput style={{ marginTop: "auto", marginBottom: "auto" }} />
-      <WeiterButton />
+      <WeiterButton navigateTo="/interesse" />
       <RobiGif src={robiLongarmtouch} style={{ left: -100, bottom: 0 }} />
     </>
   );

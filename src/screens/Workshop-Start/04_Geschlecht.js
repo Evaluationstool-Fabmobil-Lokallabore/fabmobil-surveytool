@@ -18,7 +18,7 @@ function Screen() {
         <Fabutton>keine Angabe</Fabutton>
         <FabTextinput style={{ margin: "auto" }} />
       </DoubleColumnContainer>
-      <WeiterButton />
+      <WeiterButton navigateTo="/besuch" />
       <RobiGif src={robiTastatur} style={{ width: 180, right: 0, top: 145 }} />
     </>
   );

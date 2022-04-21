@@ -39,7 +39,7 @@ function Screen() {
         </div>
       </div>
 
-      <WeiterButton />
+      <WeiterButton navigateTo="/vorerfahrung" />
     </>
   );
 }

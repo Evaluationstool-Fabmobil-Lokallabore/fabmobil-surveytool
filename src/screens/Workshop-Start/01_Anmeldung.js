@@ -13,7 +13,7 @@ function Screen() {
           noch ein paar Fragen für dich, okay?
         </p>
       </div>
-      <WeiterButton text="klar" />
+      <WeiterButton text="klar" navigateTo="/alter" />
     </>
   );
 }

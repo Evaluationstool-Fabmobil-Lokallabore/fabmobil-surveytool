@@ -1,10 +1,10 @@
-import Fabutton from "./Fabutton";
+import FabuttonLink from "./FabuttonLink";
 
-function WeiterButton({ children, style, text }) {
+function WeiterButton({ navigateTo, text, style }) {
   return (
-    <Fabutton className="WeiterButton" style={style}>
+    <FabuttonLink to={navigateTo || "#"} className="WeiterButton" style={style}>
       {text || "weiter"}
-    </Fabutton>
+    </FabuttonLink>
   );
 }
 

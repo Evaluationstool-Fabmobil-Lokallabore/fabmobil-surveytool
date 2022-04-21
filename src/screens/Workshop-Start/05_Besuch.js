@@ -1,9 +1,12 @@
+import { useNavigate } from "react-router-dom";
 import DoubleColumnContainer from "../../components/DoubleColumnContainer";
 import Fabutton from "../../components/Fabutton";
 import RobiGif from "../../components/RobiGif";
 import robiTouch from "../../assets/robi-gifs/Robi_touch-min.gif";
 
 function Screen() {
+  const navigate = useNavigate();
+  const nextRoute = "/erwartungen";
   return (
     <>
       <div>
@@ -11,12 +14,14 @@ function Screen() {
       </div>
       <div style={{ marginTop: 200 }}>
         <DoubleColumnContainer>
-          <Fabutton>noch nie</Fabutton>
-          <Fabutton>erst einmal</Fabutton>
-          <Fabutton>zweimal</Fabutton>
-          <Fabutton>dreimal</Fabutton>
+          <Fabutton onClick={() => navigate(nextRoute)}>noch nie</Fabutton>
+          <Fabutton onClick={() => navigate(nextRoute)}>erst einmal</Fabutton>
+          <Fabutton onClick={() => navigate(nextRoute)}>zweimal</Fabutton>
+          <Fabutton onClick={() => navigate(nextRoute)}>dreimal</Fabutton>
         </DoubleColumnContainer>
-        <Fabutton>Ich gehöre fast zur Crew</Fabutton>
+        <Fabutton onClick={() => navigate(nextRoute)}>
+          Ich gehöre fast zur Crew
+        </Fabutton>
         <RobiGif
           src={robiTouch}
           style={{

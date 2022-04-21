@@ -1,6 +1,10 @@
-function Fabutton({ children, className, style }) {
+function Fabutton({ children, onClick, className, style }) {
   return (
-    <div className={`Fabutton ${className || ""}`} style={style}>
+    <div
+      onClick={onClick}
+      className={`Fabutton ${className || ""}`}
+      style={style}
+    >
       {children || "..."}
     </div>
   );

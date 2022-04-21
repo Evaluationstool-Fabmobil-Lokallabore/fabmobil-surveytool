@@ -10,7 +10,7 @@ function Screen() {
         <p>Und wie lautet deine Postleitzahl?</p>
       </div>
       <FabTextinput style={{ margin: "auto" }} />
-      <WeiterButton />
+      <WeiterButton navigateTo="/geschlecht" />
       <RobiGif src={robiLongarmtouch} style={{ left: -100, bottom: 0 }} />
     </>
   );

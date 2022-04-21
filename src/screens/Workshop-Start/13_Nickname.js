@@ -14,7 +14,7 @@ function Screen() {
         (Merke dir diesen Namen. Du wirst ihn am Ende des Workshops nochmal
         brauchen.)
       </p>
-      <WeiterButton />
+      <WeiterButton navigateTo="/ende" />
       <RobiGif src={robiTastatur} style={{ width: 237, left: 111, top: 145 }} />
     </>
   );

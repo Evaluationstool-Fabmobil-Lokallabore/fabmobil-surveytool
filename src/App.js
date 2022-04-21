@@ -1,13 +1,16 @@
 import "./App.css";
-import Layout from "./components/Layout";
-import Screen from "./screens/Workshop-Start/13_Nickname";
+import Header from "./components/Header";
+import Main from "./components/Main";
+
+import { Outlet } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <Layout>
-        <Screen />
-      </Layout>
+      <Header />
+      <Main>
+        <Outlet />
+      </Main>
     </div>
   );
 }
