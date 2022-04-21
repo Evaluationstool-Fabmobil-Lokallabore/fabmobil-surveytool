@@ -1,6 +1,6 @@
 import "./App.css";
 import Layout from "./components/Layout";
-import Screen from "./screens/A09_AnzahlTage";
+import Screen from "./screens/A14_Ende";
 
 function App() {
   return (
