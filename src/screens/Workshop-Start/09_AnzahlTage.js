@@ -1,5 +1,7 @@
 import Fabutton from "../../components/Fabutton";
 import DoubleColumnContainer from "../../components/DoubleColumnContainer";
+import RobiGif from "../../components/RobiGif";
+import robiSprung from "../../assets/robi-gifs/Robi_sprung-min.gif";
 
 function Screen() {
   return (
@@ -15,6 +17,7 @@ function Screen() {
         <Fabutton>4</Fabutton>
         <Fabutton>5</Fabutton>
       </DoubleColumnContainer>
+      <RobiGif src={robiSprung} style={{ left: -100, bottom: 0 }} />
     </>
   );
 }

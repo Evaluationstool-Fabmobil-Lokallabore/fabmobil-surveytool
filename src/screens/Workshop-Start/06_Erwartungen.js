@@ -1,5 +1,7 @@
 import FabTextinput from "../../components/FabTextinput";
 import WeiterButton from "../../components/WeiterButton";
+import RobiGif from "../../components/RobiGif";
+import robiLongarmtouch from "../../assets/robi-gifs/Robi_longarmtouch-min.gif";
 
 function Screen() {
   return (
@@ -9,6 +11,7 @@ function Screen() {
       </div>
       <FabTextinput style={{ marginTop: "auto", marginBottom: "auto" }} />
       <WeiterButton />
+      <RobiGif src={robiLongarmtouch} style={{ left: -100, bottom: 0 }} />
     </>
   );
 }

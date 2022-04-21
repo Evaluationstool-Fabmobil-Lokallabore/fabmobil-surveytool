@@ -2,6 +2,8 @@ import DoubleColumnContainer from "../../components/DoubleColumnContainer";
 import Fabutton from "../../components/Fabutton";
 import FabTextinput from "../../components/FabTextinput";
 import WeiterButton from "../../components/WeiterButton";
+import RobiGif from "../../components/RobiGif";
+import robiTastatur from "../../assets/robi-gifs/Robi_tastatur-min.gif";
 
 function Screen() {
   return (
@@ -17,6 +19,7 @@ function Screen() {
         <FabTextinput style={{ margin: "auto" }} />
       </DoubleColumnContainer>
       <WeiterButton />
+      <RobiGif src={robiTastatur} style={{ width: 180, right: 0, top: 145 }} />
     </>
   );
 }

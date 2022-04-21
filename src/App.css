@@ -80,3 +80,13 @@ body {
   cursor: pointer;
   width: 109px;
 }
+
+.RobiGif {
+  position: fixed;
+  z-index: 999;
+  pointer-events: none;
+}
+
+.RobiGif img {
+  width: 100%;
+}
