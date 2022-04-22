@@ -41,6 +41,12 @@
   cursor: pointer;
 }
 
+.Fabutton--active {
+  background-color: black;
+  color: white;
+  border-color: white;
+}
+
 .DoubleColumnContainer {
   display: flex;
   flex-wrap: wrap;
