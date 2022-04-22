@@ -1,3 +1,5 @@
+@import url("");
+
 .App {
   display: flex;
   flex-direction: column;
@@ -73,4 +75,34 @@
 
 .RobiGif img {
   width: 100%;
+}
+
+.FabSlider {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 100px 0 100px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.FabSlider__elementTop,
+.FabSlider__elementBottom {
+  width: 63px;
+  height: auto;
+  cursor: pointer;
+}
+
+.FabSlider__image {
+  width: 100%;
+}
+
+.FabSlider__bar {
+  width: 25px;
+  height: 226px;
+  background-color: white;
+  border: 2px solid black;
+  position: relative;
+  margin: 10px 0;
 }

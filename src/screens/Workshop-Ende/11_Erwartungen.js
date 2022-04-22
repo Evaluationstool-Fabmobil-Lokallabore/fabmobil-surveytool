@@ -1,4 +1,6 @@
+import FabSlider from "../../components/FabSlider";
 import WeiterButton from "../../components/WeiterButton";
+import heartEmoji from "../../assets/pictograms/herz.png";
 
 function Screen() {
   return (
@@ -6,7 +8,7 @@ function Screen() {
       <div>
         <p>Wurden deine Erwartungen im Fabmobil erfüllt?</p>
       </div>
-
+      <FabSlider imgTop={heartEmoji} noBottomLabel />
       <WeiterButton navigateTo="/next-time" />
     </>
   );
