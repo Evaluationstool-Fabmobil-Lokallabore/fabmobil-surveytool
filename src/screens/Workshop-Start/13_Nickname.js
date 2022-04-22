@@ -1,4 +1,4 @@
-import FabTextinput from "../../components/FabTextinput";
+import FabTextInput from "../../components/FabTextInput";
 import WeiterButton from "../../components/WeiterButton";
 import RobiGif from "../../components/RobiGif";
 import robiTastatur from "../../assets/robi-gifs/Robi_tastatur-min.gif";
@@ -9,7 +9,7 @@ function Screen() {
       <div>
         <p>Was ist dein Nickname?</p>
       </div>
-      <FabTextinput style={{ marginTop: "auto", marginBottom: "auto" }} />
+      <FabTextInput style={{ marginTop: "auto", marginBottom: "auto" }} />
       <p>
         (Merke dir diesen Namen. Du wirst ihn am Ende des Workshops nochmal
         brauchen.)

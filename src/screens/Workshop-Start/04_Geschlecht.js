@@ -1,6 +1,6 @@
 import DoubleColumnContainer from "../../components/DoubleColumnContainer";
 import Fabutton from "../../components/Fabutton";
-import FabTextinput from "../../components/FabTextinput";
+import FabTextInput from "../../components/FabTextInput";
 import WeiterButton from "../../components/WeiterButton";
 import RobiGif from "../../components/RobiGif";
 import robiTastatur from "../../assets/robi-gifs/Robi_tastatur-min.gif";
@@ -16,7 +16,7 @@ function Screen() {
         <Fabutton>weiblich</Fabutton>
         <Fabutton>männlich</Fabutton>
         <Fabutton>keine Angabe</Fabutton>
-        <FabTextinput style={{ margin: "auto" }} />
+        <FabTextInput style={{ flex: 1 }} />
       </DoubleColumnContainer>
       <WeiterButton navigateTo="/losgehts/besuch" />
       <RobiGif src={robiTastatur} style={{ width: 180, right: 0, top: 145 }} />

@@ -1,7 +1,11 @@
-function FabTextinput({ children, style }) {
+function FabTextinput({ children, style, ...otherProps }) {
   return (
-    <div className="FabTextinput" style={style}>
-      <textarea />
+    <div className="FabTextInput" style={style}>
+      <input
+        className="FabTextInput__input"
+        type="text"
+        {...otherProps}
+      ></input>
     </div>
   );
 }
