@@ -1,9 +1,12 @@
+import { Link } from "react-router-dom";
 import Logo from "../assets/FABMOBIL_White.svg";
 
 function Header() {
   return (
     <div className="Header">
-      <img src={Logo} className="Header__Logo" alt="logo" />
+      <Link to="/" className="Header__link">
+        <img src={Logo} className="Header__logo" alt="logo" />
+      </Link>
     </div>
   );
 }
