@@ -23,19 +23,34 @@ function Screen() {
           position: "relative",
         }}
       >
-        <div>
+        <div style={{ position: "relative" }}>
           <ClickablePicto src={pictoTiefzieh} />
-          <ClickablePicto src={pictoPlotter} />
-          <ClickablePicto src={pictoRobo} />
+          <ClickablePicto
+            src={pictoPlotter}
+            style={{ position: "absolute", top: "50%", left: 0 }}
+          />
+          <ClickablePicto
+            src={pictoRobo}
+            style={{ position: "absolute", bottom: "-19%", left: 0 }}
+          />
         </div>
-        <div>
-          <ClickablePicto src={pictoScan} />
-          <ClickablePicto src={picto3DPrint} />
+        <div style={{ position: "relative" }}>
+          <ClickablePicto src={pictoScan} style={{ marginTop: "100%" }} />
+          <ClickablePicto
+            src={picto3DPrint}
+            style={{ position: "absolute", bottom: "15%", left: 0 }}
+          />
         </div>
-        <div>
-          <ClickablePicto src={pictoVR} />
-          <ClickablePicto src={pictoLaser} />
-          <ClickablePicto src={pictoStickmaschine} />
+        <div style={{ position: "relative" }}>
+          <ClickablePicto src={pictoVR} style={{ marginTop: 20 }} />
+          <ClickablePicto
+            src={pictoLaser}
+            style={{ position: "absolute", top: "50%", left: 0 }}
+          />
+          <ClickablePicto
+            src={pictoStickmaschine}
+            style={{ position: "absolute", bottom: 0, left: 0 }}
+          />
         </div>
       </div>
 
