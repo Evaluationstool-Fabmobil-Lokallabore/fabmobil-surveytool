@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import FabSlider from "../../components/FabSlider";
 import DoubleColumnContainer from "../../components/DoubleColumnContainer";
 import Fabutton from "../../components/Fabutton";
@@ -8,6 +9,8 @@ import RobiGif from "../../components/RobiGif";
 import robiLongarmslide from "../../assets/robi-gifs/Robi_longarmslide-min.gif";
 
 function Screen() {
+  const navigate = useNavigate();
+  const nextRoute = "/wiewars/erwartungen";
   return (
     <>
       <div style={{ marginBottom: "auto" }}>
@@ -16,8 +19,15 @@ function Screen() {
       <FabSlider imgTop={smileyHappy} imgBottom={smileyBroken} />
 
       <DoubleColumnContainer>
-        <Fabutton>nicht benutzt</Fabutton>
-        <FabuttonLink to="/wiewars/erwartungen">weiter</FabuttonLink>
+        <Fabutton
+          onClick={() => navigate(nextRoute)}
+          style={{ borderRight: 0 }}
+        >
+          nicht benutzt
+        </Fabutton>
+        <FabuttonLink to={nextRoute} style={{ flexBasis: "50%" }}>
+          weiter
+        </FabuttonLink>
       </DoubleColumnContainer>
       <RobiGif
         src={robiLongarmslide}
