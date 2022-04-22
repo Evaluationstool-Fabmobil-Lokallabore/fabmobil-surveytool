@@ -107,6 +107,10 @@
   margin: 10px 0;
 }
 
+.FabSlider__bar__filler {
+  background-color: black;
+}
+
 .FabTextInput {
 }
 
