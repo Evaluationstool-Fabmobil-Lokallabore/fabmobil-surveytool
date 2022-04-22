@@ -1,9 +1,10 @@
-@import url("");
-
 .App {
+  background-color: var(--color-background);
   display: flex;
   flex-direction: column;
   height: 100vh;
+  max-width: 834px;
+  margin: 0 auto;
 }
 
 .Header {
@@ -38,6 +39,7 @@
   background-color: white;
   border: 2px solid black;
   height: 65px;
+  max-width: var(--button-max-width);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -124,6 +126,7 @@
 }
 
 .FabTextInput {
+  max-width: var(--button-max-width);
 }
 
 .FabTextInput__input {
