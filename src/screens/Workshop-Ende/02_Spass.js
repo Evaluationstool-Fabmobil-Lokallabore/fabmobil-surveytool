@@ -13,7 +13,10 @@ function Screen() {
       </div>
       <FabSlider imgTop={happyFabmobil} imgBottom={sadFabmobil} />
       <WeiterButton navigateTo="/wiewars/interesse" />
-      <RobiGif src={robiLongarmslide} style={{ left: -300, top: 300 }} />
+      <RobiGif
+        src={robiLongarmslide}
+        style={{ left: -300, top: 220, transform: "rotate(90deg)" }}
+      />
     </>
   );
 }

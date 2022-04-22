@@ -4,6 +4,8 @@ import Fabutton from "../../components/Fabutton";
 import FabuttonLink from "../../components/FabuttonLink";
 import smileyHappy from "../../assets/pictograms/FM-Emoji_ohneRand61.png";
 import smileyBroken from "../../assets/pictograms/FM-Emoji_ohneRand55.png";
+import RobiGif from "../../components/RobiGif";
+import robiLongarmslide from "../../assets/robi-gifs/Robi_longarmslide-min.gif";
 
 function Screen() {
   return (
@@ -17,6 +19,10 @@ function Screen() {
         <Fabutton>nicht benutzt</Fabutton>
         <FabuttonLink to="/wiewars/erwartungen">weiter</FabuttonLink>
       </DoubleColumnContainer>
+      <RobiGif
+        src={robiLongarmslide}
+        style={{ left: -300, top: 220, transform: "rotate(90deg)" }}
+      />
     </>
   );
 }
