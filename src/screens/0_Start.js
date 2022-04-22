@@ -6,7 +6,7 @@ function Screen() {
       <FabuttonLink to="/anmeldung" style={{ marginBottom: 26 }}>
         Workshop Start
       </FabuttonLink>
-      <FabuttonLink to="/" style={{ marginBottom: 26 }}>
+      <FabuttonLink to="/nickname2" style={{ marginBottom: 26 }}>
         Workshop Ende
       </FabuttonLink>{" "}
     </>
