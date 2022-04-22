@@ -11,11 +11,13 @@ function Screen() {
           Hat das Fabmobil dein Interesse für digitale Technologien geweckt?
         </p>
       </div>
-      <Fabutton onClick={() => navigate(nextRoute)}>Ja voll</Fabutton>
-      <Fabutton onClick={() => navigate(nextRoute)}>Nö</Fabutton>
-      <Fabutton onClick={() => navigate(nextRoute)}>
-        Hatte ich vorher schon
-      </Fabutton>
+      <div className="vertical-grid">
+        <Fabutton onClick={() => navigate(nextRoute)}>Ja voll</Fabutton>
+        <Fabutton onClick={() => navigate(nextRoute)}>Nö</Fabutton>
+        <Fabutton onClick={() => navigate(nextRoute)}>
+          Hatte ich vorher schon
+        </Fabutton>
+      </div>
     </>
   );
 }

@@ -9,12 +9,14 @@ function Screen() {
       <div>
         <p>Wie spannend findest du 3D-Druck?</p>
       </div>
-      <Fabutton onClick={() => navigate(nextRoute)}>Mega! ich liebs</Fabutton>
-      <Fabutton onClick={() => navigate(nextRoute)}>So mittel</Fabutton>
-      <Fabutton onClick={() => navigate(nextRoute)}>
-        Fand ich nicht so cool...
-      </Fabutton>
-      <Fabutton onClick={() => navigate(nextRoute)}>Nicht benutzt</Fabutton>
+      <div className="vertical-grid">
+        <Fabutton onClick={() => navigate(nextRoute)}>Mega! ich liebs</Fabutton>
+        <Fabutton onClick={() => navigate(nextRoute)}>So mittel</Fabutton>
+        <Fabutton onClick={() => navigate(nextRoute)}>
+          Fand ich nicht so cool...
+        </Fabutton>
+        <Fabutton onClick={() => navigate(nextRoute)}>Nicht benutzt</Fabutton>
+      </div>
     </>
   );
 }

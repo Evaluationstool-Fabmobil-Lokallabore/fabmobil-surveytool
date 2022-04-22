@@ -10,11 +10,13 @@ function Screen() {
         <p>So viele Fragen...Bald hast dus geschafft.</p>
         <p>Warum bist du heute hier? </p>
       </div>
-      <Fabutton>Interesse digitale Technik</Fabutton>
-      <Fabutton>Hauptsache was los</Fabutton>
-      <Fabutton>Schulische Verpflichtung</Fabutton>
-      <Fabutton>Wurde mitgeschleppt</Fabutton>
-      <Fabutton>Soziale Medien</Fabutton>
+      <div className="vertical-grid">
+        <Fabutton>Interesse digitale Technik</Fabutton>
+        <Fabutton>Hauptsache was los</Fabutton>
+        <Fabutton>Schulische Verpflichtung</Fabutton>
+        <Fabutton>Wurde mitgeschleppt</Fabutton>
+        <Fabutton>Soziale Medien</Fabutton>
+      </div>
 
       <WeiterButton text="fertig" navigateTo="/losgehts/nickname" />
       <RobiGif

@@ -11,19 +11,20 @@ function Screen() {
       <div>
         <p>Wo bist du gerade?</p>
       </div>
-      <Fabutton onClick={() => navigate(nextRoute)}>Grundschule</Fabutton>
-      <Fabutton onClick={() => navigate(nextRoute)}>Förderschule</Fabutton>
-      <Fabutton onClick={() => navigate(nextRoute)}>Oberschule</Fabutton>
-      <Fabutton onClick={() => navigate(nextRoute)}>Gymnasium</Fabutton>
-      <Fabutton onClick={() => navigate(nextRoute)}>Berufsschule</Fabutton>
-      <Fabutton onClick={() => navigate(nextRoute)}>
-        Soziokultureller Ort
-      </Fabutton>
-      <Fabutton onClick={() => navigate(nextRoute)}>Festival</Fabutton>
-      <Fabutton onClick={() => navigate(nextRoute)}>Konferenz</Fabutton>
-      <Fabutton onClick={() => navigate(nextRoute)}>Aktionstage</Fabutton>
-      <Fabutton onClick={() => navigate(nextRoute)}>Andere</Fabutton>
-
+      <div className="vertical-grid">
+        <Fabutton onClick={() => navigate(nextRoute)}>Grundschule</Fabutton>
+        <Fabutton onClick={() => navigate(nextRoute)}>Förderschule</Fabutton>
+        <Fabutton onClick={() => navigate(nextRoute)}>Oberschule</Fabutton>
+        <Fabutton onClick={() => navigate(nextRoute)}>Gymnasium</Fabutton>
+        <Fabutton onClick={() => navigate(nextRoute)}>Berufsschule</Fabutton>
+        <Fabutton onClick={() => navigate(nextRoute)}>
+          Soziokultureller Ort
+        </Fabutton>
+        <Fabutton onClick={() => navigate(nextRoute)}>Festival</Fabutton>
+        <Fabutton onClick={() => navigate(nextRoute)}>Konferenz</Fabutton>
+        <Fabutton onClick={() => navigate(nextRoute)}>Aktionstage</Fabutton>
+        <Fabutton onClick={() => navigate(nextRoute)}>Andere</Fabutton>
+      </div>
       <RobiGif
         src={robiLongarmslide}
         style={{ right: -300, top: -20, transform: "rotate(180deg)" }}
