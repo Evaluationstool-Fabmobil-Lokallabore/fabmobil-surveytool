@@ -14,7 +14,7 @@ function Screen() {
       <FabSlider imgTop={robiThumbsUp} imgBottom={robiThumbsDown} />
       <DoubleColumnContainer style={{ marginBottom: 126 }}>
         <Fabutton>nicht benutzt</Fabutton>
-        <FabuttonLink to="/laser">weiter</FabuttonLink>
+        <FabuttonLink to="/wiewars/laser">weiter</FabuttonLink>
       </DoubleColumnContainer>
     </>
   );

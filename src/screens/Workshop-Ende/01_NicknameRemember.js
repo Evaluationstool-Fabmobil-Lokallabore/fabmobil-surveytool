@@ -11,7 +11,7 @@ function Screen() {
         <p>Verrätst du mir deinen Nicknamen?</p>
       </div>
       <FabTextinput style={{ marginTop: "auto", marginBottom: "auto" }} />
-      <WeiterButton navigateTo="/spass" />
+      <WeiterButton navigateTo="/wiewars/spass" />
       <RobiGif src={robiAuftrittWinken} style={{ bottom: 0 }} />
     </>
   );

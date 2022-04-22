@@ -6,7 +6,7 @@ import robiSprung from "../../assets/robi-gifs/Robi_sprung-min.gif";
 
 function Screen() {
   const navigate = useNavigate();
-  const nextRoute = "/ort";
+  const nextRoute = "/losgehts/ort";
   return (
     <>
       <div>

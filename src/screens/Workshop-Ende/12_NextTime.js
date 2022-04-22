@@ -42,7 +42,7 @@ function Screen() {
         </div>
       </div>
 
-      <WeiterButton navigateTo="/atmo" />
+      <WeiterButton navigateTo="/wiewars/atmo" />
     </>
   );
 }

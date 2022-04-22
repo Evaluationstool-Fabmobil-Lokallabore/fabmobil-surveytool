@@ -3,7 +3,7 @@ import Fabutton from "../../components/Fabutton";
 
 function Screen() {
   const navigate = useNavigate();
-  const nextRoute = "/technologie";
+  const nextRoute = "/wiewars/technologie";
   return (
     <>
       <div>

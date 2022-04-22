@@ -5,7 +5,7 @@ import robiLongarmslide from "../../assets/robi-gifs/Robi_longarmslide-min.gif";
 
 function Screen() {
   const navigate = useNavigate();
-  const nextRoute = "/grund";
+  const nextRoute = "/losgehts/grund";
   return (
     <>
       <div>

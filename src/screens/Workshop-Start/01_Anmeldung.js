@@ -15,7 +15,7 @@ function Screen() {
           noch ein paar Fragen für dich, okay?
         </p>
       </div>
-      <WeiterButton text="klar" navigateTo="/alter" />
+      <WeiterButton text="klar" navigateTo="/losgehts/alter" />
       <RobiGif src={robiAuftrittWinken} style={{ bottom: 0 }} />
     </>
   );

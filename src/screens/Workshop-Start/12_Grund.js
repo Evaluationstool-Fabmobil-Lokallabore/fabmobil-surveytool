@@ -16,7 +16,7 @@ function Screen() {
       <Fabutton>Wurde mitgeschleppt</Fabutton>
       <Fabutton>Soziale Medien</Fabutton>
 
-      <WeiterButton text="fertig" navigateTo="/nickname-create" />
+      <WeiterButton text="fertig" navigateTo="/losgehts/nickname" />
       <RobiGif
         src={robiTouch}
         style={{

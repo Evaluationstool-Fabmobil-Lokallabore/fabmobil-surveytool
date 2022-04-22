@@ -8,7 +8,7 @@ function Screen() {
         <p>Möchtest du mir noch was anderes sagen?</p>
       </div>
       <FabTextinput style={{ marginTop: "auto", marginBottom: "auto" }} />
-      <WeiterButton navigateTo="/ende2" />
+      <WeiterButton navigateTo="/wiewars/ende" />
     </>
   );
 }

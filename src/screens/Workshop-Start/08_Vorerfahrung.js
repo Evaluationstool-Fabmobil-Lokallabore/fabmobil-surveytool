@@ -37,7 +37,7 @@ function Screen() {
         </div>
       </div>
 
-      <WeiterButton navigateTo="/anzahl-tage" />
+      <WeiterButton navigateTo="/losgehts/anzahl-tage" />
     </>
   );
 }

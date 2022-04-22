@@ -15,7 +15,7 @@ function Screen() {
 
       <DoubleColumnContainer>
         <Fabutton>nicht benutzt</Fabutton>
-        <FabuttonLink to="/erwartungen2">weiter</FabuttonLink>
+        <FabuttonLink to="/wiewars/erwartungen">weiter</FabuttonLink>
       </DoubleColumnContainer>
     </>
   );

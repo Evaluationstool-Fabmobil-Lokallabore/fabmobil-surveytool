@@ -10,7 +10,7 @@ function Screen() {
         <p>Wie fandest du die Betreuung im Fabmobil?</p>
       </div>
       <FabSlider imgTop={imgTop} imgBottom={imgBottom} />
-      <WeiterButton navigateTo="/3D-Druck" />
+      <WeiterButton navigateTo="/wiewars/3D-Druck" />
     </>
   );
 }

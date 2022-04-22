@@ -37,7 +37,7 @@ function Screen() {
         </div>
       </div>
 
-      <WeiterButton navigateTo="/betreuung" />
+      <WeiterButton navigateTo="/wiewars/betreuung" />
     </>
   );
 }

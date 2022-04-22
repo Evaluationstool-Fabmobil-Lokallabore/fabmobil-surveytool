@@ -12,7 +12,7 @@ function Screen() {
         <p>Wie viel Spass hattest du während deiner Zeit im Fabmobil?</p>
       </div>
       <FabSlider imgTop={happyFabmobil} imgBottom={sadFabmobil} />
-      <WeiterButton navigateTo="/interesse2" />
+      <WeiterButton navigateTo="/wiewars/interesse" />
       <RobiGif src={robiLongarmslide} style={{ left: -300, top: 300 }} />
     </>
   );

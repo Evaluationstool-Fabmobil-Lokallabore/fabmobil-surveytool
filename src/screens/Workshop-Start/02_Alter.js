@@ -6,7 +6,7 @@ import robiLookaround from "../../assets/robi-gifs/Robi_lookaround-min.gif";
 
 function Screen() {
   const navigate = useNavigate();
-  const nextRoute = "/postleitzahl";
+  const nextRoute = "/losgehts/postleitzahl";
   return (
     <>
       <div style={{ marginBottom: "auto" }}>

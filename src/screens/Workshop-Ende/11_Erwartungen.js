@@ -9,7 +9,7 @@ function Screen() {
         <p>Wurden deine Erwartungen im Fabmobil erfüllt?</p>
       </div>
       <FabSlider imgTop={heartEmoji} noBottomLabel />
-      <WeiterButton navigateTo="/next-time" />
+      <WeiterButton navigateTo="/wiewars/next-time" />
     </>
   );
 }

@@ -10,7 +10,7 @@ function Screen() {
         <p>Wie war die Atmosphäre im Fabmobil?</p>
       </div>
       <FabSlider imgTop={happyFabmobil} imgBottom={sadFabmobil} />
-      <WeiterButton navigateTo="/angebot" />
+      <WeiterButton navigateTo="/wiewars/angebot" />
     </>
   );
 }

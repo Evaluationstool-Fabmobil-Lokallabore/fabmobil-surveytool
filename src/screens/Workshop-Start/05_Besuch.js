@@ -6,7 +6,7 @@ import robiTouch from "../../assets/robi-gifs/Robi_touch-min.gif";
 
 function Screen() {
   const navigate = useNavigate();
-  const nextRoute = "/erwartungen";
+  const nextRoute = "/losgehts/erwartungen";
   return (
     <>
       <div>
