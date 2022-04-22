@@ -9,7 +9,9 @@ function Screen() {
       <div>
         <p>Welche Erwartungen hast du an deine Zeit bei uns im Fabmobil?</p>
       </div>
-      <FabTextArea />
+      <div className="flex-vertical-center">
+        <FabTextArea />
+      </div>
       <WeiterButton navigateTo="/losgehts/interesse" />
       <RobiGif src={robiLongarmtouch} style={{ left: -100, bottom: 0 }} />
     </>

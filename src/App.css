@@ -50,6 +50,7 @@
 .DoubleColumnContainer {
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .DoubleColumnContainer > div {
@@ -144,4 +145,11 @@
 .vertical-grid {
   display: grid;
   grid-gap: 26px;
+}
+
+.flex-vertical-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
 }

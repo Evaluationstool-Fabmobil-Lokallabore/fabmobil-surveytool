@@ -1,10 +1,9 @@
-import { useNavigate } from "react-router-dom";
 import Fabutton from "../../components/Fabutton";
+import WeiterButton from "../../components/WeiterButton";
 import RobiGif from "../../components/RobiGif";
 import robiLongarmslide from "../../assets/robi-gifs/Robi_longarmslide-min.gif";
 
 function Screen() {
-  const navigate = useNavigate();
   const nextRoute = "/losgehts/grund";
   return (
     <>
@@ -12,17 +11,16 @@ function Screen() {
         <p>Wie hast du vom Fabmobil gehört?</p>
       </div>
       <div className="vertical-grid">
-        <Fabutton onClick={() => navigate(nextRoute)}>Freund*innen</Fabutton>
-        <Fabutton onClick={() => navigate(nextRoute)}>Verwandte</Fabutton>
-        <Fabutton onClick={() => navigate(nextRoute)}>Schule</Fabutton>
-        <Fabutton onClick={() => navigate(nextRoute)}>Sonstige</Fabutton>
-        <Fabutton onClick={() => navigate(nextRoute)}>Soziale Medien</Fabutton>
-        <Fabutton onClick={() => navigate(nextRoute)}>
-          Soziokultureller Ort
-        </Fabutton>
-        <Fabutton onClick={() => navigate(nextRoute)}>Festival</Fabutton>
-        <Fabutton onClick={() => navigate(nextRoute)}>Konkurrenz</Fabutton>
+        <Fabutton>Freund*innen</Fabutton>
+        <Fabutton>Verwandte</Fabutton>
+        <Fabutton>Schule</Fabutton>
+        <Fabutton>Sonstige</Fabutton>
+        <Fabutton>Soziale Medien</Fabutton>
+        <Fabutton>Soziokultureller Ort</Fabutton>
+        <Fabutton>Festival</Fabutton>
+        <Fabutton>Konkurrenz</Fabutton>
       </div>
+      <WeiterButton navigateTo={nextRoute} />
       <RobiGif src={robiLongarmslide} style={{ left: -300, top: 300 }} />
     </>
   );

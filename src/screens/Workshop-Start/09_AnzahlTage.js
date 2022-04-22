@@ -13,13 +13,15 @@ function Screen() {
         <p>Sweet. Du hast bereits die Hälfte meiner Fragen beantwortet. </p>
         <p>Wie viele Tage darfst du im Fabmobil verbringen?</p>
       </div>
-      <DoubleColumnContainer style={{ marginBottom: 126 }}>
-        <Fabutton onClick={() => navigate(nextRoute)}>1</Fabutton>
-        <Fabutton onClick={() => navigate(nextRoute)}>2</Fabutton>
-        <Fabutton onClick={() => navigate(nextRoute)}>3</Fabutton>
-        <Fabutton onClick={() => navigate(nextRoute)}>4</Fabutton>
-        <Fabutton onClick={() => navigate(nextRoute)}>5</Fabutton>
-      </DoubleColumnContainer>
+      <div className="flex-vertical-center">
+        <DoubleColumnContainer>
+          <Fabutton onClick={() => navigate(nextRoute)}>1</Fabutton>
+          <Fabutton onClick={() => navigate(nextRoute)}>2</Fabutton>
+          <Fabutton onClick={() => navigate(nextRoute)}>3</Fabutton>
+          <Fabutton onClick={() => navigate(nextRoute)}>4</Fabutton>
+          <Fabutton onClick={() => navigate(nextRoute)}>5</Fabutton>
+        </DoubleColumnContainer>
+      </div>
       <RobiGif src={robiSprung} style={{ left: -100, bottom: 0 }} />
     </>
   );
