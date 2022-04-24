@@ -15,11 +15,8 @@ function Screen() {
       <div>
         <p>
           Damit ich es fürs nächste Mal weiss: Was würdest du das nächste Mal
-          gerne ausprobieren?{" "}
+          gerne ausprobieren?
         </p>
-      </div>
-      <div>
-        <p>Verrätst du mir, was dich besonders interessiert?</p>
       </div>
       <div
         style={{
