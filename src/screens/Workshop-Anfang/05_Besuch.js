@@ -23,7 +23,9 @@ function Screen() {
       <div style={{ marginTop: 200 }}>
         <DoubleColumnContainer>
           {ANSWER_OPTIONS.map((option) => (
-            <Fabutton onClick={() => navigate(nextRoute)}>{option}</Fabutton>
+            <Fabutton key={option} onClick={() => navigate(nextRoute)}>
+              {option}
+            </Fabutton>
           ))}
         </DoubleColumnContainer>
         <RobiGif

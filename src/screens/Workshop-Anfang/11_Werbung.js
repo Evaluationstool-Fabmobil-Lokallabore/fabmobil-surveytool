@@ -23,7 +23,7 @@ function Screen() {
       </div>
       <div className="vertical-grid">
         {ANSWER_OPTIONS.map((option) => (
-          <Fabutton>{option}</Fabutton>
+          <Fabutton key={option}>{option}</Fabutton>
         ))}
       </div>
       <WeiterButton navigateTo={nextRoute} />

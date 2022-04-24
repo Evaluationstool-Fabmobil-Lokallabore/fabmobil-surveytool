@@ -17,7 +17,9 @@ function Screen() {
       </div>
       <div className="vertical-grid">
         {ANSWER_OPTIONS.map((option) => (
-          <Fabutton onClick={() => navigate(nextRoute)}>{option}</Fabutton>
+          <Fabutton key={option} onClick={() => navigate(nextRoute)}>
+            {option}
+          </Fabutton>
         ))}
       </div>
     </>

@@ -18,7 +18,9 @@ function Screen() {
       <div className="flex-vertical-center">
         <DoubleColumnContainer>
           {ANSWER_OPTIONS.map((option) => (
-            <Fabutton onClick={() => navigate(nextRoute)}>{option}</Fabutton>
+            <Fabutton key={option} onClick={() => navigate(nextRoute)}>
+              {option}
+            </Fabutton>
           ))}
         </DoubleColumnContainer>
       </div>

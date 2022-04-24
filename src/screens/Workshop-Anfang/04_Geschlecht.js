@@ -15,7 +15,7 @@ function Screen() {
       </div>
       <DoubleColumnContainer style={{ marginBottom: 126 }}>
         {ANSWER_OPTIONS.map((option) => (
-          <Fabutton>{option}</Fabutton>
+          <Fabutton key={option}>{option}</Fabutton>
         ))}
         <FabTextInput style={{ flex: 1 }} />
       </DoubleColumnContainer>
