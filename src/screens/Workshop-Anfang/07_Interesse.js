@@ -1,13 +1,8 @@
 import WeiterButton from "../../components/WeiterButton";
 import ClickablePicto from "../../components/ClickablePicto";
-import pictoTiefzieh from "../../assets/pictograms/FM-Emoji_ohneRand12.png";
-import pictoPlotter from "../../assets/pictograms/FM-Emoji_ohneRand21.png";
-import pictoRobo from "../../assets/pictograms/FM-Emoji_ohneRand32.png";
-import pictoScan from "../../assets/pictograms/FM-Emoji_ohneRand15.png";
-import picto3DPrint from "../../assets/pictograms/FM-Emoji_ohneRand33.png";
-import pictoVR from "../../assets/pictograms/FM-Emoji_ohneRand11.png";
-import pictoLaser from "../../assets/pictograms/FM-Emoji_ohneRand34.png";
-import pictoStickmaschine from "../../assets/pictograms/FM-Emoji_ohneRand50.png";
+import FABMOBIL_TECHNOLOGIES from "../../constants/fabmobil_technologies";
+
+const ANSWER_OPTIONS = FABMOBIL_TECHNOLOGIES;
 
 function Screen() {
   return (
@@ -24,31 +19,37 @@ function Screen() {
         }}
       >
         <div style={{ position: "relative" }}>
-          <ClickablePicto src={pictoTiefzieh} />
+          <ClickablePicto src={ANSWER_OPTIONS[0].picto} />
           <ClickablePicto
-            src={pictoPlotter}
+            src={ANSWER_OPTIONS[1].picto}
             style={{ position: "absolute", top: "50%", left: 0 }}
           />
           <ClickablePicto
-            src={pictoRobo}
+            src={ANSWER_OPTIONS[2].picto}
             style={{ position: "absolute", bottom: "-19%", left: 0 }}
           />
         </div>
         <div style={{ position: "relative" }}>
-          <ClickablePicto src={pictoScan} style={{ marginTop: "100%" }} />
           <ClickablePicto
-            src={picto3DPrint}
+            src={ANSWER_OPTIONS[3].picto}
+            style={{ marginTop: "100%" }}
+          />
+          <ClickablePicto
+            src={ANSWER_OPTIONS[4].picto}
             style={{ position: "absolute", bottom: "15%", left: 0 }}
           />
         </div>
         <div style={{ position: "relative" }}>
-          <ClickablePicto src={pictoVR} style={{ marginTop: 20 }} />
           <ClickablePicto
-            src={pictoLaser}
+            src={ANSWER_OPTIONS[5].picto}
+            style={{ marginTop: 20 }}
+          />
+          <ClickablePicto
+            src={ANSWER_OPTIONS[6].picto}
             style={{ position: "absolute", top: "50%", left: 0 }}
           />
           <ClickablePicto
-            src={pictoStickmaschine}
+            src={ANSWER_OPTIONS[7].picto}
             style={{ position: "absolute", bottom: 0, left: 0 }}
           />
         </div>

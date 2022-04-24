@@ -1,6 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import Fabutton from "../../components/Fabutton";
 
+const ANSWER_OPTIONS = [
+  "Ja klar!",
+  "Naja...gibts hier schon",
+  "Nee...lass mal",
+];
+
 function Screen() {
   const navigate = useNavigate();
   const nextRoute = "/wiewars/engagieren";
@@ -10,11 +16,9 @@ function Screen() {
         <p>Hättest du gern ein regelmässiges Angebot wie das Fabmobil?</p>
       </div>
       <div className="vertical-grid">
-        <Fabutton onClick={() => navigate(nextRoute)}>Ja klar!</Fabutton>
-        <Fabutton onClick={() => navigate(nextRoute)}>
-          Naja...gibts hier schon
-        </Fabutton>
-        <Fabutton onClick={() => navigate(nextRoute)}>Nee...lass mal</Fabutton>
+        {ANSWER_OPTIONS.map((option) => (
+          <Fabutton onClick={() => navigate(nextRoute)}>{option}</Fabutton>
+        ))}
       </div>
     </>
   );

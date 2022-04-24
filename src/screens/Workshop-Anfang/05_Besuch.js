@@ -4,6 +4,14 @@ import Fabutton from "../../components/Fabutton";
 import RobiGif from "../../components/RobiGif";
 import robiTouch from "../../assets/robi-gifs/Robi_touch-min.gif";
 
+const ANSWER_OPTIONS = [
+  "noch nie",
+  "erst einmal",
+  "zweimal",
+  "dreimal",
+  "Ich gehöre fast zur Crew",
+];
+
 function Screen() {
   const navigate = useNavigate();
   const nextRoute = "/losgehts/erwartungen";
@@ -14,14 +22,10 @@ function Screen() {
       </div>
       <div style={{ marginTop: 200 }}>
         <DoubleColumnContainer>
-          <Fabutton onClick={() => navigate(nextRoute)}>noch nie</Fabutton>
-          <Fabutton onClick={() => navigate(nextRoute)}>erst einmal</Fabutton>
-          <Fabutton onClick={() => navigate(nextRoute)}>zweimal</Fabutton>
-          <Fabutton onClick={() => navigate(nextRoute)}>dreimal</Fabutton>
+          {ANSWER_OPTIONS.map((option) => (
+            <Fabutton onClick={() => navigate(nextRoute)}>{option}</Fabutton>
+          ))}
         </DoubleColumnContainer>
-        <Fabutton onClick={() => navigate(nextRoute)}>
-          Ich gehöre fast zur Crew
-        </Fabutton>
         <RobiGif
           src={robiTouch}
           style={{

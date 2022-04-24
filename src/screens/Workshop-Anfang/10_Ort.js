@@ -3,6 +3,19 @@ import Fabutton from "../../components/Fabutton";
 import RobiGif from "../../components/RobiGif";
 import robiLongarmslide from "../../assets/robi-gifs/Robi_longarmslide-min.gif";
 
+const ANSWER_OPTIONS = [
+  "Grundschule",
+  "Förderschule",
+  "Oberschule",
+  "Gymnasium",
+  "Berufsschule",
+  "Soziokultureller Ort",
+  "Festival",
+  "Konferenz",
+  "Aktionstage",
+  "Andere",
+];
+
 function Screen() {
   const navigate = useNavigate();
   const nextRoute = "/losgehts/werbung";
@@ -12,18 +25,9 @@ function Screen() {
         <p>Wo bist du gerade?</p>
       </div>
       <div className="vertical-grid">
-        <Fabutton onClick={() => navigate(nextRoute)}>Grundschule</Fabutton>
-        <Fabutton onClick={() => navigate(nextRoute)}>Förderschule</Fabutton>
-        <Fabutton onClick={() => navigate(nextRoute)}>Oberschule</Fabutton>
-        <Fabutton onClick={() => navigate(nextRoute)}>Gymnasium</Fabutton>
-        <Fabutton onClick={() => navigate(nextRoute)}>Berufsschule</Fabutton>
-        <Fabutton onClick={() => navigate(nextRoute)}>
-          Soziokultureller Ort
-        </Fabutton>
-        <Fabutton onClick={() => navigate(nextRoute)}>Festival</Fabutton>
-        <Fabutton onClick={() => navigate(nextRoute)}>Konferenz</Fabutton>
-        <Fabutton onClick={() => navigate(nextRoute)}>Aktionstage</Fabutton>
-        <Fabutton onClick={() => navigate(nextRoute)}>Andere</Fabutton>
+        {ANSWER_OPTIONS.map((option) => (
+          <Fabutton onClick={() => navigate(nextRoute)}>{option}</Fabutton>
+        ))}
       </div>
       <RobiGif
         src={robiLongarmslide}

@@ -3,6 +3,14 @@ import WeiterButton from "../../components/WeiterButton";
 import RobiGif from "../../components/RobiGif";
 import robiTouch from "../../assets/robi-gifs/Robi_touch-min.gif";
 
+const ANSWER_OPTIONS = [
+  "Interesse digitale Technik",
+  "Hauptsache was los",
+  "Schulische Verpflichtung",
+  "Wurde mitgeschleppt",
+  "Soziale Medien",
+];
+
 function Screen() {
   return (
     <>
@@ -11,11 +19,9 @@ function Screen() {
         <p>Warum bist du heute hier? </p>
       </div>
       <div className="vertical-grid">
-        <Fabutton>Interesse digitale Technik</Fabutton>
-        <Fabutton>Hauptsache was los</Fabutton>
-        <Fabutton>Schulische Verpflichtung</Fabutton>
-        <Fabutton>Wurde mitgeschleppt</Fabutton>
-        <Fabutton>Soziale Medien</Fabutton>
+        {ANSWER_OPTIONS.map((option) => (
+          <Fabutton>{option}</Fabutton>
+        ))}
       </div>
 
       <WeiterButton text="fertig" navigateTo="/losgehts/nickname" />

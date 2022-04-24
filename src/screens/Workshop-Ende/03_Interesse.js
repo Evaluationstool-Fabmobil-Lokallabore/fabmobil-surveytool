@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import Fabutton from "../../components/Fabutton";
 
+const ANSWER_OPTIONS = ["Ja voll", "Nö", "Hatte ich vorher schon"];
+
 function Screen() {
   const navigate = useNavigate();
   const nextRoute = "/wiewars/technologie";
@@ -12,11 +14,9 @@ function Screen() {
         </p>
       </div>
       <div className="vertical-grid">
-        <Fabutton onClick={() => navigate(nextRoute)}>Ja voll</Fabutton>
-        <Fabutton onClick={() => navigate(nextRoute)}>Nö</Fabutton>
-        <Fabutton onClick={() => navigate(nextRoute)}>
-          Hatte ich vorher schon
-        </Fabutton>
+        {ANSWER_OPTIONS.map((option) => (
+          <Fabutton onClick={() => navigate(nextRoute)}>{option}</Fabutton>
+        ))}
       </div>
     </>
   );

@@ -1,6 +1,13 @@
 import { useNavigate } from "react-router-dom";
 import Fabutton from "../../components/Fabutton";
 
+const ANSWER_OPTIONS = [
+  "Mega! Ich liebs",
+  "So mittel",
+  "Fand ich nicht so cool...",
+  "Nicht benutzt",
+];
+
 function Screen() {
   const navigate = useNavigate();
   const nextRoute = "/wiewars/vr";
@@ -10,12 +17,9 @@ function Screen() {
         <p>Wie spannend findest du 3D-Druck?</p>
       </div>
       <div className="vertical-grid">
-        <Fabutton onClick={() => navigate(nextRoute)}>Mega! ich liebs</Fabutton>
-        <Fabutton onClick={() => navigate(nextRoute)}>So mittel</Fabutton>
-        <Fabutton onClick={() => navigate(nextRoute)}>
-          Fand ich nicht so cool...
-        </Fabutton>
-        <Fabutton onClick={() => navigate(nextRoute)}>Nicht benutzt</Fabutton>
+        {ANSWER_OPTIONS.map((option) => (
+          <Fabutton onClick={() => navigate(nextRoute)}>{option}</Fabutton>
+        ))}
       </div>
     </>
   );

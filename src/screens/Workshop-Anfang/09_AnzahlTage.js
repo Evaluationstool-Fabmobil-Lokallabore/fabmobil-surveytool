@@ -4,6 +4,8 @@ import DoubleColumnContainer from "../../components/DoubleColumnContainer";
 import RobiGif from "../../components/RobiGif";
 import robiSprung from "../../assets/robi-gifs/Robi_sprung-min.gif";
 
+const ANSWER_OPTIONS = [1, 2, 3, 4, 5];
+
 function Screen() {
   const navigate = useNavigate();
   const nextRoute = "/losgehts/ort";
@@ -15,11 +17,9 @@ function Screen() {
       </div>
       <div className="flex-vertical-center">
         <DoubleColumnContainer>
-          <Fabutton onClick={() => navigate(nextRoute)}>1</Fabutton>
-          <Fabutton onClick={() => navigate(nextRoute)}>2</Fabutton>
-          <Fabutton onClick={() => navigate(nextRoute)}>3</Fabutton>
-          <Fabutton onClick={() => navigate(nextRoute)}>4</Fabutton>
-          <Fabutton onClick={() => navigate(nextRoute)}>5</Fabutton>
+          {ANSWER_OPTIONS.map((option) => (
+            <Fabutton onClick={() => navigate(nextRoute)}>{option}</Fabutton>
+          ))}
         </DoubleColumnContainer>
       </div>
       <RobiGif src={robiSprung} style={{ left: -100, bottom: 0 }} />

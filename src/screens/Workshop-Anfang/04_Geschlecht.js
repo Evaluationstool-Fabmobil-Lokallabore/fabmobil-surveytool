@@ -5,6 +5,8 @@ import WeiterButton from "../../components/WeiterButton";
 import RobiGif from "../../components/RobiGif";
 import robiTastatur from "../../assets/robi-gifs/Robi_tastatur-min.gif";
 
+const ANSWER_OPTIONS = ["divers", "weiblich", "männlich", "keine Angabe"];
+
 function Screen() {
   return (
     <>
@@ -12,10 +14,9 @@ function Screen() {
         <p>Was hast du für ein Geschlecht?</p>
       </div>
       <DoubleColumnContainer style={{ marginBottom: 126 }}>
-        <Fabutton>divers</Fabutton>
-        <Fabutton>weiblich</Fabutton>
-        <Fabutton>männlich</Fabutton>
-        <Fabutton>keine Angabe</Fabutton>
+        {ANSWER_OPTIONS.map((option) => (
+          <Fabutton>{option}</Fabutton>
+        ))}
         <FabTextInput style={{ flex: 1 }} />
       </DoubleColumnContainer>
       <WeiterButton navigateTo="/losgehts/besuch" />
