@@ -38,10 +38,17 @@
   padding-bottom: 140px;
 }
 
+@media (min-width: 830px) {
+  .Main {
+    padding: 40px;
+  }
+}
+
 .Fabutton {
   background-color: white;
   border: 2px solid black;
-  height: 65px;
+  height: var(--button-height);
+  flex: 1;
   max-width: var(--button-max-width);
   display: flex;
   align-items: center;
@@ -51,10 +58,21 @@
   cursor: pointer;
 }
 
+@media (min-width: 830px) {
+  .Fabutton {
+    height: 94px;
+  }
+}
+
 .Fabutton--active {
   background-color: black;
   color: white;
   border-color: white;
+}
+
+.FabuttonLink {
+  display: flex;
+  justify-content: center;
 }
 
 .DoubleColumnContainer {
@@ -72,7 +90,12 @@
   border-left: none;
 }
 
-.WeiterButton {
+@media (min-width: 830px) {
+  .DoubleColumnContainer > div {
+    margin-bottom: 37px;
+  }
+}
+v .WeiterButton {
   width: 172px;
   position: fixed;
   bottom: 40px;
@@ -134,11 +157,18 @@
 
 .FabTextInput__input {
   width: 100%;
-  height: 65px;
+  height: var(--button-height);
   border: 2px solid black;
   font-size: inherit;
   font-family: inherit;
   text-align: center;
+}
+
+@media (min-width: 830px) {
+  .FabTextInput__input {
+    height: var(--button-height-tablet);
+    width: 244px;
+  }
 }
 
 .FabTextArea {
@@ -146,7 +176,7 @@
 }
 
 .FabTextArea__inner {
-  height: 65px;
+  height: var(--button-height);
   width: 100%;
   border: 2px solid black;
   font-size: inherit;

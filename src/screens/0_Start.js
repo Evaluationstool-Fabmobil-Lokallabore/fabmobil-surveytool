@@ -7,9 +7,7 @@ function Screen() {
         <FabuttonLink to="/losgehts/anmeldung" style={{ marginBottom: 26 }}>
           Workshop Start
         </FabuttonLink>
-        <FabuttonLink to="/wiewars/nickname" style={{ marginBottom: 26 }}>
-          Workshop Ende
-        </FabuttonLink>
+        <FabuttonLink to="/wiewars/nickname">Workshop Ende</FabuttonLink>
       </div>
     </>
   );

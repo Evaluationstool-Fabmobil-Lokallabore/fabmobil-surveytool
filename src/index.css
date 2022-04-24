@@ -3,6 +3,8 @@
 /* Global styling variables */
 html {
   --color-background: #ddbbfc;
+  --button-height: 65px;
+  --button-height-tablet: 94px;
   --button-max-width: 480px;
 }
 
@@ -27,6 +29,12 @@ body {
   font-size: 24px;
   color: black;
   background-color: white;
+}
+
+@media (min-width: 830px) {
+  body {
+    font-size: 40px;
+  }
 }
 
 code {
