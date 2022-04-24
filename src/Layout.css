@@ -1,4 +1,4 @@
-.App {
+.Layout {
   background-color: var(--color-background);
   display: flex;
   flex-direction: column;
@@ -70,11 +70,6 @@
   border-color: white;
 }
 
-.FabuttonLink {
-  display: flex;
-  justify-content: center;
-}
-
 .DoubleColumnContainer {
   display: flex;
   flex-wrap: wrap;
@@ -95,7 +90,8 @@
     margin-bottom: 37px;
   }
 }
-v .WeiterButton {
+
+.WeiterButton {
   width: 172px;
   position: fixed;
   bottom: 40px;

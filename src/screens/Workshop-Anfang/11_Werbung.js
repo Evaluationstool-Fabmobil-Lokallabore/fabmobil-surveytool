@@ -1,4 +1,4 @@
-import Fabutton from "../../components/Fabutton";
+import MultipleChoice from "../../components/MultipleChoice";
 import WeiterButton from "../../components/WeiterButton";
 import RobiGif from "../../components/RobiGif";
 import robiLongarmslide from "../../assets/robi-gifs/Robi_longarmslide-min.gif";
@@ -22,9 +22,7 @@ function Screen() {
         <p>Wie hast du vom Fabmobil gehört?</p>
       </div>
       <div className="vertical-grid">
-        {ANSWER_OPTIONS.map((option) => (
-          <Fabutton key={option}>{option}</Fabutton>
-        ))}
+        <MultipleChoice options={ANSWER_OPTIONS} />
       </div>
       <WeiterButton navigateTo={nextRoute} />
       <RobiGif src={robiLongarmslide} style={{ left: -300, top: 300 }} />

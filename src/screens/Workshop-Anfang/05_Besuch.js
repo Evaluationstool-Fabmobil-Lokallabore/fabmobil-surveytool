@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import DoubleColumnContainer from "../../components/DoubleColumnContainer";
-import Fabutton from "../../components/Fabutton";
+import SingleChoice from "../../components/SingleChoice";
 import RobiGif from "../../components/RobiGif";
 import robiTouch from "../../assets/robi-gifs/Robi_touch-min.gif";
 
@@ -22,11 +22,12 @@ function Screen() {
       </div>
       <div style={{ marginTop: 200 }}>
         <DoubleColumnContainer>
-          {ANSWER_OPTIONS.map((option) => (
-            <Fabutton key={option} onClick={() => navigate(nextRoute)}>
-              {option}
-            </Fabutton>
-          ))}
+          <SingleChoice
+            options={ANSWER_OPTIONS}
+            onSelect={() => {
+              setTimeout(() => navigate(nextRoute), 500);
+            }}
+          />
         </DoubleColumnContainer>
         <RobiGif
           src={robiTouch}

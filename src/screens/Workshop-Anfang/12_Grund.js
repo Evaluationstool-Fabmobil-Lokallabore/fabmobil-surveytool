@@ -1,4 +1,4 @@
-import Fabutton from "../../components/Fabutton";
+import MultipleChoice from "../../components/MultipleChoice";
 import WeiterButton from "../../components/WeiterButton";
 import RobiGif from "../../components/RobiGif";
 import robiTouch from "../../assets/robi-gifs/Robi_touch-min.gif";
@@ -19,11 +19,8 @@ function Screen() {
         <p>Warum bist du heute hier? </p>
       </div>
       <div className="vertical-grid">
-        {ANSWER_OPTIONS.map((option) => (
-          <Fabutton key={option}>{option}</Fabutton>
-        ))}
+        <MultipleChoice options={ANSWER_OPTIONS} />
       </div>
-
       <WeiterButton text="fertig" navigateTo="/losgehts/nickname" />
       <RobiGif
         src={robiTouch}

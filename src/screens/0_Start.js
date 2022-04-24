@@ -1,4 +1,4 @@
-import FabuttonLink from "../components/FabuttonLink";
+import FabuttonLink from "../components/FabuttonNext";
 
 function Screen() {
   return (

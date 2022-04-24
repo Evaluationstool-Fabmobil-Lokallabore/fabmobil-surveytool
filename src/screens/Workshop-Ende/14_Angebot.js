@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import Fabutton from "../../components/Fabutton";
+import SingleChoice from "../../components/SingleChoice";
 
 const ANSWER_OPTIONS = [
   "Ja klar!",
@@ -16,11 +16,12 @@ function Screen() {
         <p>Hättest du gern ein regelmässiges Angebot wie das Fabmobil?</p>
       </div>
       <div className="vertical-grid">
-        {ANSWER_OPTIONS.map((option) => (
-          <Fabutton key={option} onClick={() => navigate(nextRoute)}>
-            {option}
-          </Fabutton>
-        ))}
+        <SingleChoice
+          options={ANSWER_OPTIONS}
+          onSelect={() => {
+            setTimeout(() => navigate(nextRoute), 500);
+          }}
+        />
       </div>
     </>
   );
