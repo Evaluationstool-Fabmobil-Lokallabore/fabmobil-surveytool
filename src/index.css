@@ -26,7 +26,7 @@ body {
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-size: 24px;
   color: black;
-  background-color: var(--color-background);
+  background-color: white;
 }
 
 code {

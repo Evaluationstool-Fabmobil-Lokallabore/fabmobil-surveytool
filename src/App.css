@@ -19,10 +19,13 @@
 
 .Header__link {
   width: 100%;
+  height: 100%;
 }
 
 .Header__logo {
   max-height: 85%;
+  display: block;
+  margin: 0 auto;
 }
 
 .Main {
