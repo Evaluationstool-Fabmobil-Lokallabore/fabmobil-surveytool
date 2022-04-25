@@ -103,6 +103,10 @@
   width: 109px;
 }
 
+.ClickablePicto--active {
+  background-color: white;
+}
+
 .RobiGif {
   position: fixed;
   z-index: 999;

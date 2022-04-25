@@ -1,5 +1,17 @@
-function ClickablePicto({ src, style }) {
-  return <img style={style} className="ClickablePicto" src={src} />;
+import classNames from "classnames";
+
+function ClickablePicto({ src, title, isActive, style, onClick }) {
+  return (
+    <img
+      style={style}
+      alt={title}
+      onClick={onClick}
+      className={classNames("ClickablePicto", {
+        "ClickablePicto--active": isActive,
+      })}
+      src={src}
+    />
+  );
 }
 
 export default ClickablePicto;
