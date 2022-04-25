@@ -6,7 +6,7 @@ import robiLookaround from "../../assets/robi-gifs/Robi_lookaround-min.gif";
 
 const ANSWER_OPTIONS = ["0-12", "13-16", "17-20", "21-24", "25-99", "99+"];
 
-function Screen({ onSubmit }) {
+function Screen({ data, onSubmit }) {
   const navigate = useNavigate();
   const nextRoute = "/losgehts/postleitzahl";
   return (
@@ -17,7 +17,9 @@ function Screen({ onSubmit }) {
       <DoubleColumnContainer style={{ marginBottom: 126 }}>
         <SingleChoice
           options={ANSWER_OPTIONS}
-          onSelect={() => {
+          answer={data}
+          onSelect={(value) => {
+            onSubmit(value);
             setTimeout(() => navigate(nextRoute), 500);
           }}
         />

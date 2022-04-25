@@ -7,15 +7,19 @@ import robiTastatur from "../../assets/robi-gifs/Robi_tastatur-min.gif";
 
 const ANSWER_OPTIONS = ["divers", "weiblich", "männlich", "keine Angabe"];
 
-function Screen() {
+function Screen({ data, onSubmit }) {
   return (
     <>
       <div style={{ marginBottom: "auto" }}>
         <p>Was hast du für ein Geschlecht?</p>
       </div>
       <DoubleColumnContainer style={{ marginBottom: 126 }}>
-        <MultipleChoice options={ANSWER_OPTIONS} />
-        <FabTextInput style={{ flex: 1 }} />
+        <MultipleChoice
+          options={ANSWER_OPTIONS}
+          data={data}
+          onChange={onSubmit}
+        />
+        <FabTextInput style={{ flex: 1 }} value={""} onChange={onSubmit} />
       </DoubleColumnContainer>
       <WeiterButton navigateTo="/losgehts/besuch" />
       <RobiGif src={robiTastatur} style={{ width: 180, right: 0, top: 145 }} />

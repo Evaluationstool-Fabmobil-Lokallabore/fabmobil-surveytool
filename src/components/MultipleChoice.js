@@ -4,43 +4,41 @@ import Fabutton from "./Fabutton";
 class MultipleChoice extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { answers: [] };
   }
 
-  toggle(answer) {
-    const index = this.state.answers.indexOf(answer);
+  toggle(answer, data) {
+    console.log(answer, data);
+    const index = data.indexOf(answer);
     console.log(index);
     if (index > -1) {
       //remove
-      let newArr = this.state.answers.slice();
-      newArr.splice(index, 1);
-      this.setState({
-        ...this.state,
-        answers: newArr,
-      });
+      data.splice(index, 1);
+      this.props.onChange(data);
     } else {
       //add
-      this.setState({
-        ...this.state,
-        answers: [...this.state.answers, answer],
-      });
+      this.props.onChange([...data, answer]);
     }
   }
 
-  isActive(answer) {
-    return this.state.answers.indexOf(answer) > -1;
+  isActive(answer, data) {
+    if (!data) {
+      return false;
+    }
+    return data.indexOf(answer) > -1;
   }
 
   render() {
     const { options } = this.props;
+    const data = this.props.data || [];
+
     return (
       <>
         {options.map((option) => (
           <Fabutton
             key={option}
-            isActive={this.isActive(option)}
+            isActive={this.isActive(option, data)}
             onClick={() => {
-              this.toggle(option);
+              this.toggle(option, data);
             }}
           >
             {option}

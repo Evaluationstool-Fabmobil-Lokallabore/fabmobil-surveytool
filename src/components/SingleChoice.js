@@ -4,40 +4,26 @@ import Fabutton from "./Fabutton";
 class SingleChoice extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { answer: null };
   }
 
   toggle(answer) {
-    if (answer === this.state.answer) {
-      //remove
-      this.setState({
-        ...this.state,
-        answer: null,
-      });
-    } else {
-      //add
-      this.setState({
-        ...this.state,
-        answer: answer,
-      });
-    }
+    this.props.onSelect(answer);
   }
 
-  isActive(answer) {
-    return this.state.answer === answer;
+  isActive(option, answer) {
+    return option === answer;
   }
 
   render() {
-    const { options, onSelect } = this.props;
+    const { options, answer } = this.props;
     return (
       <>
         {options.map((option) => (
           <Fabutton
             key={option}
-            isActive={this.isActive(option)}
+            isActive={this.isActive(option, answer)}
             onClick={() => {
               this.toggle(option);
-              onSelect();
             }}
           >
             {option}
