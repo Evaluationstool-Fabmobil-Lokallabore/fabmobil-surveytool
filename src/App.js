@@ -143,7 +143,14 @@ class App extends React.Component {
               />
               <Route
                 path="losgehts/vorerfahrung"
-                element={<S08Vorerfahrung />}
+                element={
+                  <S08Vorerfahrung
+                    onSubmit={(data) => {
+                      this.logAnswer("vorerfahrung", data);
+                    }}
+                    data={this.state.surveyAnswersWorkshopStart.vorerfahrung}
+                  />
+                }
               />
               <Route path="losgehts/anzahl-tage" element={<S09AnzahlTage />} />
               <Route path="losgehts/ort" element={<S10Ort />} />

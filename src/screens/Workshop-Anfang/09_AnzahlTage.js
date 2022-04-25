@@ -6,7 +6,7 @@ import robiSprung from "../../assets/robi-gifs/Robi_sprung-min.gif";
 
 const ANSWER_OPTIONS = [1, 2, 3, 4, 5];
 
-function Screen() {
+function Screen({ onSubmit, data }) {
   const navigate = useNavigate();
   const nextRoute = "/losgehts/ort";
   return (
@@ -19,7 +19,9 @@ function Screen() {
         <DoubleColumnContainer>
           <SingleChoice
             options={ANSWER_OPTIONS}
+            answer={data}
             onSelect={() => {
+              onSubmit(data);
               setTimeout(() => navigate(nextRoute), 500);
             }}
           />

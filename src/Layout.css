@@ -29,6 +29,7 @@
 }
 
 .Main {
+  position: relative;
   background-color: var(--color-background);
   display: flex;
   flex: 1;
@@ -93,7 +94,7 @@
 
 .WeiterButton {
   width: 172px;
-  position: fixed;
+  position: absolute;
   bottom: 40px;
   right: 17px;
 }
