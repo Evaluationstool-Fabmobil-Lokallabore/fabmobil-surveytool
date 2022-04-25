@@ -14,7 +14,7 @@ function Screen({ onSubmit, data }) {
         onChange={onSubmit}
         value={isNaN(data) ? 0 : data}
       />
-      <WeiterButton navigateTo="/wiewars/next-time" />
+      <WeiterButton navigateTo="/wiewars/nextTime" />
     </>
   );
 }

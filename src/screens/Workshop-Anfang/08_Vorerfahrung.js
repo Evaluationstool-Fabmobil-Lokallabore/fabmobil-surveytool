@@ -35,7 +35,7 @@ function Screen({ onSubmit, data }) {
         />
       </div>
 
-      <WeiterButton navigateTo="/losgehts/anzahl-tage" />
+      <WeiterButton navigateTo="/losgehts/anzahlTage" />
     </>
   );
 }

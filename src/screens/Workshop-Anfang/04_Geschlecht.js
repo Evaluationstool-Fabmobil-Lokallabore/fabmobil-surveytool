@@ -2,6 +2,7 @@ import DoubleColumnContainer from "../../components/DoubleColumnContainer";
 import MultipleChoiceTool from "../../components/MultipleChoiceTool";
 import FabTextInput from "../../components/FabTextInput";
 import WeiterButton from "../../components/WeiterButton";
+import SubmitButton from "../../components/SubmitButton";
 import RobiGif from "../../components/RobiGif";
 import robiTastatur from "../../assets/robi-gifs/Robi_tastatur-min.gif";
 
@@ -21,6 +22,7 @@ function Screen({ data, onSubmit }) {
         />
         <FabTextInput style={{ flex: 1 }} value={""} onChange={onSubmit} />
       </DoubleColumnContainer>
+
       <WeiterButton navigateTo="/losgehts/besuch" />
       <RobiGif src={robiTastatur} style={{ width: 180, right: 0, top: 145 }} />
     </>

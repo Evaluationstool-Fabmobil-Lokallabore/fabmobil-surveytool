@@ -10,7 +10,7 @@ const ANSWER_OPTIONS = [
 
 function Screen({ onSubmit, data }) {
   const navigate = useNavigate();
-  const nextRoute = "/wiewars/3D-Modelling";
+  const nextRoute = "/wiewars/dreiDModelling";
   return (
     <>
       <div>

@@ -16,7 +16,7 @@ function Screen({ onSubmit, data }) {
         src={robiLookaround}
         style={{ width: 500, top: 100, right: -340 }}
       />
-      <WeiterButton navigateTo="/wiewars/3D-Druck" />
+      <WeiterButton navigateTo="/wiewars/dreiDDruck" />
     </>
   );
 }

@@ -10,7 +10,7 @@ const ANSWER_OPTIONS = [
 
 function Screen({ onSubmit, data }) {
   const navigate = useNavigate();
-  const nextRoute = "/wiewars/anything-else";
+  const nextRoute = "/wiewars/anythingElse";
   return (
     <>
       <div>

@@ -1,9 +1,11 @@
+import { useNavigate } from "react-router-dom";
 import FabTextInput from "../../components/FabTextInput";
-import WeiterButton from "../../components/WeiterButton";
+import SubmitButton from "../../components/SubmitButton";
 import RobiGif from "../../components/RobiGif";
 import robiTastatur from "../../assets/robi-gifs/Robi_tastatur-min.gif";
 
-function Screen({ onSubmit, data }) {
+function Screen({ onSubmit, onFinalSubmit, data }) {
+  const navigate = useNavigate();
   return (
     <>
       <div>
@@ -18,7 +20,12 @@ function Screen({ onSubmit, data }) {
         (Merke dir diesen Namen. Du wirst ihn am Ende des Workshops nochmal
         brauchen.)
       </p>
-      <WeiterButton navigateTo="/losgehts/ende" />
+      <SubmitButton
+        onClick={() => {
+          onFinalSubmit();
+          setTimeout(() => navigate("/losgehts/ende"), 500);
+        }}
+      />
       <RobiGif src={robiTastatur} style={{ width: 237, left: 111, top: 145 }} />
     </>
   );
