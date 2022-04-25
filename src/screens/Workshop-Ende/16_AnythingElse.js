@@ -1,15 +1,15 @@
-import FabTextInput from "../../components/FabTextInput";
+import FabTextArea from "../../components/FabTextArea";
 import WeiterButton from "../../components/WeiterButton";
 import RobiGif from "../../components/RobiGif";
 import robiTastatur from "../../assets/robi-gifs/Robi_tastatur-min.gif";
 
-function Screen() {
+function Screen({ onSubmit, data }) {
   return (
     <>
       <div>
         <p>Möchtest du mir noch was anderes sagen?</p>
       </div>
-      <FabTextInput style={{ marginTop: "auto", marginBottom: "auto" }} />
+      <FabTextArea value={data} onChange={onSubmit} />
       <WeiterButton navigateTo="/wiewars/ende" />
       <RobiGif src={robiTastatur} style={{ width: 180, right: 0, top: 145 }} />
     </>

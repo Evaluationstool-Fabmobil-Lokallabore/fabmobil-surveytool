@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import DoubleColumnContainer from "../../components/DoubleColumnContainer";
-import SingleChoice from "../../components/SingleChoice";
+import SingleChoiceTool from "../../components/SingleChoiceTool";
 import RobiGif from "../../components/RobiGif";
 import robiTouch from "../../assets/robi-gifs/Robi_touch-min.gif";
 
@@ -22,7 +22,7 @@ function Screen({ data, onSubmit }) {
       </div>
       <div style={{ marginTop: 200 }}>
         <DoubleColumnContainer>
-          <SingleChoice
+          <SingleChoiceTool
             options={ANSWER_OPTIONS}
             answer={data}
             onSelect={(value) => {

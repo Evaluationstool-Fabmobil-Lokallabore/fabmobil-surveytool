@@ -5,13 +5,13 @@ import imgBottom from "../../assets/pictograms/FM-Emoji_ohneRand57.png";
 import RobiGif from "../../components/RobiGif";
 import robiLookaround from "../../assets/robi-gifs/Robi_lookaround-min.gif";
 
-function Screen() {
+function Screen({ onSubmit, data }) {
   return (
     <>
       <div>
         <p>Wie fandest du die Betreuung im Fabmobil?</p>
       </div>
-      <FabSlider imgTop={imgTop} imgBottom={imgBottom} />
+      <FabSlider imgTop={imgTop} imgBottom={imgBottom} onChange={onSubmit} />
       <RobiGif
         src={robiLookaround}
         style={{ width: 500, top: 100, right: -340 }}

@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import SingleChoice from "../../components/SingleChoice";
+import SingleChoiceTool from "../../components/SingleChoiceTool";
 
 const ANSWER_OPTIONS = [
   "Super gern!",
@@ -8,7 +8,7 @@ const ANSWER_OPTIONS = [
   "Könnt ich mir vorstellen...",
 ];
 
-function Screen() {
+function Screen({ onSubmit, data }) {
   const navigate = useNavigate();
   const nextRoute = "/wiewars/anything-else";
   return (
@@ -17,9 +17,11 @@ function Screen() {
         <p>Hättest du Lust dich in einem regelmäßigen Angebot zu engagieren?</p>
       </div>
       <div className="vertical-grid">
-        <SingleChoice
+        <SingleChoiceTool
+          answer={data}
           options={ANSWER_OPTIONS}
-          onSelect={() => {
+          onSelect={(answer) => {
+            onSubmit(answer);
             setTimeout(() => navigate(nextRoute), 500);
           }}
         />

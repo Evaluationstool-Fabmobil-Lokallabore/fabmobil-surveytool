@@ -44,16 +44,27 @@ class App extends React.Component {
         geschlecht: null,
         besuch: "noch nie",
         erwartungen: "freitextfreitext",
+        anzahlTage: "4",
       },
       surveyAnswersWorkshopEnd: {},
     };
   }
 
-  logAnswer(questionId, answer) {
+  logAnswerWorkshopStart(questionId, answer) {
     this.setState({
       ...this.state,
       surveyAnswersWorkshopStart: {
         ...this.state.surveyAnswersWorkshopStart,
+        [questionId]: answer,
+      },
+    });
+  }
+
+  logAnswerWorkshopEnd(questionId, answer) {
+    this.setState({
+      ...this.state,
+      surveyAnswersWorkshopEnd: {
+        ...this.state.surveyAnswersWorkshopEnd,
         [questionId]: answer,
       },
     });
@@ -80,7 +91,7 @@ class App extends React.Component {
                 element={
                   <S02Alter
                     onSubmit={(data) => {
-                      this.logAnswer("alter", data);
+                      this.logAnswerWorkshopStart("alter", data);
                     }}
                     data={this.state.surveyAnswersWorkshopStart.alter}
                   />
@@ -91,7 +102,7 @@ class App extends React.Component {
                 element={
                   <S03Postleitzahl
                     onSubmit={(data) => {
-                      this.logAnswer("postleitzahl", data);
+                      this.logAnswerWorkshopStart("postleitzahl", data);
                     }}
                     data={this.state.surveyAnswersWorkshopStart.postleitzahl}
                   />
@@ -102,7 +113,7 @@ class App extends React.Component {
                 element={
                   <S04Geschlecht
                     onSubmit={(data) => {
-                      this.logAnswer("geschlecht", data);
+                      this.logAnswerWorkshopStart("geschlecht", data);
                     }}
                     data={this.state.surveyAnswersWorkshopStart.geschlecht}
                   />
@@ -113,7 +124,7 @@ class App extends React.Component {
                 element={
                   <S05Besuch
                     onSubmit={(data) => {
-                      this.logAnswer("besuch", data);
+                      this.logAnswerWorkshopStart("besuch", data);
                     }}
                     data={this.state.surveyAnswersWorkshopStart.besuch}
                   />
@@ -124,7 +135,7 @@ class App extends React.Component {
                 element={
                   <S06Erwartungen
                     onSubmit={(data) => {
-                      this.logAnswer("erwartungen", data);
+                      this.logAnswerWorkshopStart("erwartungen", data);
                     }}
                     data={this.state.surveyAnswersWorkshopStart.erwartungen}
                   />
@@ -135,7 +146,7 @@ class App extends React.Component {
                 element={
                   <S07Interesse
                     onSubmit={(data) => {
-                      this.logAnswer("interesse", data);
+                      this.logAnswerWorkshopStart("interesse", data);
                     }}
                     data={this.state.surveyAnswersWorkshopStart.interesse}
                   />
@@ -146,39 +157,243 @@ class App extends React.Component {
                 element={
                   <S08Vorerfahrung
                     onSubmit={(data) => {
-                      this.logAnswer("vorerfahrung", data);
+                      this.logAnswerWorkshopStart("vorerfahrung", data);
                     }}
                     data={this.state.surveyAnswersWorkshopStart.vorerfahrung}
                   />
                 }
               />
-              <Route path="losgehts/anzahl-tage" element={<S09AnzahlTage />} />
-              <Route path="losgehts/ort" element={<S10Ort />} />
-              <Route path="losgehts/werbung" element={<S11Werbung />} />
-              <Route path="losgehts/grund" element={<S12Grund />} />
-              <Route path="losgehts/nickname" element={<S13Nickname />} />
+              <Route
+                path="losgehts/anzahl-tage"
+                element={
+                  <S09AnzahlTage
+                    onSubmit={(data) => {
+                      this.logAnswerWorkshopStart("anzahlTage", data);
+                    }}
+                    data={this.state.surveyAnswersWorkshopStart.anzahlTage}
+                  />
+                }
+              />
+              <Route
+                path="losgehts/ort"
+                element={
+                  <S10Ort
+                    onSubmit={(data) => {
+                      this.logAnswerWorkshopStart("ort", data);
+                    }}
+                    data={this.state.surveyAnswersWorkshopStart.ort}
+                  />
+                }
+              />
+              <Route
+                path="losgehts/werbung"
+                element={
+                  <S11Werbung
+                    onSubmit={(data) => {
+                      this.logAnswerWorkshopStart("werbung", data);
+                    }}
+                    data={this.state.surveyAnswersWorkshopStart.werbung}
+                  />
+                }
+              />
+              <Route
+                path="losgehts/grund"
+                element={
+                  <S12Grund
+                    onSubmit={(data) => {
+                      this.logAnswerWorkshopStart("grund", data);
+                    }}
+                    data={this.state.surveyAnswersWorkshopStart.grund}
+                  />
+                }
+              />
+              <Route
+                path="losgehts/nickname"
+                element={
+                  <S13Nickname
+                    onSubmit={(data) => {
+                      this.logAnswerWorkshopStart("nickname", data);
+                    }}
+                    data={this.state.surveyAnswersWorkshopStart.nickname}
+                  />
+                }
+              />
               <Route path="losgehts/ende" element={<S14Ende />} />
               <Route
                 path="wiewars/nickname"
-                element={<E01NicknameRemember />}
+                element={
+                  <E01NicknameRemember
+                    onSubmit={(data) => {
+                      this.logAnswerWorkshopEnd("nickname", data);
+                    }}
+                    data={this.state.surveyAnswersWorkshopEnd.nickname}
+                  />
+                }
               />
-              <Route path="wiewars/spass" element={<E02Spass />} />
-              <Route path="wiewars/interesse" element={<E03Interesse />} />
-              <Route path="wiewars/technologie" element={<E04Technologie />} />
-              <Route path="wiewars/programme" element={<E05Programme />} />
-              <Route path="wiewars/betreuung" element={<E06Betreuung />} />
-              <Route path="wiewars/3D-Druck" element={<E073DDruck />} />
-              <Route path="wiewars/vr" element={<E08VR />} />
-              <Route path="wiewars/laser" element={<E09Laser />} />
-              <Route path="wiewars/3D-Modelling" element={<E103DModelling />} />
-              <Route path="wiewars/erwartungen" element={<E11Erwartungen />} />
-              <Route path="wiewars/next-time" element={<E12NextTime />} />
-              <Route path="wiewars/atmo" element={<E13Atmo />} />
-              <Route path="wiewars/angebot" element={<E14Angebot />} />
-              <Route path="wiewars/engagieren" element={<E15Engagieren />} />
+              <Route
+                path="wiewars/spass"
+                element={
+                  <E02Spass
+                    onSubmit={(data) => {
+                      this.logAnswerWorkshopEnd("spass", data);
+                    }}
+                    data={this.state.surveyAnswersWorkshopEnd.spass}
+                  />
+                }
+              />
+              <Route
+                path="wiewars/interesse"
+                element={
+                  <E03Interesse
+                    onSubmit={(data) => {
+                      this.logAnswerWorkshopEnd("interesse", data);
+                    }}
+                    data={this.state.surveyAnswersWorkshopEnd.interesse}
+                  />
+                }
+              />
+              <Route
+                path="wiewars/technologie"
+                element={
+                  <E04Technologie
+                    onSubmit={(data) => {
+                      this.logAnswerWorkshopEnd("technologie", data);
+                    }}
+                    data={this.state.surveyAnswersWorkshopEnd.technologie}
+                  />
+                }
+              />
+              <Route
+                path="wiewars/programme"
+                element={
+                  <E05Programme
+                    onSubmit={(data) => {
+                      this.logAnswerWorkshopEnd("programme", data);
+                    }}
+                    data={this.state.surveyAnswersWorkshopEnd.programme}
+                  />
+                }
+              />
+              <Route
+                path="wiewars/betreuung"
+                element={
+                  <E06Betreuung
+                    onSubmit={(data) => {
+                      this.logAnswerWorkshopEnd("betreuung", data);
+                    }}
+                    data={this.state.surveyAnswersWorkshopEnd.betreuung}
+                  />
+                }
+              />
+              <Route
+                path="wiewars/3D-Druck"
+                element={
+                  <E073DDruck
+                    onSubmit={(data) => {
+                      this.logAnswerWorkshopEnd("DreiDDRuck", data);
+                    }}
+                    data={this.state.surveyAnswersWorkshopEnd.DreiDDRuck}
+                  />
+                }
+              />
+              <Route
+                path="wiewars/vr"
+                element={
+                  <E08VR
+                    onSubmit={(data) => {
+                      this.logAnswerWorkshopEnd("vr", data);
+                    }}
+                    data={this.state.surveyAnswersWorkshopEnd.vr}
+                  />
+                }
+              />
+              <Route
+                path="wiewars/laser"
+                element={
+                  <E09Laser
+                    onSubmit={(data) => {
+                      this.logAnswerWorkshopEnd("laser", data);
+                    }}
+                    data={this.state.surveyAnswersWorkshopEnd.laser}
+                  />
+                }
+              />
+              <Route
+                path="wiewars/3D-Modelling"
+                element={
+                  <E103DModelling
+                    onSubmit={(data) => {
+                      this.logAnswerWorkshopEnd("DreiDModelling", data);
+                    }}
+                    data={this.state.surveyAnswersWorkshopEnd.DreiDModelling}
+                  />
+                }
+              />
+              <Route
+                path="wiewars/erwartungen"
+                element={
+                  <E11Erwartungen
+                    onSubmit={(data) => {
+                      this.logAnswerWorkshopEnd("erwartungen", data);
+                    }}
+                    data={this.state.surveyAnswersWorkshopEnd.erwartungen}
+                  />
+                }
+              />
+              <Route
+                path="wiewars/next-time"
+                element={
+                  <E12NextTime
+                    onSubmit={(data) => {
+                      this.logAnswerWorkshopEnd("nextTime", data);
+                    }}
+                    data={this.state.surveyAnswersWorkshopEnd.nextTime}
+                  />
+                }
+              />
+              <Route
+                path="wiewars/atmo"
+                element={
+                  <E13Atmo
+                    onSubmit={(data) => {
+                      this.logAnswerWorkshopEnd("atmo", data);
+                    }}
+                    data={this.state.surveyAnswersWorkshopEnd.atmo}
+                  />
+                }
+              />
+              <Route
+                path="wiewars/angebot"
+                element={
+                  <E14Angebot
+                    onSubmit={(data) => {
+                      this.logAnswerWorkshopEnd("angebot", data);
+                    }}
+                    data={this.state.surveyAnswersWorkshopEnd.angebot}
+                  />
+                }
+              />
+              <Route
+                path="wiewars/engagieren"
+                element={
+                  <E15Engagieren
+                    onSubmit={(data) => {
+                      this.logAnswerWorkshopEnd("engagieren", data);
+                    }}
+                    data={this.state.surveyAnswersWorkshopEnd.engagieren}
+                  />
+                }
+              />
               <Route
                 path="wiewars/anything-else"
-                element={<E16AnythingElse />}
+                element={
+                  <E16AnythingElse
+                    onSubmit={(data) => {
+                      this.logAnswerWorkshopEnd("anythingElse", data);
+                    }}
+                    data={this.state.surveyAnswersWorkshopEnd.anythingElse}
+                  />
+                }
               />
               <Route path="wiewars/ende" element={<E17Ende />} />
               <Route path="*" element={<p>There's nothing here!</p>} />

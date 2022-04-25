@@ -7,11 +7,12 @@ const DEFAULT_STEP_MAX = 5;
 class FabSlider extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { value: 0 };
   }
 
   handleSliderChange(newValue) {
-    this.setState({ value: newValue });
+    if (this.props.onChange) {
+      this.props.onChange(newValue);
+    }
   }
 
   render() {
@@ -35,7 +36,7 @@ class FabSlider extends React.Component {
             marks={true}
             color="secondary"
             valueLabelDisplay="on"
-            value={this.state.value}
+            value={this.props.value}
             onChange={(_, newValue) => this.handleSliderChange(newValue)}
           />
         </div>

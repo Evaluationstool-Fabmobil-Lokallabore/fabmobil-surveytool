@@ -1,7 +1,6 @@
 import WeiterButton from "../../components/WeiterButton";
-import ClickablePicto from "../../components/ClickablePicto";
 import FABMOBIL_PROGRAMS from "../../constants/fabmobil_programs";
-import MultiplePictoChoice from "../../components/MultiplePictoChoice";
+import MultiplePictoChoiceTool from "../../components/MultiplePictoChoiceTool";
 
 const ANSWER_OPTIONS = FABMOBIL_PROGRAMS;
 
@@ -19,7 +18,7 @@ function Screen({ onSubmit, data }) {
           position: "relative",
         }}
       >
-        <MultiplePictoChoice
+        <MultiplePictoChoiceTool
           options={ANSWER_OPTIONS}
           data={data}
           onChange={onSubmit}

@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import SingleChoice from "../../components/SingleChoice";
+import SingleChoiceTool from "../../components/SingleChoiceTool";
 import DoubleColumnContainer from "../../components/DoubleColumnContainer";
 import RobiGif from "../../components/RobiGif";
 import robiSprung from "../../assets/robi-gifs/Robi_sprung-min.gif";
@@ -17,11 +17,11 @@ function Screen({ onSubmit, data }) {
       </div>
       <div className="flex-vertical-center">
         <DoubleColumnContainer>
-          <SingleChoice
+          <SingleChoiceTool
             options={ANSWER_OPTIONS}
             answer={data}
-            onSelect={() => {
-              onSubmit(data);
+            onSelect={(answer) => {
+              onSubmit(answer);
               setTimeout(() => navigate(nextRoute), 500);
             }}
           />

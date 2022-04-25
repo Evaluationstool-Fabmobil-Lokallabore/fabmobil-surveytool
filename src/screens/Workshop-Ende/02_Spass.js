@@ -5,13 +5,18 @@ import robiLongarmslide from "../../assets/robi-gifs/Robi_longarmslide-min.gif";
 import happyFabmobil from "../../assets/pictograms/fabmobil_happy.png";
 import sadFabmobil from "../../assets/pictograms/fabmobil_sad.png";
 
-function Screen() {
+function Screen({ onSubmit, data }) {
   return (
     <>
       <div>
         <p>Wie viel Spass hattest du während deiner Zeit im Fabmobil?</p>
       </div>
-      <FabSlider imgTop={happyFabmobil} imgBottom={sadFabmobil} />
+      <FabSlider
+        value={data}
+        onChange={onSubmit}
+        imgTop={happyFabmobil}
+        imgBottom={sadFabmobil}
+      />
       <WeiterButton navigateTo="/wiewars/interesse" />
       <RobiGif
         src={robiLongarmslide}

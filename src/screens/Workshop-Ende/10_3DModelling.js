@@ -8,7 +8,7 @@ import smileyBroken from "../../assets/pictograms/FM-Emoji_ohneRand55.png";
 import RobiGif from "../../components/RobiGif";
 import robiLongarmslide from "../../assets/robi-gifs/Robi_longarmslide-min.gif";
 
-function Screen() {
+function Screen({ onSubmit, data }) {
   const navigate = useNavigate();
   const nextRoute = "/wiewars/erwartungen";
   return (
@@ -16,10 +16,23 @@ function Screen() {
       <div style={{ marginBottom: "auto" }}>
         <p>3D-Modelling rockt?</p>
       </div>
-      <FabSlider imgTop={smileyHappy} imgBottom={smileyBroken} />
+      <FabSlider
+        imgTop={smileyHappy}
+        imgBottom={smileyBroken}
+        onChange={onSubmit}
+        value={isNaN(data) ? 0 : data}
+      />
 
       <DoubleColumnContainer>
-        <Fabutton onClick={() => navigate(nextRoute)}>nicht benutzt</Fabutton>
+        <Fabutton
+          isActive={data === "nicht benutzt"}
+          onClick={() => {
+            onSubmit("nicht benutzt");
+            navigate(nextRoute);
+          }}
+        >
+          nicht benutzt
+        </Fabutton>
         <FabuttonLink to={nextRoute} style={{ flexBasis: "50%" }}>
           weiter
         </FabuttonLink>

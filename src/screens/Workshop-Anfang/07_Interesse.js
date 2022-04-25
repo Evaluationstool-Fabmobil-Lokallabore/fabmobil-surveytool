@@ -1,5 +1,5 @@
 import WeiterButton from "../../components/WeiterButton";
-import MultiplePictoChoice from "../../components/MultiplePictoChoice";
+import MultiplePictoChoice from "../../components/MultiplePictoChoiceTool";
 import FABMOBIL_TECHNOLOGIES from "../../constants/fabmobil_technologies";
 
 const ANSWER_OPTIONS = FABMOBIL_TECHNOLOGIES;

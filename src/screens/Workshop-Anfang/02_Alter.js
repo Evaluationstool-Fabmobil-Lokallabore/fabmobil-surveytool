@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import SingleChoice from "../../components/SingleChoice";
+import SingleChoiceTool from "../../components/SingleChoiceTool";
 import DoubleColumnContainer from "../../components/DoubleColumnContainer";
 import RobiGif from "../../components/RobiGif";
 import robiLookaround from "../../assets/robi-gifs/Robi_lookaround-min.gif";
@@ -15,7 +15,7 @@ function Screen({ data, onSubmit }) {
         <p>Wie alt bist du denn?</p>
       </div>
       <DoubleColumnContainer style={{ marginBottom: 126 }}>
-        <SingleChoice
+        <SingleChoiceTool
           options={ANSWER_OPTIONS}
           answer={data}
           onSelect={(value) => {

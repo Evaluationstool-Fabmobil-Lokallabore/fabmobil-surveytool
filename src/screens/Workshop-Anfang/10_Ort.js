@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import SingleChoice from "../../components/SingleChoice";
+import SingleChoiceTool from "../../components/SingleChoiceTool";
 import RobiGif from "../../components/RobiGif";
 import robiLongarmslide from "../../assets/robi-gifs/Robi_longarmslide-min.gif";
 
@@ -16,7 +16,7 @@ const ANSWER_OPTIONS = [
   "Andere",
 ];
 
-function Screen() {
+function Screen({ onSubmit, data }) {
   const navigate = useNavigate();
   const nextRoute = "/losgehts/werbung";
   return (
@@ -25,9 +25,11 @@ function Screen() {
         <p>Wo bist du gerade?</p>
       </div>
       <div className="vertical-grid">
-        <SingleChoice
+        <SingleChoiceTool
           options={ANSWER_OPTIONS}
-          onSelect={() => {
+          answer={data}
+          onSelect={(answer) => {
+            onSubmit(answer);
             setTimeout(() => navigate(nextRoute), 500);
           }}
         />

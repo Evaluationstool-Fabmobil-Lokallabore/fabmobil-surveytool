@@ -1,4 +1,4 @@
-import MultipleChoice from "../../components/MultipleChoice";
+import MultipleChoiceTool from "../../components/MultipleChoiceTool";
 import WeiterButton from "../../components/WeiterButton";
 import RobiGif from "../../components/RobiGif";
 import robiTouch from "../../assets/robi-gifs/Robi_touch-min.gif";
@@ -11,7 +11,7 @@ const ANSWER_OPTIONS = [
   "Soziale Medien",
 ];
 
-function Screen() {
+function Screen({ onSubmit, data }) {
   return (
     <>
       <div>
@@ -19,7 +19,11 @@ function Screen() {
         <p>Warum bist du heute hier? </p>
       </div>
       <div className="vertical-grid">
-        <MultipleChoice options={ANSWER_OPTIONS} />
+        <MultipleChoiceTool
+          options={ANSWER_OPTIONS}
+          onChange={onSubmit}
+          data={data}
+        />
       </div>
       <WeiterButton text="fertig" navigateTo="/losgehts/nickname" />
       <RobiGif

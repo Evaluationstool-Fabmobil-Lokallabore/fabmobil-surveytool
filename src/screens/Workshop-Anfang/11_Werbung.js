@@ -1,4 +1,4 @@
-import MultipleChoice from "../../components/MultipleChoice";
+import MultipleChoiceTool from "../../components/MultipleChoiceTool";
 import WeiterButton from "../../components/WeiterButton";
 import RobiGif from "../../components/RobiGif";
 import robiLongarmslide from "../../assets/robi-gifs/Robi_longarmslide-min.gif";
@@ -14,7 +14,7 @@ const ANSWER_OPTIONS = [
   "Konkurrenz",
 ];
 
-function Screen() {
+function Screen({ onSubmit, data }) {
   const nextRoute = "/losgehts/grund";
   return (
     <>
@@ -22,7 +22,11 @@ function Screen() {
         <p>Wie hast du vom Fabmobil gehört?</p>
       </div>
       <div className="vertical-grid">
-        <MultipleChoice options={ANSWER_OPTIONS} />
+        <MultipleChoiceTool
+          options={ANSWER_OPTIONS}
+          data={data}
+          onChange={onSubmit}
+        />
       </div>
       <WeiterButton navigateTo={nextRoute} />
       <RobiGif src={robiLongarmslide} style={{ left: -300, top: 300 }} />

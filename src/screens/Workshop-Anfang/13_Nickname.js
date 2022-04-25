@@ -3,13 +3,17 @@ import WeiterButton from "../../components/WeiterButton";
 import RobiGif from "../../components/RobiGif";
 import robiTastatur from "../../assets/robi-gifs/Robi_tastatur-min.gif";
 
-function Screen() {
+function Screen({ onSubmit, data }) {
   return (
     <>
       <div>
         <p>Was ist dein Nickname?</p>
       </div>
-      <FabTextInput style={{ marginTop: "auto", marginBottom: "auto" }} />
+      <FabTextInput
+        value={data}
+        onChange={onSubmit}
+        style={{ marginTop: "auto", marginBottom: "auto" }}
+      />
       <p>
         (Merke dir diesen Namen. Du wirst ihn am Ende des Workshops nochmal
         brauchen.)

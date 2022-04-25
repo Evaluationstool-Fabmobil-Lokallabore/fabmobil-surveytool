@@ -6,10 +6,6 @@ class SingleChoice extends React.Component {
     super(props);
   }
 
-  toggle(answer) {
-    this.props.onSelect(answer);
-  }
-
   isActive(option, answer) {
     return option === answer;
   }
@@ -23,7 +19,7 @@ class SingleChoice extends React.Component {
             key={option}
             isActive={this.isActive(option, answer)}
             onClick={() => {
-              this.toggle(option);
+              this.props.onSelect(option);
             }}
           >
             {option}

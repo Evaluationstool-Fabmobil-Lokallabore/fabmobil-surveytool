@@ -1,5 +1,5 @@
 import DoubleColumnContainer from "../../components/DoubleColumnContainer";
-import MultipleChoice from "../../components/MultipleChoice";
+import MultipleChoiceTool from "../../components/MultipleChoiceTool";
 import FabTextInput from "../../components/FabTextInput";
 import WeiterButton from "../../components/WeiterButton";
 import RobiGif from "../../components/RobiGif";
@@ -14,7 +14,7 @@ function Screen({ data, onSubmit }) {
         <p>Was hast du für ein Geschlecht?</p>
       </div>
       <DoubleColumnContainer style={{ marginBottom: 126 }}>
-        <MultipleChoice
+        <MultipleChoiceTool
           options={ANSWER_OPTIONS}
           data={data}
           onChange={onSubmit}
