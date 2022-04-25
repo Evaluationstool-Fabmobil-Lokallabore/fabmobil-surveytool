@@ -12,7 +12,7 @@ const ANSWER_OPTIONS = [
   "Ich gehöre fast zur Crew",
 ];
 
-function Screen() {
+function Screen({ data, onSubmit }) {
   const navigate = useNavigate();
   const nextRoute = "/losgehts/erwartungen";
   return (
@@ -24,7 +24,9 @@ function Screen() {
         <DoubleColumnContainer>
           <SingleChoice
             options={ANSWER_OPTIONS}
-            onSelect={() => {
+            answer={data}
+            onSelect={(value) => {
+              onSubmit(value);
               setTimeout(() => navigate(nextRoute), 500);
             }}
           />

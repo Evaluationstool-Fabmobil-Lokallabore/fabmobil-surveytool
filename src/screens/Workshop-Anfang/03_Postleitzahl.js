@@ -3,7 +3,7 @@ import WeiterButton from "../../components/WeiterButton";
 import RobiGif from "../../components/RobiGif";
 import robiLongarmtouch from "../../assets/robi-gifs/Robi_longarmtouch-min.gif";
 
-function Screen() {
+function Screen({ data, onSubmit }) {
   return (
     <>
       <div>
@@ -11,10 +11,11 @@ function Screen() {
       </div>
       <div className="flex-vertical-center">
         <FabTextInput
-          minlength="5"
-          maxlength="5"
+          value={data}
+          minLength="5"
+          maxLength="5"
           pattern={/[0-9]{5}/}
-          onChange={(event) => this.onChange(event.target.value)}
+          onChange={onSubmit}
         />
       </div>
       <WeiterButton navigateTo="/losgehts/geschlecht" />

@@ -39,8 +39,11 @@ class App extends React.Component {
     super(props);
     this.state = {
       surveyAnswersWorkshopStart: {
-        alter: "10-12",
+        alter: "0-12",
+        postleitzahl: "9999",
         geschlecht: null,
+        besuch: "noch nie",
+        erwartungen: "freitextfreitext",
       },
       surveyAnswersWorkshopEnd: {},
     };
@@ -90,6 +93,7 @@ class App extends React.Component {
                     onSubmit={(data) => {
                       this.logAnswer("postleitzahl", data);
                     }}
+                    data={this.state.surveyAnswersWorkshopStart.postleitzahl}
                   />
                 }
               />
@@ -104,8 +108,28 @@ class App extends React.Component {
                   />
                 }
               />
-              <Route path="losgehts/besuch" element={<S05Besuch />} />
-              <Route path="losgehts/erwartungen" element={<S06Erwartungen />} />
+              <Route
+                path="losgehts/besuch"
+                element={
+                  <S05Besuch
+                    onSubmit={(data) => {
+                      this.logAnswer("besuch", data);
+                    }}
+                    data={this.state.surveyAnswersWorkshopStart.besuch}
+                  />
+                }
+              />
+              <Route
+                path="losgehts/erwartungen"
+                element={
+                  <S06Erwartungen
+                    onSubmit={(data) => {
+                      this.logAnswer("erwartungen", data);
+                    }}
+                    data={this.state.surveyAnswersWorkshopStart.erwartungen}
+                  />
+                }
+              />
               <Route path="losgehts/interesse" element={<S07Interesse />} />
               <Route
                 path="losgehts/vorerfahrung"

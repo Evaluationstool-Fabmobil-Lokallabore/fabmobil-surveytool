@@ -1,4 +1,4 @@
-function FabTextinput({ children, style, value, onChange, ...otherProps }) {
+function FabTextinput({ value, style, onChange, ...otherProps }) {
   return (
     <div className="FabTextInput" style={style}>
       <input

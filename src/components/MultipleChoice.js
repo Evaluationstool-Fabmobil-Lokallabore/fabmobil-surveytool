@@ -7,9 +7,7 @@ class MultipleChoice extends React.Component {
   }
 
   toggle(answer, data) {
-    console.log(answer, data);
     const index = data.indexOf(answer);
-    console.log(index);
     if (index > -1) {
       //remove
       data.splice(index, 1);

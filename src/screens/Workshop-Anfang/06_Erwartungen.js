@@ -3,14 +3,14 @@ import WeiterButton from "../../components/WeiterButton";
 import RobiGif from "../../components/RobiGif";
 import robiLongarmtouch from "../../assets/robi-gifs/Robi_longarmtouch-min.gif";
 
-function Screen() {
+function Screen({ data, onSubmit }) {
   return (
     <>
       <div>
         <p>Welche Erwartungen hast du an deine Zeit bei uns im Fabmobil?</p>
       </div>
       <div className="flex-vertical-center">
-        <FabTextArea />
+        <FabTextArea value={data} onChange={onSubmit} />
       </div>
       <WeiterButton navigateTo="/losgehts/interesse" />
       <RobiGif src={robiLongarmtouch} style={{ left: -100, bottom: 0 }} />
