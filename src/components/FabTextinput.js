@@ -1,4 +1,4 @@
-function FabTextinput({ value, style, onChange, ...otherProps }) {
+function FabTextInput({ value, style, onChange, ...otherProps }) {
   return (
     <div className="FabTextInput" style={style}>
       <input
@@ -14,4 +14,4 @@ function FabTextinput({ value, style, onChange, ...otherProps }) {
   );
 }
 
-export default FabTextinput;
+export default FabTextInput;
