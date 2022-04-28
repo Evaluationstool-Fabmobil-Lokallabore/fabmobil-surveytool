@@ -37,6 +37,7 @@ class App extends React.Component {
         [questionId]: answer,
       },
     });
+    console.log(this.state);
   }
 
   logAnswerWorkshopEnd(questionId, answer) {
@@ -47,6 +48,7 @@ class App extends React.Component {
         [questionId]: answer,
       },
     });
+    console.log(this.state);
   }
 
   submitAllAnswers(surveyType) {
