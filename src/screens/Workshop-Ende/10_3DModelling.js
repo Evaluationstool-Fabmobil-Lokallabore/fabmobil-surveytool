@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import FabSlider from "../../components/FabSlider";
 import DoubleColumnContainer from "../../components/DoubleColumnContainer";
 import Fabutton from "../../components/Fabutton";
-import FabuttonLink from "../../components/FabuttonNext";
+import FabuttonNext from "../../components/FabuttonNext";
 import smileyHappy from "../../assets/pictograms/FM-Emoji_ohneRand61.png";
 import smileyBroken from "../../assets/pictograms/FM-Emoji_ohneRand55.png";
 import RobiGif from "../../components/RobiGif";
@@ -33,9 +33,9 @@ function Screen({ onSubmit, data }) {
         >
           nicht benutzt
         </Fabutton>
-        <FabuttonLink to={nextRoute} style={{ flexBasis: "50%" }}>
+        <FabuttonNext to={nextRoute} style={{ flexBasis: "50%" }}>
           weiter
-        </FabuttonLink>
+        </FabuttonNext>
       </DoubleColumnContainer>
       <RobiGif
         src={robiLongarmslide}

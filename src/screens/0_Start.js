@@ -1,13 +1,19 @@
-import FabuttonLink from "../components/FabuttonNext";
+import FabuttonNext from "../components/FabuttonNext";
 
 function Screen() {
   return (
     <>
       <div className="flex-vertical-center">
-        <FabuttonLink to="/losgehts/anmeldung" style={{ marginBottom: 26 }}>
+        <FabuttonNext
+          to="/losgehts/anmeldung"
+          wait={0}
+          style={{ marginBottom: 26 }}
+        >
           Workshop Start
-        </FabuttonLink>
-        <FabuttonLink to="/wiewars/nickname">Workshop Ende</FabuttonLink>
+        </FabuttonNext>
+        <FabuttonNext to="/wiewars/nickname" wait={0}>
+          Workshop Ende
+        </FabuttonNext>
       </div>
     </>
   );
