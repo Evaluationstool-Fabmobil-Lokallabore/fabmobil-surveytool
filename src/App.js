@@ -47,10 +47,12 @@ class App extends React.Component {
       surveyType === "workshopStart"
         ? DUMMY_DATABASE.WORKSHOP_START
         : DUMMY_DATABASE.WORKSHOP_END;
-    const data =
+    const surveyData =
       surveyType === "workshopStart"
         ? this.state.surveyAnswersWorkshopStart
         : this.state.surveyAnswersWorkshopEnd;
+    const data = { ...surveyData, date: new Date().toDateString() };
+    console.log(data);
     axios.post(url, data).then((response) => {
       console.log(response);
     });
