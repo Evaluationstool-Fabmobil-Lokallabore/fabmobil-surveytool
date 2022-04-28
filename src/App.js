@@ -58,7 +58,7 @@ class App extends React.Component {
       surveyType === "workshopStart"
         ? this.state.surveyAnswersWorkshopStart
         : this.state.surveyAnswersWorkshopEnd;
-    const data = { ...surveyData, date: new Date().toString() };
+    const data = { ...surveyData, date: new Date().toLocaleString() };
     console.log("submitted data", data);
     axios.post(url, data).then((response) => {
       console.log("response", response);
