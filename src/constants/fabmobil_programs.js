@@ -6,7 +6,7 @@ import pictoTinkercad from "../assets/pictograms/FM-Emoji_ohneRand17.png";
 import pictoArduino from "../assets/pictograms/FM-Emoji_ohneRand24.png";
 import pictoInkscape from "../assets/pictograms/FM-Emoji_ohneRand19.png";
 
-export default [
+const fabmobilPrograms = [
   { title: "Tiltbrush", picto: pictoTiltbrush },
   { title: "Calliope", picto: pictoCalliope },
   { title: "SculptGL", picto: pictoSculptgl },
@@ -15,3 +15,5 @@ export default [
   { title: "Arduino", picto: pictoArduino },
   { title: "Inkscape", picto: pictoInkscape },
 ];
+
+export default fabmobilPrograms;

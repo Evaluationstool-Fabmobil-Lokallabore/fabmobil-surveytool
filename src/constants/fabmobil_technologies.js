@@ -7,7 +7,7 @@ import pictoVR from "../assets/pictograms/FM-Emoji_ohneRand11.png";
 import pictoLaser from "../assets/pictograms/FM-Emoji_ohneRand34.png";
 import pictoStickmaschine from "../assets/pictograms/FM-Emoji_ohneRand50.png";
 
-export default [
+const fabmobilTechnologies = [
   { title: "Tiefziehen", picto: pictoTiefzieh },
   { title: "Plotter", picto: pictoPlotter },
   { title: "Robo", picto: pictoRobo },
@@ -17,3 +17,5 @@ export default [
   { title: "Laser", picto: pictoLaser },
   { title: "Stickmaschine", picto: pictoStickmaschine },
 ];
+
+export default fabmobilTechnologies;

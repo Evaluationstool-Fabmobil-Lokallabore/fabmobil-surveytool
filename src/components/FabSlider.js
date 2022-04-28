@@ -9,7 +9,7 @@ function FabSlider(props) {
     <div className="FabSlider">
       <div className="FabSlider__elementTop">
         {props.imgTop ? (
-          <img className="FabSlider__image" src={props.imgTop} />
+          <img className="FabSlider__image" src={props.imgTop} alt="" />
         ) : (
           "+"
         )}
@@ -31,7 +31,7 @@ function FabSlider(props) {
       </div>
       <div className="FabSlider__elementBottom">
         {props.imgBottom ? (
-          <img className="FabSlider__image" src={props.imgBottom} />
+          <img className="FabSlider__image" src={props.imgBottom} alt="" />
         ) : props.noBottomLabel ? (
           ""
         ) : (

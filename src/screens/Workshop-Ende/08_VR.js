@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 import FabSlider from "../../components/FabSlider";
 import DoubleColumnContainer from "../../components/DoubleColumnContainer";
 import Fabutton from "../../components/Fabutton";
@@ -7,7 +6,6 @@ import robiThumbsUp from "../../assets/pictograms/robi_thumbsup.png";
 import robiThumbsDown from "../../assets/pictograms/robi_thumbsdown.png";
 
 function Screen({ onSubmit, data }) {
-  const navigate = useNavigate();
   const nextRoute = "/wiewars/laser";
   return (
     <>

@@ -13,7 +13,7 @@ import S12Grund from "../screens/Workshop-Anfang/12_Grund";
 import S13Nickname from "../screens/Workshop-Anfang/13_Nickname";
 import S14Ende from "../screens/Workshop-Anfang/14_Ende";
 
-export default {
+const surveyWorkshopStart = {
   baseUrl: "losgehts",
   surveyItems: [
     {
@@ -75,3 +75,5 @@ export default {
     },
   ],
 };
+
+export default surveyWorkshopStart;

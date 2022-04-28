@@ -16,7 +16,7 @@ import E15Engagieren from "../screens/Workshop-Ende/15_Engagieren";
 import E16AnythingElse from "../screens/Workshop-Ende/16_AnythingElse";
 import E17Ende from "../screens/Workshop-Ende/17_Ende";
 
-export default {
+const surveyWorkshopEnd = {
   baseUrl: "wiewars",
   surveyItems: [
     {
@@ -90,3 +90,5 @@ export default {
     },
   ],
 };
+
+export default surveyWorkshopEnd;
