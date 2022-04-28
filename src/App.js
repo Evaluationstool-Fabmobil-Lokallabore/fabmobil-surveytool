@@ -22,6 +22,13 @@ class App extends React.Component {
     };
   }
 
+  resetSurveyData() {
+    this.setState({
+      surveyAnswersWorkshopStart: {},
+      surveyAnswersWorkshopEnd: {},
+    });
+  }
+
   logAnswerWorkshopStart(questionId, answer) {
     this.setState({
       ...this.state,
@@ -51,10 +58,11 @@ class App extends React.Component {
       surveyType === "workshopStart"
         ? this.state.surveyAnswersWorkshopStart
         : this.state.surveyAnswersWorkshopEnd;
-    const data = { ...surveyData, date: new Date().toDateString() };
-    console.log(data);
+    const data = { ...surveyData, date: new Date().toString() };
+    console.log("submitted data", data);
     axios.post(url, data).then((response) => {
-      console.log(response);
+      console.log("response", response);
+      this.resetSurveyData();
     });
   }
 
