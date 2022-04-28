@@ -4,11 +4,12 @@ import Fabutton from "./Fabutton";
 
 const WAIT_BEFORE_NAVIGATE = 500;
 
-function FabuttonNext({ to, onClick = () => {}, children, className }) {
+function FabuttonNext({ to, onClick = () => {}, children, className, style }) {
   const navigate = useNavigate();
   return (
     <Fabutton
       className={classNames("FabuttonNext", className)}
+      style={style}
       onClick={() => {
         onClick();
         navigate(to);
