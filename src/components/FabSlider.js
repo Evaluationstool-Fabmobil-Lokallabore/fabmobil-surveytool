@@ -3,6 +3,7 @@ import React from "react";
 
 const DEFAULT_STEP_MIN = 0;
 const DEFAULT_STEP_MAX = 5;
+const DEFAULT_VALUE = null;
 
 function FabSlider(props) {
   return (
@@ -16,7 +17,13 @@ function FabSlider(props) {
       </div>
 
       <div className="FabSlider__bar">
-        <div className="FabSlider__bar__filler"></div>
+        <div
+          className="FabSlider__bar__filler"
+          style={{
+            height:
+              (props.value / (props.maxSteps || DEFAULT_STEP_MAX)) * 100 + "%",
+          }}
+        ></div>
         <Slider
           aria-label="Like"
           orientation="vertical"
@@ -25,7 +32,9 @@ function FabSlider(props) {
           marks={true}
           color="secondary"
           valueLabelDisplay="on"
-          value={props.value}
+          value={
+            typeof props.value === "undefined" ? DEFAULT_VALUE : props.value
+          }
           onChange={(_, newValue) => props.onChange(newValue)}
         />
       </div>

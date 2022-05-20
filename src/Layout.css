@@ -144,6 +144,7 @@
 }
 
 .FabSlider__bar {
+  position: relative;
   width: 25px;
   height: 226px;
   background-color: white;
@@ -154,6 +155,16 @@
 
 .FabSlider__bar__filler {
   background-color: black;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.MuiSlider-thumbColorSecondary,
+.MuiSlider-track,
+.MuiSlider-rail,
+.MuiSlider-mark {
+  visibility: hidden;
 }
 
 .FabTextInput {
