@@ -1,7 +1,7 @@
 import FabSlider from "../../components/FabSlider";
 import WeiterButton from "../../components/WeiterButton";
-import happyFabmobil from "../../assets/pictograms/fabmobil_happy.png";
-import sadFabmobil from "../../assets/pictograms/fabmobil_sad.png";
+import happyFabmobil from "../../assets/pictograms/FM-Emoji_ohneRand30.png";
+import sadFabmobil from "../../assets/pictograms/FM-Emoji_ohneRand3.png";
 
 function Screen({ onSubmit, data }) {
   return (
