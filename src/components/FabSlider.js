@@ -6,6 +6,7 @@ const DEFAULT_STEP_MAX = 5;
 const DEFAULT_VALUE = null;
 
 function FabSlider(props) {
+  const value = props.value === "undefined" ? DEFAULT_VALUE : props.value;
   return (
     <div className="FabSlider">
       <div className="FabSlider__elementTop">
@@ -20,8 +21,7 @@ function FabSlider(props) {
         <div
           className="FabSlider__bar__filler"
           style={{
-            height:
-              (props.value / (props.maxSteps || DEFAULT_STEP_MAX)) * 100 + "%",
+            height: (value / (props.maxSteps || DEFAULT_STEP_MAX)) * 100 + "%",
           }}
         ></div>
         <Slider
@@ -32,9 +32,7 @@ function FabSlider(props) {
           marks={true}
           color="secondary"
           valueLabelDisplay="on"
-          value={
-            typeof props.value === "undefined" ? DEFAULT_VALUE : props.value
-          }
+          value={value}
           onChange={(_, newValue) => props.onChange(newValue)}
         />
       </div>

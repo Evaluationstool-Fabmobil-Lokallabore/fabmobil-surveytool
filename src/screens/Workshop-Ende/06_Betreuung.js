@@ -11,7 +11,12 @@ function Screen({ onSubmit, data }) {
       <div>
         <p>Wie fandest du die Betreuung im Fabmobil?</p>
       </div>
-      <FabSlider imgTop={imgTop} imgBottom={imgBottom} onChange={onSubmit} />
+      <FabSlider
+        imgTop={imgTop}
+        imgBottom={imgBottom}
+        value={data}
+        onChange={onSubmit}
+      />
       <RobiGif
         src={robiLookaround}
         style={{ width: 500, top: 100, right: -340 }}
