@@ -1,5 +1,5 @@
 import WeiterButton from "../../components/WeiterButton";
-import MultiplePictoChoice from "../../components/MultiplePictoChoiceTool";
+import MultiplePictoChoiceTool from "../../components/MultiplePictoChoiceTool";
 import FABMOBIL_TECHNOLOGIES from "../../constants/fabmobil_technologies";
 
 const ANSWER_OPTIONS = FABMOBIL_TECHNOLOGIES;
@@ -14,7 +14,7 @@ function Screen({ onSubmit, data }) {
         <p>Verrätst du mir, was dich besonders interessiert?</p>
       </div>
 
-      <MultiplePictoChoice
+      <MultiplePictoChoiceTool
         options={[column1, column2, column3]}
         data={data}
         onChange={onSubmit}

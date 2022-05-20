@@ -1,6 +1,6 @@
 import classNames from "classnames";
 
-function ClickablePicto({ src, title, isActive, style, onClick }) {
+function ClickablePicto({ src, srcActive, title, isActive, style, onClick }) {
   return (
     <img
       style={style}
@@ -10,7 +10,7 @@ function ClickablePicto({ src, title, isActive, style, onClick }) {
       className={classNames("ClickablePicto", {
         "ClickablePicto--active": isActive,
       })}
-      src={src}
+      src={isActive ? srcActive : src}
     />
   );
 }

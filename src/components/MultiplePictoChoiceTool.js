@@ -47,6 +47,7 @@ class MultiplePictoChoice extends React.Component {
               key={option.title}
               isActive={this.isActive(option.title, data)}
               src={option.picto}
+              srcActive={option.pictoActive || option.picto}
               title={option.title}
               onClick={() => {
                 this.toggle(option.title, data);
@@ -61,6 +62,7 @@ class MultiplePictoChoice extends React.Component {
               key={option.title}
               isActive={this.isActive(option.title, data)}
               src={option.picto}
+              srcActive={option.pictoActive || option.picto}
               title={option.title}
               onClick={() => {
                 this.toggle(option.title, data);
@@ -75,6 +77,7 @@ class MultiplePictoChoice extends React.Component {
               key={option.title}
               isActive={this.isActive(option.title, data)}
               src={option.picto}
+              srcActive={option.pictoActive || option.picto}
               title={option.title}
               onClick={() => {
                 this.toggle(option.title, data);
