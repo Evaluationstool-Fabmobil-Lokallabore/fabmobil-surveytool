@@ -103,6 +103,22 @@
   right: 17px;
 }
 
+.MultiplePictoChoiceTool {
+  display: flex;
+  flex-shrink: 0;
+  flex-grow: 1;
+  flex-direction: row;
+}
+
+.MultiplePictoChoiceTool__Column {
+  position: relative;
+  flex-basis: 33%;
+}
+
+.MultiplePictoChoiceTool .ClickablePicto {
+  position: absolute;
+}
+
 .ClickablePicto {
   cursor: pointer;
   width: 109px;

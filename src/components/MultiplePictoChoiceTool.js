@@ -26,22 +26,22 @@ class MultiplePictoChoice extends React.Component {
     return data.indexOf(answer) > -1;
   }
 
-  getStyle(index = 0) {
+  getStyle(column = 0, index = 0) {
     if (!this.props.styles || !this.props.styles.length) {
       return {};
     }
-    return this.props.styles[index];
+    return this.props.styles[column][index];
   }
 
   render() {
     const data = this.props.data || [];
     const options = this.props.options || [];
-    const column1 = options.slice(0, 3);
-    const column2 = options.slice(3, 6);
-    const column3 = options.slice(6, options.length + 1);
+    const column1 = options[0];
+    const column2 = options[1];
+    const column3 = options[2];
     return (
-      <>
-        <div style={{ position: "relative" }}>
+      <div className="MultiplePictoChoiceTool">
+        <div className="MultiplePictoChoiceTool__Column">
           {column1.map((option, i) => (
             <ClickablePicto
               key={option.title}
@@ -51,11 +51,11 @@ class MultiplePictoChoice extends React.Component {
               onClick={() => {
                 this.toggle(option.title, data);
               }}
-              style={this.getStyle(i)}
+              style={this.getStyle(0, i)}
             />
           ))}
         </div>
-        <div style={{ position: "relative" }}>
+        <div className="MultiplePictoChoiceTool__Column">
           {column2.map((option, i) => (
             <ClickablePicto
               key={option.title}
@@ -65,11 +65,11 @@ class MultiplePictoChoice extends React.Component {
               onClick={() => {
                 this.toggle(option.title, data);
               }}
-              style={this.getStyle(3 + i)}
+              style={this.getStyle(1, i)}
             />
           ))}
         </div>
-        <div style={{ position: "relative" }}>
+        <div className="MultiplePictoChoiceTool__Column">
           {column3.map((option, i) => (
             <ClickablePicto
               key={option.title}
@@ -79,11 +79,11 @@ class MultiplePictoChoice extends React.Component {
               onClick={() => {
                 this.toggle(option.title, data);
               }}
-              style={this.getStyle(6 + i)}
+              style={this.getStyle(2, i)}
             />
           ))}
         </div>
-      </>
+      </div>
     );
   }
 }

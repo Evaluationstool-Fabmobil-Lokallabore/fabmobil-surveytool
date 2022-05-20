@@ -3,6 +3,9 @@ import MultiplePictoChoice from "../../components/MultiplePictoChoiceTool";
 import FABMOBIL_TECHNOLOGIES from "../../constants/fabmobil_technologies";
 
 const ANSWER_OPTIONS = FABMOBIL_TECHNOLOGIES;
+const column1 = ANSWER_OPTIONS.slice(0, 3);
+const column2 = ANSWER_OPTIONS.slice(3, 5);
+const column3 = ANSWER_OPTIONS.slice(5, ANSWER_OPTIONS.length + 1);
 
 function Screen({ onSubmit, data }) {
   return (
@@ -10,30 +13,28 @@ function Screen({ onSubmit, data }) {
       <div>
         <p>Verrätst du mir, was dich besonders interessiert?</p>
       </div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          flex: 1,
-          position: "relative",
-        }}
-      >
-        <MultiplePictoChoice
-          options={ANSWER_OPTIONS}
-          data={data}
-          onChange={onSubmit}
-          styles={[
-            {},
-            { position: "absolute", top: "50%", left: 0 },
-            { position: "absolute", bottom: "-19%", left: 0 },
-            { marginTop: "100%" },
-            { position: "absolute", bottom: "15%", left: 0 },
-            { marginTop: 20 },
-            { position: "absolute", top: "50%", left: 0 },
-            { position: "absolute", bottom: 0, left: 0 },
-          ]}
-        />
-      </div>
+
+      <MultiplePictoChoice
+        options={[column1, column2, column3]}
+        data={data}
+        onChange={onSubmit}
+        styles={[
+          [
+            {}, //Tiefziehen
+            { top: "50%" }, //Plotter
+            { bottom: "-19%" }, //Robo
+          ],
+          [
+            { top: "20%" }, //Scan
+            { bottom: "8%" }, //3D-Print
+          ],
+          [
+            { top: "5%" }, //VR
+            { top: "50%", left: 0 }, //Laser
+            { bottom: 0, left: 0 }, //Stickmaschine
+          ],
+        ]}
+      />
 
       <WeiterButton navigateTo="/losgehts/vorerfahrung" />
     </>

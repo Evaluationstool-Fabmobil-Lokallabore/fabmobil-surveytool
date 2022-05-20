@@ -2,7 +2,17 @@ import WeiterButton from "../../components/WeiterButton";
 import MultiplePictoChoice from "../../components/MultiplePictoChoiceTool";
 import FABMOBIL_TECHNOLOGIES from "../../constants/fabmobil_technologies";
 
-const ANSWER_OPTIONS = FABMOBIL_TECHNOLOGIES;
+const column1 = [
+  FABMOBIL_TECHNOLOGIES[0],
+  FABMOBIL_TECHNOLOGIES[6],
+  FABMOBIL_TECHNOLOGIES[3],
+];
+const column2 = [FABMOBIL_TECHNOLOGIES[1], FABMOBIL_TECHNOLOGIES[2]];
+const column3 = [
+  FABMOBIL_TECHNOLOGIES[7],
+  FABMOBIL_TECHNOLOGIES[5],
+  FABMOBIL_TECHNOLOGIES[4],
+];
 
 function Screen({ onSubmit, data }) {
   return (
@@ -22,18 +32,17 @@ function Screen({ onSubmit, data }) {
         }}
       >
         <MultiplePictoChoice
-          options={ANSWER_OPTIONS}
+          options={[column1, column2, column3]}
           data={data}
           onChange={onSubmit}
           styles={[
-            {},
-            { position: "absolute", top: "50%", left: 0 },
-            { position: "absolute", bottom: "-19%", left: 0 },
-            { marginTop: "100%" },
-            { position: "absolute", bottom: "15%", left: 0 },
-            { marginTop: 20 },
-            { position: "absolute", top: "50%", left: 0 },
-            { position: "absolute", bottom: 0, left: 0 },
+            [{ top: "30%" }, { bottom: "14%", left: "5%" }, { bottom: "-19%" }],
+            [{ top: "10%", left: "-50%" }, { bottom: "20%" }],
+            [
+              { top: "0%" },
+              { top: "30%", left: "-30%" },
+              { bottom: 0, left: 0 },
+            ],
           ]}
         />
       </div>

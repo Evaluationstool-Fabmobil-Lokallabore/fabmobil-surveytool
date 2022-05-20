@@ -4,6 +4,7 @@ function ClickablePicto({ src, title, isActive, style, onClick }) {
   return (
     <img
       style={style}
+      title={title}
       alt={title}
       onClick={onClick}
       className={classNames("ClickablePicto", {
