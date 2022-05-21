@@ -1,7 +1,6 @@
 import FabTextInput from "../../components/FabTextInput";
 import WeiterButton from "../../components/WeiterButton";
-import RobiGif from "../../components/RobiGif";
-import robiAuftrittWinken from "../../assets/robi-gifs/Robi_auftritt+winken-min.gif";
+import RobiGifComposite from "../../components/RobiGifComposite";
 
 function Screen({ onSubmit, data }) {
   return (
@@ -18,7 +17,7 @@ function Screen({ onSubmit, data }) {
       />
 
       <WeiterButton navigateTo="/wiewars/spass" />
-      <RobiGif src={robiAuftrittWinken} style={{ bottom: 0 }} />
+      <RobiGifComposite style={{ bottom: 0 }} />
     </>
   );
 }

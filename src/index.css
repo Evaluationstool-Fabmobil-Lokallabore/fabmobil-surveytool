@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
+img[src$=".gif"] {
+  /* display: none; */
+}
+
 /* Global styling variables */
 html {
   --color-background: #ddbbfc;
@@ -35,9 +39,4 @@ body {
   body {
     font-size: 40px;
   }
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
 }
