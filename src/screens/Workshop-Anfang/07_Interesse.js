@@ -18,6 +18,7 @@ function Screen({ onSubmit, data }) {
         options={[column1, column2, column3]}
         data={data}
         onChange={onSubmit}
+        style={{ marginBottom: 130 }}
         styles={[
           [
             {}, //Tiefziehen

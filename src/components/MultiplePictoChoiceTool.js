@@ -40,7 +40,7 @@ class MultiplePictoChoice extends React.Component {
     const column2 = options[1];
     const column3 = options[2];
     return (
-      <div className="MultiplePictoChoiceTool">
+      <div className="MultiplePictoChoiceTool" style={this.props.style}>
         <div className="MultiplePictoChoiceTool__Column">
           {column1.map((option, i) => (
             <ClickablePicto

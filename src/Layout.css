@@ -36,7 +36,7 @@
   flex-direction: column;
   justify-content: normal;
   padding: 15px;
-  padding-bottom: 111px;
+  /* padding-bottom: 120px; */
 }
 
 @media (min-width: 830px) {

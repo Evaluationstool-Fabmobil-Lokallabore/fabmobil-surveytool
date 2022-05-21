@@ -35,6 +35,7 @@ function Screen({ onSubmit, data }) {
           options={[column1, column2, column3]}
           data={data}
           onChange={onSubmit}
+          style={{ marginBottom: 130 }}
           styles={[
             [{ top: "30%" }, { bottom: "14%", left: "5%" }, { bottom: "-19%" }],
             [{ top: "10%", left: "-50%" }, { bottom: "20%" }],
