@@ -5,10 +5,10 @@ import RobiGif from "../../components/RobiGif";
 import robiLookaround from "../../assets/robi-gifs/Robi_lookaround-min.gif";
 
 const ANSWER_OPTIONS = ["0-12", "13-16", "17-20", "21-24", "25-99", "99+"];
+const nextRoute = "/losgehts/postleitzahl";
 
 function Screen({ data, onSubmit }) {
   const navigate = useNavigate();
-  const nextRoute = "/losgehts/postleitzahl";
   return (
     <>
       <div style={{ marginBottom: 250 }}>

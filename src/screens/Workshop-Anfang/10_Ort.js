@@ -16,9 +16,10 @@ const ANSWER_OPTIONS = [
   "Andere",
 ];
 
+const nextRoute = "/losgehts/werbung";
+
 function Screen({ onSubmit, data }) {
   const navigate = useNavigate();
-  const nextRoute = "/losgehts/werbung";
   return (
     <>
       <div>

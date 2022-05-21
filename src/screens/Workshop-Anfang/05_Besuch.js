@@ -12,9 +12,10 @@ const ANSWER_OPTIONS = [
   "Ich gehöre fast zur Crew",
 ];
 
+const nextRoute = "/losgehts/erwartungen";
+
 function Screen({ data, onSubmit }) {
   const navigate = useNavigate();
-  const nextRoute = "/losgehts/erwartungen";
   return (
     <>
       <div>

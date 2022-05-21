@@ -14,14 +14,15 @@ const ANSWER_OPTIONS = [
   "Konkurrenz",
 ];
 
+const nextRoute = "/losgehts/grund";
+
 function Screen({ onSubmit, data }) {
-  const nextRoute = "/losgehts/grund";
   return (
     <>
       <div>
         <p>Wie hast du vom Fabmobil gehört?</p>
       </div>
-      <div className="vertical-grid">
+      <div className="vertical-grid" style={{ height: 472 }}>
         <MultipleChoiceTool
           options={ANSWER_OPTIONS}
           data={data}

@@ -15,7 +15,7 @@ function Screen({ data, onSubmit }) {
           Was hast du für ein <br /> Geschlecht?
         </p>
       </div>
-      <DoubleColumnContainer style={{ marginBottom: 126 }}>
+      <DoubleColumnContainer>
         <MultipleChoiceTool
           options={ANSWER_OPTIONS}
           data={data}

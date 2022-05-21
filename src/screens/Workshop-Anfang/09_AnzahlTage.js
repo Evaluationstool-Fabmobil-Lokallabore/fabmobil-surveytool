@@ -5,10 +5,10 @@ import RobiGif from "../../components/RobiGif";
 import robiSprung from "../../assets/robi-gifs/Robi_sprung-min.gif";
 
 const ANSWER_OPTIONS = [1, 2, 3, 4, 5];
+const nextRoute = "/losgehts/ort";
 
 function Screen({ onSubmit, data }) {
   const navigate = useNavigate();
-  const nextRoute = "/losgehts/ort";
   return (
     <>
       <div>

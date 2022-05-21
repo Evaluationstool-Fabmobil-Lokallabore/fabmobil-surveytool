@@ -36,7 +36,7 @@
   flex-direction: column;
   justify-content: normal;
   padding: 15px;
-  padding-bottom: 140px;
+  padding-bottom: 111px;
 }
 
 @media (min-width: 830px) {
@@ -147,7 +147,6 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 100px 0 100px;
   align-items: center;
   justify-content: center;
   text-align: center;

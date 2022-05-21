@@ -28,7 +28,7 @@ function Screen({ onSubmit, data }) {
           }}
         />
       </div>
-      <RobiGif src={robiButtons} style={{ width: 220, left: 119, top: 171 }} />
+      <RobiGif src={robiButtons} style={{ width: 220, left: 119, top: 148 }} />
     </>
   );
 }
