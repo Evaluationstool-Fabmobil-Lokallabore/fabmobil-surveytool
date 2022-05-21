@@ -34,6 +34,7 @@ class RobiGifComposite extends React.Component {
             position: "absolute",
             bottom: 0,
             left: 0,
+            width: 350,
             opacity: this.state.showSecondGif ? 0 : 1,
           }}
           alt=""
@@ -44,6 +45,7 @@ class RobiGifComposite extends React.Component {
             position: "absolute",
             bottom: 0,
             left: 0,
+            width: 350,
             opacity: this.state.showSecondGif ? 1 : 0,
           }}
           alt=""

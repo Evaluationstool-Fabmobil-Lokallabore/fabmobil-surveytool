@@ -18,7 +18,9 @@ function Screen({ data, onSubmit }) {
   return (
     <>
       <div>
-        <p>Konntest du schon Mal im Fabmobil rumexperimentieren?</p>
+        <p>
+          Konntest du schon mal <br /> im Fabmobil <br /> rumexperimentieren?
+        </p>
       </div>
       <div style={{ marginTop: 200 }}>
         <DoubleColumnContainer>
@@ -35,9 +37,10 @@ function Screen({ data, onSubmit }) {
           src={robiTouch}
           style={{
             width: 405,
-            right: -130,
-            top: -20,
-            transform: "rotate(194deg)",
+            height: 405,
+            left: 100,
+            top: 22,
+            transform: "rotate(-165deg)",
           }}
         />
       </div>

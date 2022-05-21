@@ -30,8 +30,8 @@ function Screen({ onSubmit, data }) {
         src={robiTouch}
         style={{
           width: 500,
-          left: -140,
-          bottom: -300,
+          left: -194,
+          top: 645,
         }}
       />
     </>

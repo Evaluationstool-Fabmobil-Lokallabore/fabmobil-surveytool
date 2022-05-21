@@ -8,17 +8,13 @@ function Screen({ onSubmit, onFinalSubmit, data }) {
   const navigate = useNavigate();
   return (
     <>
-      <div>
+      <div style={{ marginBottom: 229 }}>
         <p>Was ist dein Nickname?</p>
       </div>
-      <FabTextInput
-        value={data}
-        onChange={onSubmit}
-        style={{ marginTop: "auto", marginBottom: "auto" }}
-      />
+      <FabTextInput value={data} onChange={onSubmit} />
       <p>
-        (Merke dir diesen Namen. Du wirst ihn am Ende des Workshops nochmal
-        brauchen.)
+        (Merke dir diesen Namen. <br /> Du wirst ihn am Ende des Workshops
+        nochmal brauchen.)
       </p>
       <SubmitButton
         onClick={() => {
@@ -26,7 +22,7 @@ function Screen({ onSubmit, onFinalSubmit, data }) {
           setTimeout(() => navigate("/losgehts/ende"), 500);
         }}
       />
-      <RobiGif src={robiTastatur} style={{ width: 237, left: 111, top: 145 }} />
+      <RobiGif src={robiTastatur} style={{ width: 237, left: 111, top: 165 }} />
     </>
   );
 }

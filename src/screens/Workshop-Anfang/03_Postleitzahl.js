@@ -6,20 +6,23 @@ import robiLongarmtouch from "../../assets/robi-gifs/Robi_longarmtouch-min.gif";
 function Screen({ data, onSubmit }) {
   return (
     <>
-      <div>
+      <div style={{ marginBottom: 175 }}>
         <p>Und wie lautet deine Postleitzahl?</p>
       </div>
-      <div className="flex-vertical-center">
-        <FabTextInput
-          value={data}
-          minLength="5"
-          maxLength="5"
-          pattern={/[0-9]{5}/}
-          onChange={onSubmit}
-        />
-      </div>
+
+      <FabTextInput
+        value={data}
+        minLength="5"
+        maxLength="5"
+        pattern={/[0-9]{5}/}
+        onChange={onSubmit}
+      />
+
       <WeiterButton navigateTo="/losgehts/geschlecht" />
-      <RobiGif src={robiLongarmtouch} style={{ left: -100, bottom: 0 }} />
+      <RobiGif
+        src={robiLongarmtouch}
+        style={{ width: 491, left: -123, top: 326 }}
+      />
     </>
   );
 }

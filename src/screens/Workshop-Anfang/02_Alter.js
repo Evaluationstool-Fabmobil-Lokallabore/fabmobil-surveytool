@@ -11,10 +11,10 @@ function Screen({ data, onSubmit }) {
   const nextRoute = "/losgehts/postleitzahl";
   return (
     <>
-      <div style={{ marginBottom: "auto" }}>
+      <div style={{ marginBottom: 250 }}>
         <p>Wie alt bist du denn?</p>
       </div>
-      <DoubleColumnContainer style={{ marginBottom: 126 }}>
+      <DoubleColumnContainer style={{}}>
         <SingleChoiceTool
           options={ANSWER_OPTIONS}
           answer={data}
@@ -24,7 +24,7 @@ function Screen({ data, onSubmit }) {
           }}
         />
       </DoubleColumnContainer>
-      <RobiGif src={robiLookaround} style={{ top: -10 }} />
+      <RobiGif src={robiLookaround} style={{ width: 417, top: 19 }} />
     </>
   );
 }

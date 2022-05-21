@@ -1,5 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import SingleChoiceTool from "../../components/SingleChoiceTool";
+import RobiGif from "../../components/RobiGif";
+import robiButtons from "../../assets/robi-gifs/Robi_buttons-min.gif";
 
 const ANSWER_OPTIONS = [
   "Mega! Ich liebs",
@@ -13,7 +15,7 @@ function Screen({ onSubmit, data }) {
   const nextRoute = "/wiewars/vr";
   return (
     <>
-      <div>
+      <div style={{ marginBottom: 201 }}>
         <p>Wie spannend findest du 3D-Druck?</p>
       </div>
       <div className="vertical-grid">
@@ -26,6 +28,7 @@ function Screen({ onSubmit, data }) {
           }}
         />
       </div>
+      <RobiGif src={robiButtons} style={{ width: 220, left: 119, top: 171 }} />
     </>
   );
 }

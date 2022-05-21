@@ -1,5 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import SingleChoiceTool from "../../components/SingleChoiceTool";
+import RobiGif from "../../components/RobiGif";
+import robiSprung from "../../assets/robi-gifs/Robi_sprung-min.gif";
 
 const ANSWER_OPTIONS = [
   "Super gern!",
@@ -13,7 +15,7 @@ function Screen({ onSubmit, data }) {
   const nextRoute = "/wiewars/anythingElse";
   return (
     <>
-      <div>
+      <div style={{ marginBottom: 200 }}>
         <p>Hättest du Lust dich in einem regelmäßigen Angebot zu engagieren?</p>
       </div>
       <div className="vertical-grid">
@@ -26,6 +28,15 @@ function Screen({ onSubmit, data }) {
           }}
         />
       </div>
+      <RobiGif
+        src={robiSprung}
+        style={{
+          width: 391,
+          left: -50,
+          top: 100,
+          transform: "rotate(7.4deg)",
+        }}
+      />
     </>
   );
 }

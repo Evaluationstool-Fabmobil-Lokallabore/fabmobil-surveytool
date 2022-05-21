@@ -9,7 +9,7 @@ function Screen({ onSubmit, onFinalSubmit, data }) {
 
   return (
     <>
-      <div>
+      <div style={{ marginBottom: 125 }}>
         <p>Möchtest du mir noch was anderes sagen?</p>
       </div>
       <FabTextArea value={data} onChange={onSubmit} />

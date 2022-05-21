@@ -1,5 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import SingleChoiceTool from "../../components/SingleChoiceTool";
+import RobiGif from "../../components/RobiGif";
+import robiTastaturAgro from "../../assets/robi-gifs/Robi_tastatur_agro-min.gif";
+
 const ANSWER_OPTIONS = ["Ja voll", "Nö", "Hatte ich vorher schon"];
 
 function Screen({ onSubmit, data }) {
@@ -7,7 +10,7 @@ function Screen({ onSubmit, data }) {
   const nextRoute = "/wiewars/technologie";
   return (
     <>
-      <div>
+      <div style={{ marginBottom: 176 }}>
         <p>
           Hat das Fabmobil dein Interesse für digitale Technologien geweckt?
         </p>
@@ -22,6 +25,10 @@ function Screen({ onSubmit, data }) {
           }}
         />
       </div>
+      <RobiGif
+        src={robiTastaturAgro}
+        style={{ width: 200, left: 175, top: 182 }}
+      />
     </>
   );
 }

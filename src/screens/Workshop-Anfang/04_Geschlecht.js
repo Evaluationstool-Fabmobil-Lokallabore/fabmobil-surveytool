@@ -10,8 +10,10 @@ const ANSWER_OPTIONS = ["divers", "weiblich", "männlich", "keine Angabe"];
 function Screen({ data, onSubmit }) {
   return (
     <>
-      <div style={{ marginBottom: "auto" }}>
-        <p>Was hast du für ein Geschlecht?</p>
+      <div style={{ marginBottom: 203 }}>
+        <p>
+          Was hast du für ein <br /> Geschlecht?
+        </p>
       </div>
       <DoubleColumnContainer style={{ marginBottom: 126 }}>
         <MultipleChoiceTool
@@ -23,7 +25,10 @@ function Screen({ data, onSubmit }) {
       </DoubleColumnContainer>
 
       <WeiterButton navigateTo="/losgehts/besuch" />
-      <RobiGif src={robiTastatur} style={{ width: 180, right: 0, top: 145 }} />
+      <RobiGif
+        src={robiTastatur}
+        style={{ width: 256, height: 256, left: 128, top: 106 }}
+      />
     </>
   );
 }

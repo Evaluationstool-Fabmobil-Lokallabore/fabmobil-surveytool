@@ -27,7 +27,7 @@ function Screen({ onSubmit, data }) {
           />
         </DoubleColumnContainer>
       </div>
-      <RobiGif src={robiSprung} style={{ left: -100, bottom: 0 }} />
+      <RobiGif src={robiSprung} style={{ left: -100, bottom: -92 }} />
     </>
   );
 }

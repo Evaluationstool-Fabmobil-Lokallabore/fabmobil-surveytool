@@ -6,14 +6,15 @@ import robiLongarmtouch from "../../assets/robi-gifs/Robi_longarmtouch-min.gif";
 function Screen({ data, onSubmit }) {
   return (
     <>
-      <div>
+      <div style={{ marginBottom: 177 }}>
         <p>Welche Erwartungen hast du an deine Zeit bei uns im Fabmobil?</p>
       </div>
-      <div className="flex-vertical-center">
-        <FabTextArea value={data} onChange={onSubmit} />
-      </div>
+      <FabTextArea value={data} onChange={onSubmit} />
       <WeiterButton navigateTo="/losgehts/interesse" />
-      <RobiGif src={robiLongarmtouch} style={{ left: -100, bottom: 0 }} />
+      <RobiGif
+        src={robiLongarmtouch}
+        style={{ width: 491, left: -123, top: 326 }}
+      />
     </>
   );
 }

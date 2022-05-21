@@ -137,6 +137,12 @@
   width: 100%;
 }
 
+.RobiGifComposite {
+  position: fixed;
+  z-index: 999;
+  pointer-events: none;
+}
+
 .FabSlider {
   position: relative;
   display: flex;

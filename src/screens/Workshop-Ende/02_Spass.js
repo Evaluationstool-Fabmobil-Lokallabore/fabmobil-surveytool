@@ -20,7 +20,7 @@ function Screen({ onSubmit, data }) {
       <WeiterButton navigateTo="/wiewars/interesse" />
       <RobiGif
         src={robiLongarmslide}
-        style={{ left: -300, top: 220, transform: "rotate(90deg)" }}
+        style={{ width: 500, left: -300, top: 320, transform: "rotate(68deg)" }}
       />
     </>
   );
