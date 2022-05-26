@@ -1,6 +1,6 @@
 import WeiterButton from "../../components/WeiterButton";
 import MultiplePictoChoice from "../../components/MultiplePictoChoiceTool";
-import FABMOBIL_TECHNOLOGIES from "../../constants/fabmobil_technologies";
+import FABMOBIL_TECHNOLOGIES from "../../constants/fabmobil-technologies";
 
 const column1 = [
   FABMOBIL_TECHNOLOGIES[0],

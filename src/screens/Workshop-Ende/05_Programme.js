@@ -1,6 +1,6 @@
 import WeiterButton from "../../components/WeiterButton";
 import MultiplePictoChoiceTool from "../../components/MultiplePictoChoiceTool";
-import FABMOBIL_PROGRAMS from "../../constants/fabmobil_programs";
+import FABMOBIL_PROGRAMS from "../../constants/fabmobil-programs";
 
 const ANSWER_OPTIONS = FABMOBIL_PROGRAMS;
 const column1 = ANSWER_OPTIONS.slice(0, 3);
