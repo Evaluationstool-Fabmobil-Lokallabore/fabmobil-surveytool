@@ -7,6 +7,12 @@ import robiTastatur from "../../assets/robi-gifs/Robi_tastatur-min.gif";
 
 const ANSWER_OPTIONS = ["divers", "weiblich", "männlich", "keine Angabe"];
 
+function getValueOfTextInput(options, data) {
+  console.log(options, data);
+  return "foobar";
+  //data.forEach(ANSWER_OPTIONS.indexOf(data) > -1) ? "" : data
+}
+
 function Screen({ data, onSubmit }) {
   return (
     <>
@@ -21,7 +27,13 @@ function Screen({ data, onSubmit }) {
           data={data}
           onChange={onSubmit}
         />
-        <FabTextInput style={{ flex: 1 }} value={""} onChange={onSubmit} />
+        <FabTextInput
+          style={{ flex: 1 }}
+          value={getValueOfTextInput(ANSWER_OPTIONS, data)}
+          onChange={(val) => {
+            onSubmit([...data, val]);
+          }}
+        />
       </DoubleColumnContainer>
 
       <WeiterButton navigateTo="/losgehts/besuch" />
