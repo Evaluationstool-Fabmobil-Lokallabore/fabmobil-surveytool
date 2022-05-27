@@ -51,7 +51,7 @@ class App extends React.Component {
       date: new Date().toLocaleString(),
     };
     console.log("submitted data", data);
-    firebaseClient.postAnswersWorkshopStart(data);
+    this.firebaseClient.postAnswersWorkshopStart(data);
   }
 
   submitAllWorkshopEndAnswers() {
@@ -60,7 +60,7 @@ class App extends React.Component {
       date: new Date().toLocaleString(),
     };
     console.log("submitted data", data);
-    firebaseClient.postAnswersWorkshopEnd(data);
+    this.firebaseClient.postAnswersWorkshopEnd(data);
   }
 
   onFinalSubmitWorkshopStart() {
