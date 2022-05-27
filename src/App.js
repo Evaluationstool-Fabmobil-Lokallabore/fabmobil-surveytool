@@ -1,27 +1,15 @@
 import React from "react";
-import axios from "axios";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./Layout";
 import StartScreen from "./screens/0_Start";
 import SURVEY_WORKSHOPSTART from "./constants/survey-workshopstart.js";
 import SURVEY_WORKSHOPEND from "./constants/survey-workshopend.js";
-import { initializeApp } from "firebase/app";
-import firebaseConfig from "./constants/firebase-config";
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-console.log(app);
-
-const DUMMY_DATABASE = {
-  WORKSHOP_START:
-    "https://sheet.best/api/sheets/8a8c4c58-adc0-4e1d-a766-ab7e57dd690c",
-  WORKSHOP_END:
-    "https://sheet.best/api/sheets/9c60d472-68aa-432c-bd82-6fc526c2624c",
-};
+import FirebaseClient from "./firebase/client";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
+    this.firebaseClient = new FirebaseClient();
     this.state = {
       surveyAnswersWorkshopStart: {},
       surveyAnswersWorkshopEnd: {},
@@ -57,29 +45,30 @@ class App extends React.Component {
     console.log(this.state);
   }
 
-  submitAllAnswers(surveyType) {
-    const url =
-      surveyType === "workshopStart"
-        ? DUMMY_DATABASE.WORKSHOP_START
-        : DUMMY_DATABASE.WORKSHOP_END;
-    const surveyData =
-      surveyType === "workshopStart"
-        ? this.state.surveyAnswersWorkshopStart
-        : this.state.surveyAnswersWorkshopEnd;
-    const data = { ...surveyData, date: new Date().toLocaleString() };
+  submitAllWorkshopStartAnswers() {
+    const data = {
+      ...this.state.surveyAnswersWorkshopStart,
+      date: new Date().toLocaleString(),
+    };
     console.log("submitted data", data);
-    axios.post(url, data).then((response) => {
-      console.log("response", response);
-      this.resetSurveyData();
-    });
+    firebaseClient.postAnswersWorkshopStart(data);
+  }
+
+  submitAllWorkshopEndAnswers() {
+    const data = {
+      ...this.state.surveyAnswersWorkshopEnd,
+      date: new Date().toLocaleString(),
+    };
+    console.log("submitted data", data);
+    firebaseClient.postAnswersWorkshopEnd(data);
   }
 
   onFinalSubmitWorkshopStart() {
-    this.submitAllAnswers("workshopStart");
+    this.submitAllWorkshopStartAnswers();
   }
 
   onFinalSubmitWorkshopEnd() {
-    this.submitAllAnswers("workshopEnd");
+    this.submitAllWorkshopEndAnswers();
   }
 
   render() {
