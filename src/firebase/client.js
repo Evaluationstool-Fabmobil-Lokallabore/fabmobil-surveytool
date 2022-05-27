@@ -10,19 +10,19 @@ class Client {
     this.dbRef = ref(this.db);
   }
 
-  get() {
-    get(child(this.dbRef, `foo`))
-      .then((snapshot) => {
-        if (snapshot.exists()) {
-          console.log(snapshot.val());
-        } else {
-          console.log("No data available");
-        }
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }
+  // get() {
+  //   get(child(this.dbRef, `foo`))
+  //     .then((snapshot) => {
+  //       if (snapshot.exists()) {
+  //         console.log(snapshot.val());
+  //       } else {
+  //         console.log("No data available");
+  //       }
+  //     })
+  //     .catch((error) => {
+  //       console.error(error);
+  //     });
+  // }
 
   postAnswersWorkshopEnd(data) {
     const answerListRef = ref(this.db, "answersWorkshopEnd");
