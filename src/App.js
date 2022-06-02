@@ -8,6 +8,16 @@ import SURVEY_WORKSHOPEND from "./constants/survey-workshopend.js";
 import { initializeApp } from "firebase/app";
 import firebaseConfig from "./constants/firebase-config";
 
+function reformatSurveyData(surveyData) {
+  const geschlecht = surveyData.geschlecht;
+  if (!geschlecht) return surveyData;
+  const geschlechtReformatted = [
+    ...geschlecht.predefinedValues,
+    geschlecht.freeValue,
+  ];
+  return { ...surveyData, geschlecht: geschlechtReformatted };
+}
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 console.log(app);
@@ -74,7 +84,11 @@ class App extends React.Component {
       surveyType === "workshopStart"
         ? this.state.surveyAnswersWorkshopStart
         : this.state.surveyAnswersWorkshopEnd;
-    const data = { ...surveyData, date: new Date().toLocaleString() };
+    const reformattedSurveyData = reformatSurveyData(surveyData);
+    const data = {
+      ...reformattedSurveyData,
+      date: new Date().toLocaleString(),
+    };
     console.log("submitted data", data);
     axios.post(url, data).then((response) => {
       console.log("response", response);
