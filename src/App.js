@@ -36,25 +36,33 @@ class App extends React.Component {
   }
 
   logAnswerWorkshopStart(questionId, answer) {
-    this.setState({
-      ...this.state,
-      surveyAnswersWorkshopStart: {
-        ...this.state.surveyAnswersWorkshopStart,
-        [questionId]: answer,
+    this.setState(
+      {
+        ...this.state,
+        surveyAnswersWorkshopStart: {
+          ...this.state.surveyAnswersWorkshopStart,
+          [questionId]: answer,
+        },
       },
-    });
-    console.log(this.state);
+      () => {
+        console.log(this.state);
+      }
+    );
   }
 
   logAnswerWorkshopEnd(questionId, answer) {
-    this.setState({
-      ...this.state,
-      surveyAnswersWorkshopEnd: {
-        ...this.state.surveyAnswersWorkshopEnd,
-        [questionId]: answer,
+    this.setState(
+      {
+        ...this.state,
+        surveyAnswersWorkshopEnd: {
+          ...this.state.surveyAnswersWorkshopEnd,
+          [questionId]: answer,
+        },
       },
-    });
-    console.log(this.state);
+      () => {
+        console.log(this.state);
+      }
+    );
   }
 
   submitAllAnswers(surveyType) {
