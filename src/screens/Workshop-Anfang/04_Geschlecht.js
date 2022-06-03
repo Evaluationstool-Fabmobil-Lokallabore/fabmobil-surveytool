@@ -7,13 +7,16 @@ import robiTastatur from "../../assets/robi-gifs/Robi_tastatur-min.gif";
 
 const ANSWER_OPTIONS = ["divers", "weiblich", "männlich", "keine Angabe"];
 
-function getValueOfTextInput(options, data) {
-  console.log(options, data);
-  return "foobar";
-  //data.forEach(ANSWER_OPTIONS.indexOf(data) > -1) ? "" : data
+function changePredefinedValues(data, vals) {
+  return { ...data, predefinedValues: vals };
+}
+
+function changeFreeValue(data, val) {
+  return { ...data, freeValue: val };
 }
 
 function Screen({ data, onSubmit }) {
+  console.log(data);
   return (
     <>
       <div style={{ marginBottom: 203 }}>
@@ -24,15 +27,13 @@ function Screen({ data, onSubmit }) {
       <DoubleColumnContainer>
         <MultipleChoiceTool
           options={ANSWER_OPTIONS}
-          data={data}
-          onChange={onSubmit}
+          data={(data && data.predefinedValues) || null}
+          onChange={(vals) => onSubmit(changePredefinedValues(data, vals))}
         />
         <FabTextInput
           style={{ flex: 1 }}
-          value={getValueOfTextInput(ANSWER_OPTIONS, data)}
-          onChange={(val) => {
-            onSubmit([...data, val]);
-          }}
+          value={(data && data.freeValue) || null}
+          onChange={(val) => onSubmit(changeFreeValue(data, val))}
         />
       </DoubleColumnContainer>
 

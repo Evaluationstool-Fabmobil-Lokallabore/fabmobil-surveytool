@@ -4,7 +4,16 @@ import Layout from "./Layout";
 import StartScreen from "./screens/0_Start";
 import SURVEY_WORKSHOPSTART from "./constants/survey-workshopstart.js";
 import SURVEY_WORKSHOPEND from "./constants/survey-workshopend.js";
-import FirebaseClient from "./firebase/client";
+
+function reformatSurveyData(surveyData) {
+  const geschlecht = surveyData.geschlecht;
+  if (!geschlecht) return surveyData;
+  const geschlechtReformatted = [
+    ...geschlecht.predefinedValues,
+    geschlecht.freeValue,
+  ];
+  return { ...surveyData, geschlecht: geschlechtReformatted };
+}
 
 class App extends React.Component {
   constructor(props) {
@@ -24,30 +33,47 @@ class App extends React.Component {
   }
 
   logAnswerWorkshopStart(questionId, answer) {
-    this.setState({
-      ...this.state,
-      surveyAnswersWorkshopStart: {
-        ...this.state.surveyAnswersWorkshopStart,
-        [questionId]: answer,
+    this.setState(
+      {
+        ...this.state,
+        surveyAnswersWorkshopStart: {
+          ...this.state.surveyAnswersWorkshopStart,
+          [questionId]: answer,
+        },
       },
-    });
-    console.log(this.state);
+      () => {
+        console.log(this.state);
+      }
+    );
   }
 
   logAnswerWorkshopEnd(questionId, answer) {
-    this.setState({
-      ...this.state,
-      surveyAnswersWorkshopEnd: {
-        ...this.state.surveyAnswersWorkshopEnd,
-        [questionId]: answer,
+    this.setState(
+      {
+        ...this.state,
+        surveyAnswersWorkshopEnd: {
+          ...this.state.surveyAnswersWorkshopEnd,
+          [questionId]: answer,
+        },
       },
-    });
-    console.log(this.state);
+      () => {
+        console.log(this.state);
+      }
+    );
   }
 
   submitAllWorkshopStartAnswers() {
+    const url =
+      surveyType === "workshopStart"
+        ? DUMMY_DATABASE.WORKSHOP_START
+        : DUMMY_DATABASE.WORKSHOP_END;
+    const surveyData =
+      surveyType === "workshopStart"
+        ? this.state.surveyAnswersWorkshopStart
+        : this.state.surveyAnswersWorkshopEnd;
+    const reformattedSurveyData = reformatSurveyData(surveyData);
     const data = {
-      ...this.state.surveyAnswersWorkshopStart,
+      ...reformattedSurveyData,
       date: new Date().toLocaleString(),
     };
     console.log("submitted data", data);
