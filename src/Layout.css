@@ -8,6 +8,7 @@
   min-height: -moz-available;
   min-height: -webkit-stretch-available;
   min-height: stretch-available;
+  height: 100%;
 }
 
 .Header {
