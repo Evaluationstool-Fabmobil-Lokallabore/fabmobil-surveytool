@@ -6,8 +6,8 @@
   margin: 0 auto;
   min-height: 100vh; /* fall-back */
   min-height: -moz-available;
-  min-height: -webkit-fill-available;
-  min-height: fill-available;
+  min-height: -webkit-stretch-available;
+  min-height: stretch-available;
 }
 
 .Header {
