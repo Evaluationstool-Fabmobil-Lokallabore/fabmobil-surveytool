@@ -11,7 +11,7 @@ function Screen({ data, onSubmit }) {
   const navigate = useNavigate();
   return (
     <>
-      <div style={{ marginBottom: 250 }}>
+      <div style={{ marginBottom: "auto" }}>
         <p>Wie alt bist du denn?</p>
       </div>
       <DoubleColumnContainer style={{}}>

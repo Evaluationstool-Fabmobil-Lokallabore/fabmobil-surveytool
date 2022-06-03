@@ -6,7 +6,7 @@ import robiLongarmtouch from "../../assets/robi-gifs/Robi_longarmtouch-min.gif";
 function Screen({ data, onSubmit }) {
   return (
     <>
-      <div style={{ marginBottom: 175 }}>
+      <div style={{ marginBottom: 30 }}>
         <p>Und wie lautet deine Postleitzahl?</p>
       </div>
 
