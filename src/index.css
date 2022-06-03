@@ -12,6 +12,11 @@ html {
   --button-max-width: 480px;
 }
 
+html,
+body {
+  height: 100%;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -39,4 +44,8 @@ body {
   body {
     font-size: 40px;
   }
+}
+
+#root {
+  height: 100%;
 }
