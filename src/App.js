@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./Layout";
 import StartScreen from "./screens/0_Start";
+import FirebaseClient from "./firebase/client";
 import SURVEY_WORKSHOPSTART from "./constants/survey-workshopstart.js";
 import SURVEY_WORKSHOPEND from "./constants/survey-workshopend.js";
 
@@ -63,15 +64,9 @@ class App extends React.Component {
   }
 
   submitAllWorkshopStartAnswers() {
-    const url =
-      surveyType === "workshopStart"
-        ? DUMMY_DATABASE.WORKSHOP_START
-        : DUMMY_DATABASE.WORKSHOP_END;
-    const surveyData =
-      surveyType === "workshopStart"
-        ? this.state.surveyAnswersWorkshopStart
-        : this.state.surveyAnswersWorkshopEnd;
-    const reformattedSurveyData = reformatSurveyData(surveyData);
+    const reformattedSurveyData = reformatSurveyData(
+      this.state.surveyAnswersWorkshopStart
+    );
     const data = {
       ...reformattedSurveyData,
       date: new Date().toLocaleString(),

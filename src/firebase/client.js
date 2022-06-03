@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getDatabase, ref, child, get, push, set } from "firebase/database"; //import getterFunction of database service
+import { getDatabase, ref, push, set } from "firebase/database"; //import getterFunction of database service
 import firebaseConfig from "./config.js";
 
 class Client {
