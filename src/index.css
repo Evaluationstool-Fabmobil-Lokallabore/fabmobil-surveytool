@@ -15,6 +15,7 @@ html {
 html,
 body {
   height: 100%;
+  overscroll-behavior-y: contain; /* prevent pull-to-refresh in mobile Chrome
 }
 
 * {
