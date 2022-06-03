@@ -18,12 +18,12 @@ function Screen({ onSubmit, data }) {
         options={[column1, column2, column3]}
         data={data}
         onChange={onSubmit}
-        style={{ marginBottom: 130 }}
+        style={{ marginBottom: 0 }}
         styles={[
           [
             {}, //Tiefziehen
             { top: "50%" }, //Plotter
-            { bottom: "-19%" }, //Robo
+            { bottom: -40 }, //Robo
           ],
           [
             { top: "20%" }, //Scan
@@ -32,7 +32,7 @@ function Screen({ onSubmit, data }) {
           [
             { top: "5%" }, //VR
             { top: "50%", left: 0 }, //Laser
-            { bottom: 0, left: 0 }, //Stickmaschine
+            { bottom: 20, left: 0 }, //Stickmaschine
           ],
         ]}
       />

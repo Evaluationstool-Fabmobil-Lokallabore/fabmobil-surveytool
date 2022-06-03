@@ -41,6 +41,7 @@
   flex-direction: column;
   justify-content: normal;
   padding: 0 15px;
+  overflow: hidden;
 }
 
 @media (min-width: 830px) {
@@ -102,9 +103,9 @@
 
 .WeiterButton {
   width: 172px;
-  position: absolute;
-  bottom: 40px;
-  right: 17px;
+  margin-left: auto;
+  margin-bottom: 20px;
+  margin-top: auto;
 }
 
 .MultiplePictoChoiceTool {
@@ -125,7 +126,7 @@
 
 .ClickablePicto {
   cursor: pointer;
-  width: 109px;
+  height: 10vh;
 }
 
 .ClickablePicto--active {
@@ -145,6 +146,13 @@
   position: fixed;
   z-index: 999;
   pointer-events: none;
+}
+
+.RobiGifFlex {
+  flex-grow: 1;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
 }
 
 .FabSlider {
@@ -227,7 +235,21 @@
 .vertical-grid {
   display: grid;
   grid-gap: 26px;
+  overflow-y: scroll;
+  margin-bottom: 20px;
+  position: relative;
 }
+
+/*.vertical-grid::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 100;
+  width: 100%;
+  height: 10px;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.35), transparent);
+}*/
 
 .flex-vertical-center {
   display: flex;

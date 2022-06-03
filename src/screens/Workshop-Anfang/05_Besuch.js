@@ -23,7 +23,7 @@ function Screen({ data, onSubmit }) {
           Konntest du schon mal <br /> im Fabmobil <br /> rumexperimentieren?
         </p>
       </div>
-      <div style={{ marginTop: 200 }}>
+      <div style={{ marginTop: "auto" }}>
         <DoubleColumnContainer>
           <SingleChoiceTool
             options={ANSWER_OPTIONS}

@@ -2,7 +2,7 @@ import DoubleColumnContainer from "../../components/DoubleColumnContainer";
 import MultipleChoiceTool from "../../components/MultipleChoiceTool";
 import FabTextInput from "../../components/FabTextInput";
 import WeiterButton from "../../components/WeiterButton";
-import RobiGif from "../../components/RobiGif";
+import RobiGifFlex from "../../components/RobiGifFlex";
 import robiTastatur from "../../assets/robi-gifs/Robi_tastatur-min.gif";
 
 const ANSWER_OPTIONS = ["divers", "weiblich", "männlich", "keine Angabe"];
@@ -19,11 +19,12 @@ function Screen({ data, onSubmit }) {
   console.log(data);
   return (
     <>
-      <div style={{ marginBottom: 203 }}>
+      <div style={{ marginBottom: 0 }}>
         <p>
           Was hast du für ein <br /> Geschlecht?
         </p>
       </div>
+      <RobiGifFlex src={robiTastatur} />
       <DoubleColumnContainer>
         <MultipleChoiceTool
           options={ANSWER_OPTIONS}
@@ -38,10 +39,6 @@ function Screen({ data, onSubmit }) {
       </DoubleColumnContainer>
 
       <WeiterButton navigateTo="/losgehts/besuch" />
-      <RobiGif
-        src={robiTastatur}
-        style={{ width: 256, height: 256, left: 128, top: 106 }}
-      />
     </>
   );
 }

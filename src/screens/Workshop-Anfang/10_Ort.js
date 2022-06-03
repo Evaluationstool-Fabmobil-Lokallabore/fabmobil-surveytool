@@ -25,6 +25,7 @@ function Screen({ onSubmit, data }) {
       <div>
         <p>Wo bist du gerade?</p>
       </div>
+
       <div className="vertical-grid">
         <SingleChoiceTool
           options={ANSWER_OPTIONS}
@@ -35,6 +36,7 @@ function Screen({ onSubmit, data }) {
           }}
         />
       </div>
+
       <RobiGif
         src={robiLongarmslide}
         style={{ right: -300, top: -20, transform: "rotate(180deg)" }}
