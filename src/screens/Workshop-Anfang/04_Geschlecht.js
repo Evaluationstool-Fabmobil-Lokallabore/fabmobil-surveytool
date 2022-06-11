@@ -33,7 +33,7 @@ function Screen({ data, onSubmit }) {
         />
         <FabTextInput
           style={{ flex: 1 }}
-          value={(data && data.freeValue) || null}
+          value={(data && data.freeValue) || ""}
           onChange={(val) => onSubmit(changeFreeValue(data, val))}
         />
       </DoubleColumnContainer>

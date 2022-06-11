@@ -11,7 +11,7 @@ function Screen({ data, onSubmit }) {
       </div>
       <div className="flex-wrapper">
         <FabTextInput
-          value={data}
+          value={data || ""}
           minLength="5"
           maxLength="5"
           pattern={/[0-9]{5}/}

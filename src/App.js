@@ -9,10 +9,10 @@ import SURVEY_WORKSHOPEND from "./constants/survey-workshopend.js";
 function reformatSurveyData(surveyData) {
   const geschlecht = surveyData.geschlecht;
   if (!geschlecht) return surveyData;
-  const geschlechtReformatted = [
-    ...geschlecht.predefinedValues,
-    geschlecht.freeValue,
-  ];
+  const geschlechtReformatted = [...geschlecht.predefinedValues];
+  if (geschlecht.freeValue !== undefined) {
+    geschlechtReformatted.push(geschlecht.freeValue);
+  }
   return { ...surveyData, geschlecht: geschlechtReformatted };
 }
 

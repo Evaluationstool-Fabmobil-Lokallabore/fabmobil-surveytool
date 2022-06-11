@@ -12,7 +12,7 @@ function Screen({ onSubmit, onFinalSubmit, data }) {
         <p>Was ist dein Nickname?</p>
       </div>
       <RobiGifFlex src={robiTastatur} />
-      <FabTextInput value={data} onChange={onSubmit} />
+      <FabTextInput value={data || ""} onChange={onSubmit} />
       <p>
         (Merke dir diesen Namen. <br /> Du wirst ihn am Ende des Workshops
         nochmal brauchen.)
