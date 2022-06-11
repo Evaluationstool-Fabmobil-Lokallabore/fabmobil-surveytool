@@ -10,22 +10,26 @@ function Screen({ onSubmit, data }) {
       <div>
         <p>Wurden deine Erwartungen im Fabmobil erfüllt?</p>
       </div>
-      <FabSlider
-        imgTop={heartEmoji}
-        noBottomLabel
-        onChange={onSubmit}
-        value={isNaN(data) ? 0 : data}
-      />
+      <div className="flex-wrapper">
+        <FabSlider
+          imgTop={heartEmoji}
+          noBottomLabel
+          onChange={onSubmit}
+          value={isNaN(data) ? 0 : data}
+        />
+        <RobiGif
+          src={robiGoodBad}
+          style={{
+            position: "absolute",
+            width: 391,
+            left: -80,
+            bottom: -92,
+            transform: "rotate(7.4deg)",
+          }}
+        />
+      </div>
+
       <WeiterButton navigateTo="/wiewars/nextTime" />
-      <RobiGif
-        src={robiGoodBad}
-        style={{
-          width: 391,
-          left: -50,
-          bottom: -92,
-          transform: "rotate(7.4deg)",
-        }}
-      />
     </>
   );
 }

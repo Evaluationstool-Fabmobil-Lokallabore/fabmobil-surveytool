@@ -1,5 +1,5 @@
 import WeiterButton from "../../components/WeiterButton";
-import RobiGif from "../../components/RobiGif";
+import RobiGifFlex from "../../components/RobiGifFlex";
 
 function Screen() {
   return (
@@ -10,9 +10,8 @@ function Screen() {
           Fabmobil widmen.
         </p>
         <p>Viel Spass und bis später.</p>
-        <RobiGif style={{ left: 0, bottom: 130 }} />
       </div>
-
+      <RobiGifFlex style={{ marginTop: -100 }} />
       <WeiterButton text="fertig" navigateTo={"/"} />
     </>
   );

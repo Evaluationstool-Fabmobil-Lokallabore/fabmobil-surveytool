@@ -19,7 +19,7 @@ function Screen({ onSubmit, data }) {
       />
       <RobiGif
         src={robiLookaround}
-        style={{ width: 500, top: 100, right: -340 }}
+        style={{ width: 500, top: "20%", right: -340 }}
       />
       <WeiterButton navigateTo="/wiewars/dreiDDruck" />
     </>

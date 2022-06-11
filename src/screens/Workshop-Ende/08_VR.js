@@ -18,7 +18,7 @@ function Screen({ onSubmit, data }) {
         onChange={onSubmit}
         value={isNaN(data) ? 0 : data}
       />
-      <DoubleColumnContainer style={{ marginBottom: 126 }}>
+      <DoubleColumnContainer>
         <Fabutton
           isActive={data === "nicht benutzt"}
           onClick={() => {

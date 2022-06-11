@@ -18,12 +18,7 @@ function FabSlider(props) {
       </div>
 
       <div className="FabSlider__bar">
-        <div
-          className="FabSlider__bar__filler"
-          style={{
-            height: (value / (props.maxSteps || DEFAULT_STEP_MAX)) * 100 + "%",
-          }}
-        ></div>
+        <div className="FabSlider__bar__filler"></div>
         <Slider
           aria-label="Like"
           orientation="vertical"

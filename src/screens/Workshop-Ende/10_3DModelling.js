@@ -13,7 +13,7 @@ function Screen({ onSubmit, data }) {
   const nextRoute = "/wiewars/erwartungen";
   return (
     <>
-      <div style={{ marginBottom: 87 }}>
+      <div>
         <p>3D-Modelling rockt?</p>
       </div>
       <FabSlider
@@ -39,7 +39,7 @@ function Screen({ onSubmit, data }) {
       </DoubleColumnContainer>
       <RobiGif
         src={robiLongarmslide}
-        style={{ left: -300, top: 162, transform: "rotate(90deg)" }}
+        style={{ left: -300, top: "15%", transform: "rotate(90deg)" }}
       />
     </>
   );

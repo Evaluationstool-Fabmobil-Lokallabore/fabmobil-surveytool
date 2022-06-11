@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import SingleChoiceTool from "../../components/SingleChoiceTool";
-import RobiGif from "../../components/RobiGif";
+import RobiGifFlex from "../../components/RobiGifFlex";
 import robiGoodBad from "../../assets/robi-gifs/Robi_onebuttons_langsam-min.gif";
 
 const ANSWER_OPTIONS = [
@@ -14,9 +14,10 @@ function Screen({ onSubmit, data }) {
   const nextRoute = "/wiewars/engagieren";
   return (
     <>
-      <div style={{ marginBottom: 177 }}>
+      <div>
         <p>Hättest du gern ein regelmässiges Angebot wie das Fabmobil?</p>
       </div>
+      <RobiGifFlex src={robiGoodBad} style={{ marginTop: -30 }} />
       <div className="vertical-grid">
         <SingleChoiceTool
           answer={data}
@@ -27,14 +28,6 @@ function Screen({ onSubmit, data }) {
           }}
         />
       </div>
-      <RobiGif
-        src={robiGoodBad}
-        style={{
-          width: 225,
-          left: 167,
-          top: 183,
-        }}
-      />
     </>
   );
 }

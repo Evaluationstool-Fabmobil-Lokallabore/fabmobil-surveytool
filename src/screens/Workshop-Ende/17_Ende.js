@@ -1,5 +1,5 @@
 import WeiterButton from "../../components/WeiterButton";
-import RobiGif from "../../components/RobiGif";
+import RobiGifFlex from "../../components/RobiGifFlex";
 
 function Screen() {
   return (
@@ -7,9 +7,8 @@ function Screen() {
       <div>
         <p>Danke dass du mir so viele Fragen beantwortet hast.</p>
         <p>Es war schön dich kennenzulernen.</p>
-        <RobiGif style={{ left: 0, bottom: 130 }} />
       </div>
-
+      <RobiGifFlex style={{ marginTop: -130 }} />
       <WeiterButton text="fertig" navigateTo={"/"} />
     </>
   );
