@@ -172,6 +172,19 @@
   background-position: left;
 }
 
+.RobiGifSpecial {
+  position: fixed;
+  pointer-events: none;
+  top: 5px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  margin-left: 29px;
+}
+
+.RobiGifSpecial img {
+  height: 100%;
+}
+
 .FabSlider {
   position: relative;
   display: flex;
