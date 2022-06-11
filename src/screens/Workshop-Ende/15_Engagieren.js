@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import SingleChoiceTool from "../../components/SingleChoiceTool";
-import RobiGifFlex from "../../components/RobiGifFlex";
+import RobiGif from "../../components/RobiGif";
 import robiSprung from "../../assets/robi-gifs/Robi_sprung-min.gif";
 
 const ANSWER_OPTIONS = [
@@ -18,18 +18,15 @@ function Screen({ onSubmit, data }) {
       <div>
         <p>Hättest du Lust dich in einem regelmäßigen Angebot zu engagieren?</p>
       </div>
-      <RobiGifFlex
+      <RobiGif
         src={robiSprung}
         style={{
-          width: 391,
-          left: -50,
-          top: 100,
-          backgroundSize: "contain",
-          backgroundPosition: "left",
-          backgroundRepeat: "repeat-x",
+          width: "100%",
+          left: 0,
+          top: 0,
         }}
       />
-      <div className="vertical-grid">
+      <div className="vertical-grid" style={{ marginTop: "auto" }}>
         <SingleChoiceTool
           answer={data}
           options={ANSWER_OPTIONS}

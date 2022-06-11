@@ -18,7 +18,10 @@ function Screen({ onSubmit, data }) {
       <div>
         <p>Wie spannend findest du 3D-Druck?</p>
       </div>
-      <RobiGifFlex src={robiButtons} />
+      <RobiGifFlex
+        src={robiButtons}
+        style={{ marginTop: -23, marginBottom: 12 }}
+      />
       <div className="vertical-grid">
         <SingleChoiceTool
           options={ANSWER_OPTIONS}

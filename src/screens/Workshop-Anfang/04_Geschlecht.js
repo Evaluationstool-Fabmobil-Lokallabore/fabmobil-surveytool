@@ -24,7 +24,7 @@ function Screen({ data, onSubmit }) {
           Was hast du für ein <br /> Geschlecht?
         </p>
       </div>
-      <RobiGifFlex src={robiTastatur} />
+      <RobiGifFlex src={robiTastatur} style={{ marginTop: -52 }} />
       <DoubleColumnContainer>
         <MultipleChoiceTool
           options={ANSWER_OPTIONS}

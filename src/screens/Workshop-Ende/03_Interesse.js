@@ -15,10 +15,7 @@ function Screen({ onSubmit, data }) {
           Hat das Fabmobil dein Interesse für digitale Technologien geweckt?
         </p>
       </div>
-      <RobiGifFlex
-        src={robiTastaturAgro}
-        style={{ width: 200, left: 175, top: 182 }}
-      />
+      <RobiGifFlex src={robiTastaturAgro} style={{ maxHeight: 200 }} />
       <div className="vertical-grid">
         <SingleChoiceTool
           options={ANSWER_OPTIONS}

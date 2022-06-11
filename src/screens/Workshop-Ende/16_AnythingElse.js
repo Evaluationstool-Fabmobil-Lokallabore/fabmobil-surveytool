@@ -14,7 +14,11 @@ function Screen({ onSubmit, onFinalSubmit, data }) {
       </div>
       <RobiGifFlex src={robiTastatur} />
       <div className="flex-wrapper">
-        <FabTextArea value={data} onChange={onSubmit} />
+        <FabTextArea
+          value={data}
+          onChange={onSubmit}
+          style={{ marginBottom: "auto" }}
+        />
       </div>
       <SubmitButton
         onClick={() => {
