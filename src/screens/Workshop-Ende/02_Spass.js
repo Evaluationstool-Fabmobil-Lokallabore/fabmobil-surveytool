@@ -6,6 +6,7 @@ import happyFabmobil from "../../assets/pictograms/FM-Emoji_ohneRand30.png";
 import sadFabmobil from "../../assets/pictograms/FM-Emoji_ohneRand3.png";
 
 function Screen({ onSubmit, data }) {
+  console.log(data);
   return (
     <>
       <div>

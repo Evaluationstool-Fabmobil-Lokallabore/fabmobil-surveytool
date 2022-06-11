@@ -6,7 +6,7 @@ const DEFAULT_STEP_MAX = 5;
 const DEFAULT_VALUE = null;
 
 function FabSlider(props) {
-  const value = props.value === "undefined" ? DEFAULT_VALUE : props.value;
+  const value = props.value === undefined ? DEFAULT_VALUE : props.value;
   return (
     <div className="FabSlider">
       <div className="FabSlider__elementTop">
@@ -18,7 +18,12 @@ function FabSlider(props) {
       </div>
 
       <div className="FabSlider__bar">
-        <div className="FabSlider__bar__filler"></div>
+        <div
+          className="FabSlider__bar__filler"
+          style={{
+            height: (value / (props.maxSteps || DEFAULT_STEP_MAX)) * 100 + "%",
+          }}
+        ></div>
         <Slider
           aria-label="Like"
           orientation="vertical"
