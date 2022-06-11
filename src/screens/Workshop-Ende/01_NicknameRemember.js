@@ -1,8 +1,24 @@
+import { useState, useEffect, useRef } from "react";
 import FabTextInput from "../../components/FabTextInput";
 import WeiterButton from "../../components/WeiterButton";
-import RobiGifComposite from "../../components/RobiGifFlexComposite";
+import RobiGifComposite from "../../components/RobiGifComposite";
 
 function Screen({ onSubmit, data }) {
+  const containerRef = useRef(null);
+  const [foobar, setFoobar] = useState(0);
+  const calcFoobar = () => {
+    return containerRef.current.offsetHeight / 2 + 100;
+  };
+  useEffect(() => {
+    setFoobar(calcFoobar());
+    const resizeListener = () => {
+      setFoobar(calcFoobar());
+    };
+    window.addEventListener("resize", resizeListener);
+    return () => {
+      window.removeEventListener("resize", resizeListener);
+    };
+  }, []);
   return (
     <>
       <div>
@@ -10,9 +26,21 @@ function Screen({ onSubmit, data }) {
         <p>Verrätst du mir deinen Nicknamen?</p>
       </div>
 
-      <FabTextInput value={data} onChange={onSubmit} />
-      <RobiGifComposite style={{ marginTop: -50 }} />
+      <div
+        className="flex-wrapper"
+        style={{ position: "relative" }}
+        ref={containerRef}
+      >
+        <FabTextInput
+          value={data}
+          onChange={onSubmit}
+          style={{ marginTop: -65 }}
+        />
+      </div>
       <WeiterButton navigateTo="/wiewars/spass" />
+      <RobiGifComposite
+        style={{ bottom: 0, left: 0, height: foobar, marginBottom: 0 }}
+      />
     </>
   );
 }

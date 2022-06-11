@@ -28,7 +28,11 @@ function Screen({ data, onSubmit }) {
       <div>
         <p>Wie alt bist du denn?</p>
       </div>
-      <div className="flex-wrapper" ref={containerRef}></div>
+      <div
+        className="flex-wrapper"
+        ref={containerRef}
+        style={{ maxHeight: 200 }}
+      ></div>
       <DoubleColumnContainer style={{}}>
         <SingleChoiceTool
           options={ANSWER_OPTIONS}

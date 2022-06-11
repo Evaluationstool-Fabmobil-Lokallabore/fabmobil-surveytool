@@ -16,7 +16,7 @@ function Screen() {
       </div>
       <WeiterButton text="klar" navigateTo="/losgehts/alter" />
       <RobiGifComposite
-        style={{ position: "absolute", left: -48, bottom: 0 }}
+        style={{ position: "absolute", height: "50%", left: -48, bottom: 0 }}
       />
     </>
   );
