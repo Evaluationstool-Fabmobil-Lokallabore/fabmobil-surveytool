@@ -1,4 +1,4 @@
-import "./Layout.css";
+import "./Layout.scss";
 import Header from "./components/Header";
 import Main from "./components/Main";
 
