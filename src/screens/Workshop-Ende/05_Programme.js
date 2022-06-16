@@ -25,21 +25,20 @@ function Screen({ onSubmit, data }) {
           options={[column1, column2, column3]}
           data={data}
           onChange={onSubmit}
-          style={{ marginBottom: 130 }}
+          style={{}}
           styles={[
             [
               {}, //Tiefziehen
-              { top: "50%" }, //Plotter
-              { bottom: "-19%" }, //Robo
+              { top: "50%" }, //Calliope
+              { bottom: "-9%" }, //SculptGL
             ],
             [
-              { top: "20%" }, //Scan
-              { bottom: "8%" }, //3D-Print
+              { top: "20%" }, //Blender
+              { bottom: "8%" }, //TinkerCAD
             ],
             [
-              { top: "5%" }, //VR
-              { top: "50%", left: 0 }, //Laser
-              { bottom: 0, left: 0 }, //Stickmaschine
+              { top: "5%" }, //Arduino
+              { top: "50%", left: 0 }, //Inkscape
             ],
           ]}
         />

@@ -31,7 +31,7 @@ function Screen({ onSubmit, data }) {
         style={{
           width: 500,
           left: -194,
-          top: 645,
+          bottom: -358,
         }}
       />
     </>

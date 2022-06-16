@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import DoubleColumnContainer from "../../components/DoubleColumnContainer";
 import SingleChoiceTool from "../../components/SingleChoiceTool";
 import RobiGif from "../../components/RobiGif";
+import RobiGifFlex from "../../components/RobiGifFlex";
 import robiTouch from "../../assets/robi-gifs/Robi_touch-min.gif";
 
 const ANSWER_OPTIONS = [
@@ -23,6 +24,13 @@ function Screen({ data, onSubmit }) {
           Konntest du schon mal <br /> im Fabmobil <br /> rumexperimentieren?
         </p>
       </div>
+      <RobiGifFlex
+        src={robiTouch}
+        style={{
+          marginTop: -160,
+          transform: "rotate(-165deg) translate(-49vw, 0)",
+        }}
+      />
       <div style={{ marginTop: "auto" }}>
         <DoubleColumnContainer>
           <SingleChoiceTool
@@ -34,16 +42,6 @@ function Screen({ data, onSubmit }) {
             }}
           />
         </DoubleColumnContainer>
-        <RobiGif
-          src={robiTouch}
-          style={{
-            width: 405,
-            height: 405,
-            left: 100,
-            top: 22,
-            transform: "rotate(-165deg)",
-          }}
-        />
       </div>
     </>
   );
