@@ -28,18 +28,17 @@ function Screen({ onSubmit, data }) {
           style={{ marginBottom: 0 }}
           styles={[
             [
-              {}, //Tiefziehen
-              { top: "50%" }, //Plotter
-              { bottom: "-19%" }, //Robo
+              {}, //Tiltbrush
+              {}, //Caliope
+              {}, //SculptGL
             ],
             [
-              { top: "20%" }, //Scan
-              { bottom: "8%" }, //3D-Print
+              {}, //Blender
+              {}, //TinkerCAD
             ],
             [
-              { top: "5%" }, //VR
-              { top: "50%", left: 0 }, //Laser
-              { bottom: 0, left: 0 }, //Stickmaschine
+              {}, //Arduino
+              {}, //Incscape
             ],
           ]}
         />
