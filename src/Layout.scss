@@ -340,7 +340,7 @@
     grid-gap: 26px;
   }
 }
-@media (min-height: $breakpoint-width-tablet) {
+@media (min-width: $breakpoint-width-tablet) {
   .vertical-grid {
     margin: 0 auto;
   }

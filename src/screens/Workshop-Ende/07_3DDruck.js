@@ -20,7 +20,7 @@ function Screen({ onSubmit, data }) {
       </div>
       <RobiGifFlex
         src={robiButtons}
-        style={{ marginTop: -23, marginBottom: 12 }}
+        style={{ marginTop: -23, marginBottom: 12, maxHeight: 300 }}
       />
       <div className="vertical-grid">
         <SingleChoiceTool

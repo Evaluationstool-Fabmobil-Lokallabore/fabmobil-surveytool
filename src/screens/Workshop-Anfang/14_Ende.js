@@ -11,7 +11,7 @@ function Screen() {
         </p>
         <p>Viel Spass und bis später.</p>
       </div>
-      <RobiGifFlex style={{ marginTop: -100 }} />
+      <RobiGifFlex style={{ marginTop: -100, maxHeight: 500 }} />
       <WeiterButton text="fertig" navigateTo={"/"} />
     </>
   );

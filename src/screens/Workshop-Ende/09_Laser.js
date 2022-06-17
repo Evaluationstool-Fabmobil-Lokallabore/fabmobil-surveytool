@@ -18,10 +18,7 @@ function Screen({ onSubmit, data }) {
       <div>
         <p>Lasercutter....dein Ding?</p>
       </div>
-      <RobiGifFlex
-        src={robiSlider}
-        style={{ width: 204, left: 75, top: 195 }}
-      />
+      <RobiGifFlex src={robiSlider} style={{ width: "100%", maxHeight: 300 }} />
 
       <div className="vertical-grid">
         <SingleChoiceTool

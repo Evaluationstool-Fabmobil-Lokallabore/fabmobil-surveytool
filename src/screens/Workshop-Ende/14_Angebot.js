@@ -17,7 +17,10 @@ function Screen({ onSubmit, data }) {
       <div>
         <p>Hättest du gern ein regelmässiges Angebot wie das Fabmobil?</p>
       </div>
-      <RobiGifFlex src={robiGoodBad} style={{ marginTop: -30 }} />
+      <RobiGifFlex
+        src={robiGoodBad}
+        style={{ marginTop: -30, maxHeight: 300 }}
+      />
       <div className="vertical-grid">
         <SingleChoiceTool
           answer={data}

@@ -22,8 +22,7 @@ function Screen({ onSubmit, data }) {
         src={robiSprung}
         style={{
           width: "100%",
-          left: 0,
-          top: 0,
+          maxHeight: 300,
         }}
       />
       <div className="vertical-grid" style={{ marginTop: "auto" }}>
