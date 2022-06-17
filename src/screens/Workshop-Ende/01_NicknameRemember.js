@@ -9,6 +9,10 @@ function Screen({ onSubmit, data }) {
   const calcFoobar = () => {
     return containerRef.current.offsetHeight / 2 + 100;
   };
+  const hasUserAnswered = () => {
+    if (!data || data.length < 1) return false;
+    return true;
+  };
   useEffect(() => {
     setFoobar(calcFoobar());
     const resizeListener = () => {
@@ -37,7 +41,7 @@ function Screen({ onSubmit, data }) {
           style={{ marginTop: -65 }}
         />
       </div>
-      <WeiterButton navigateTo="/wiewars/spass" />
+      <WeiterButton enabled={hasUserAnswered()} navigateTo="/wiewars/spass" />
       <RobiGifComposite
         style={{ bottom: 0, left: 0, height: foobar, marginBottom: 0 }}
       />
