@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import DoubleColumnContainer from "../../components/DoubleColumnContainer";
 import SingleChoiceTool from "../../components/SingleChoiceTool";
-import RobiGif from "../../components/RobiGif";
 import RobiGifFlex from "../../components/RobiGifFlex";
 import robiTouch from "../../assets/robi-gifs/Robi_touch-min.gif";
 
