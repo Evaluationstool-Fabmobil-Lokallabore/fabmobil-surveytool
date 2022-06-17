@@ -37,13 +37,9 @@ function Screen({ onSubmit, data }) {
           onChange={onSubmit}
           style={{}}
           styles={[
-            [{ top: "30%" }, { bottom: "14%", left: "5%" }, { bottom: "-19%" }],
-            [{ top: "10%", left: "-50%" }, { bottom: "20%" }],
-            [
-              { top: "0%" },
-              { top: "30%", left: "-30%" },
-              { bottom: 0, left: 0 },
-            ],
+            [{}, {}, {}],
+            [{}, {}],
+            [{}, {}, {}],
           ]}
         />
       </div>

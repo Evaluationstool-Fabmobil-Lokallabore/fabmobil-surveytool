@@ -28,17 +28,17 @@ function Screen({ onSubmit, data }) {
           styles={[
             [
               {}, //Tiefziehen
-              { top: "50%" }, //Plotter
-              { bottom: "-9%" }, //Robo
+              {}, //Plotter
+              {}, //Robo
             ],
             [
-              { top: "20%" }, //Scan
-              { bottom: "8%" }, //3D-Print
+              {}, //Scan
+              {}, //3D-Print
             ],
             [
-              { top: "5%" }, //VR
-              { top: "50%", left: 0 }, //Laser
-              { bottom: 0, left: 0 }, //Stickmaschine
+              {}, //VR
+              {}, //Laser
+              {}, //Stickmaschine
             ],
           ]}
         />

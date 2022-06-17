@@ -29,16 +29,16 @@ function Screen({ onSubmit, data }) {
           styles={[
             [
               {}, //Tiefziehen
-              { top: "50%" }, //Calliope
-              { bottom: "-9%" }, //SculptGL
+              {}, //Calliope
+              {}, //SculptGL
             ],
             [
-              { top: "20%" }, //Blender
-              { bottom: "8%" }, //TinkerCAD
+              {}, //Blender
+              {}, //TinkerCAD
             ],
             [
-              { top: "5%" }, //Arduino
-              { top: "50%", left: 0 }, //Inkscape
+              {}, //Arduino
+              {}, //Inkscape
             ],
           ]}
         />
