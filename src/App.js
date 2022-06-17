@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./Layout";
 import StartScreen from "./screens/0_Start";
+import DataExportScreen from "./screens/X_Data-Export";
 import FirebaseClient from "./firebase/client";
 import SURVEY_WORKSHOPSTART from "./constants/survey-workshopstart.js";
 import SURVEY_WORKSHOPEND from "./constants/survey-workshopend.js";
@@ -146,6 +147,7 @@ class App extends React.Component {
 
               <Route path="*" element={<p>There's nothing here!</p>} />
             </Route>
+            <Route path="/data-export" element={<DataExportScreen />} />
           </Routes>
         </BrowserRouter>
       </>
