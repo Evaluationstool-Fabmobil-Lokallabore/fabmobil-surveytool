@@ -8,8 +8,11 @@ import SURVEY_WORKSHOPEND from "./constants/survey-workshopend.js";
 
 function reformatSurveyData(surveyData) {
   const geschlecht = surveyData.geschlecht;
+  let geschlechtReformatted = [];
   if (!geschlecht) return surveyData;
-  const geschlechtReformatted = [...geschlecht.predefinedValues];
+  if (!geschlecht.predefinedValues || geschlecht.predefinedValues.length > 0) {
+    geschlechtReformatted = [...geschlecht.predefinedValues];
+  }
   if (geschlecht.freeValue !== undefined) {
     geschlechtReformatted.push(geschlecht.freeValue);
   }
