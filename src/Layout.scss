@@ -52,9 +52,9 @@
   overflow: hidden;
 }
 
-@media (min-width: 830px) {
+@media (min-width: $breakpoint-width-tablet) {
   .Main {
-    padding: 40px;
+    padding: 0 40px 40px;
   }
 }
 
@@ -76,9 +76,17 @@
   }
 }
 
-@media (min-width: 830px) {
+@media (min-width: $breakpoint-width-tablet) {
   .Fabutton {
     height: 94px;
+    font-size: 35px;
+    width: var(--button-max-width);
+  }
+
+  .vertical-grid .Fabutton {
+    font-size: 24px;
+    height: 65px;
+    width: 340px;
   }
 }
 
@@ -92,6 +100,13 @@
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+}
+
+@media (min-width: $breakpoint-width-tablet) {
+  .DoubleColumnContainer {
+    max-width: 486px;
+    margin: 0 auto;
+  }
 }
 
 .DoubleColumnContainer > div {
@@ -114,7 +129,7 @@
   flex-grow: 1;
 }
 
-@media (min-width: 830px) {
+@media (min-width: $breakpoint-width-tablet) {
   .DoubleColumnContainer > div {
     margin-bottom: 37px;
   }
@@ -126,6 +141,12 @@
   margin-bottom: 20px;
   margin-top: auto;
   flex-shrink: 0;
+}
+
+@media (min-width: $breakpoint-width-tablet) {
+  .WeiterButton {
+    width: 244px;
+  }
 }
 
 .MultiplePictoChoiceTool {
@@ -266,6 +287,12 @@
   max-width: var(--button-max-width);
 }
 
+@media (min-width: $breakpoint-width-tablet) {
+  .FabTextInput {
+    margin: 0 auto;
+  }
+}
+
 .FabTextInput__input {
   width: 100%;
   height: var(--button-height-short);
@@ -281,10 +308,10 @@
   }
 }
 
-@media (min-width: 830px) {
+@media (min-width: $breakpoint-width-tablet) {
   .FabTextInput__input {
     height: var(--button-height-tablet);
-    width: 244px;
+    width: 480px;
   }
 }
 
@@ -311,6 +338,11 @@
 @media (min-height: $breakpoint-height) {
   .vertical-grid {
     grid-gap: 26px;
+  }
+}
+@media (min-height: $breakpoint-width-tablet) {
+  .vertical-grid {
+    margin: 0 auto;
   }
 }
 

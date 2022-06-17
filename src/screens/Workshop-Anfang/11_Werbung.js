@@ -22,10 +22,7 @@ function Screen({ onSubmit, data }) {
       <div>
         <p>Wie hast du vom Fabmobil gehört?</p>
       </div>
-      <div
-        className="vertical-grid"
-        style={{ height: 472, overflow: "scroll" }}
-      >
+      <div className="vertical-grid">
         <MultipleChoiceTool
           options={ANSWER_OPTIONS}
           data={data}

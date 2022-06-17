@@ -4,12 +4,25 @@ function Screen() {
   return (
     <>
       <div className="flex-vertical-center">
-        <FabuttonNext to="/losgehts/anmeldung" style={{ marginBottom: 26 }}>
-          Workshop Start
-        </FabuttonNext>
-        <FabuttonNext to="/wiewars/nickname" wait={0}>
-          Workshop Ende
-        </FabuttonNext>
+        <div>
+          <FabuttonNext
+            to="/losgehts/anmeldung"
+            style={{
+              marginBottom: 26,
+              marginLeft: "auto",
+              marginRight: "auto",
+            }}
+          >
+            Workshop Start
+          </FabuttonNext>
+          <FabuttonNext
+            to="/wiewars/nickname"
+            wait={0}
+            style={{ margin: "0 auto" }}
+          >
+            Workshop Ende
+          </FabuttonNext>
+        </div>
       </div>
     </>
   );
