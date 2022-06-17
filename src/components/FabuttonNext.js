@@ -2,11 +2,21 @@ import { useNavigate } from "react-router-dom";
 import classNames from "classnames";
 import Fabutton from "./Fabutton";
 
-function FabuttonNext({ to, onClick = () => {}, children, className, style }) {
+function FabuttonNext({
+  enabled = true,
+  to,
+  onClick = () => {},
+  children,
+  className,
+  style,
+}) {
   const navigate = useNavigate();
   return (
     <Fabutton
-      className={classNames("FabuttonNext", className)}
+      enabled={enabled}
+      className={classNames("FabuttonNext", className, {
+        "FabuttonNext--disabled": !enabled,
+      })}
       style={style}
       onClick={() => {
         onClick();

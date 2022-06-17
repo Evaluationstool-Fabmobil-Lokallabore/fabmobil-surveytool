@@ -1,8 +1,13 @@
 import FabuttonNext from "./FabuttonNext";
 
-function WeiterButton({ navigateTo, text, style }) {
+function WeiterButton({ enabled = true, navigateTo, text, style }) {
   return (
-    <FabuttonNext to={navigateTo || "#"} className="WeiterButton" style={style}>
+    <FabuttonNext
+      enabled={enabled}
+      to={navigateTo || "#"}
+      className="WeiterButton"
+      style={style}
+    >
       {text || "weiter"}
     </FabuttonNext>
   );

@@ -143,10 +143,20 @@
   flex-shrink: 0;
 }
 
+.WeiterButton--disabled {
+  pointer-events: none;
+  color: gray;
+}
+
 @media (min-width: $breakpoint-width-tablet) {
   .WeiterButton {
     width: 244px;
   }
+}
+
+.FabuttonNext--disabled {
+  pointer-events: none;
+  color: gray;
 }
 
 .MultiplePictoChoiceTool {

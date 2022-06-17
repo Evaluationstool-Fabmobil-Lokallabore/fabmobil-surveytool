@@ -5,6 +5,10 @@ import RobiGifFlex from "../../components/RobiGifFlex";
 import robiTastatur from "../../assets/robi-gifs/Robi_tastatur-min.gif";
 
 function Screen({ onSubmit, onFinalSubmit, data }) {
+  const hasUserAnswered = () => {
+    if (!data || data.length < 1) return false;
+    return true;
+  };
   const navigate = useNavigate();
   return (
     <>
@@ -18,6 +22,7 @@ function Screen({ onSubmit, onFinalSubmit, data }) {
         nochmal brauchen.)
       </p>
       <SubmitButton
+        enabled={hasUserAnswered()}
         onClick={() => {
           onFinalSubmit();
           setTimeout(() => navigate("/losgehts/ende"), 500);
