@@ -5,10 +5,10 @@ import Main from "./components/Main";
 import { Outlet } from "react-router-dom";
 import React from "react";
 
-function App() {
+function Layout({ onLogoClick = () => {} }) {
   return (
     <div className="Layout">
-      <Header />
+      <Header onLogoClick={onLogoClick} />
       <Main>
         <Outlet />
       </Main>
@@ -16,4 +16,4 @@ function App() {
   );
 }
 
-export default App;
+export default Layout;
