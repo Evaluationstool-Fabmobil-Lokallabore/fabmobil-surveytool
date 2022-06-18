@@ -52,8 +52,8 @@ function Screen() {
       const content = e.target.result;
       const data = JSON.parse(content);
       console.log("parsed data", data);
-      const dataWsStart = data["answersWorkshopStart"];
-      const dataWsEnd = data["answersWorkshopEnd"];
+      const dataWsStart = data["answersWorkshopStart"] || {};
+      const dataWsEnd = data["answersWorkshopEnd"] || {};
       try {
         const WsStartReformatted = Object.keys(dataWsStart)
           .map((fireBaseResponseId) => ({

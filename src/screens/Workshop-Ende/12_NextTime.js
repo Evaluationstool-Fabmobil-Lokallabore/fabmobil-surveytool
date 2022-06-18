@@ -23,27 +23,17 @@ function Screen({ onSubmit, data }) {
           gerne ausprobieren?
         </p>
       </div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          flex: 1,
-          position: "relative",
-        }}
-      >
-        <MultiplePictoChoice
-          options={[column1, column2, column3]}
-          data={data}
-          onChange={onSubmit}
-          style={{}}
-          styles={[
-            [{}, {}, {}],
-            [{}, {}],
-            [{}, {}, {}],
-          ]}
-        />
-      </div>
-
+      <MultiplePictoChoice
+        options={[column1, column2, column3]}
+        data={data}
+        onChange={onSubmit}
+        style={{}}
+        styles={[
+          [{}, {}, {}],
+          [{}, {}],
+          [{}, {}, {}],
+        ]}
+      />
       <WeiterButton navigateTo="/wiewars/atmo" />
     </>
   );

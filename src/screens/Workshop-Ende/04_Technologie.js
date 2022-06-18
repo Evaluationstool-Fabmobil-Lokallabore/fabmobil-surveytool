@@ -13,36 +13,27 @@ function Screen({ onSubmit, data }) {
       <div>
         <p>Welche Technologien hast du benutzt?</p>
       </div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          flex: 1,
-          position: "relative",
-        }}
-      >
-        <MultiplePictoChoice
-          options={[column1, column2, column3]}
-          data={data}
-          onChange={onSubmit}
-          styles={[
-            [
-              {}, //Tiefziehen
-              {}, //Plotter
-              {}, //Robo
-            ],
-            [
-              {}, //Scan
-              {}, //3D-Print
-            ],
-            [
-              {}, //VR
-              {}, //Laser
-              {}, //Stickmaschine
-            ],
-          ]}
-        />
-      </div>
+      <MultiplePictoChoice
+        options={[column1, column2, column3]}
+        data={data}
+        onChange={onSubmit}
+        styles={[
+          [
+            {}, //Tiefziehen
+            {}, //Plotter
+            {}, //Robo
+          ],
+          [
+            {}, //Scan
+            {}, //3D-Print
+          ],
+          [
+            {}, //VR
+            {}, //Laser
+            {}, //Stickmaschine
+          ],
+        ]}
+      />
 
       <WeiterButton navigateTo="/wiewars/programme" />
     </>

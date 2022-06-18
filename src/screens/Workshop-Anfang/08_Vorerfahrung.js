@@ -13,37 +13,28 @@ function Screen({ onSubmit, data }) {
       <div>
         <p>Welche Technologien hast du denn vor dem Kurs schon ausprobiert? </p>
       </div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          flex: 1,
-          position: "relative",
-        }}
-      >
-        <MultiplePictoChoiceTool
-          options={[column1, column2, column3]}
-          data={data}
-          onChange={onSubmit}
-          style={{ marginBottom: 0 }}
-          styles={[
-            [
-              {}, //Tiltbrush
-              {}, //Caliope
-              {}, //SculptGL
-            ],
-            [
-              {}, //Blender
-              {}, //TinkerCAD
-            ],
-            [
-              {}, //Arduino
-              {}, //Incscape
-            ],
-          ]}
-        />
-      </div>
 
+      <MultiplePictoChoiceTool
+        options={[column1, column2, column3]}
+        data={data}
+        onChange={onSubmit}
+        style={{ marginBottom: 0 }}
+        styles={[
+          [
+            {}, //Tiltbrush
+            {}, //Caliope
+            {}, //SculptGL
+          ],
+          [
+            {}, //Blender
+            {}, //TinkerCAD
+          ],
+          [
+            {}, //Arduino
+            {}, //Incscape
+          ],
+        ]}
+      />
       <WeiterButton navigateTo="/losgehts/anzahlTage" />
     </>
   );

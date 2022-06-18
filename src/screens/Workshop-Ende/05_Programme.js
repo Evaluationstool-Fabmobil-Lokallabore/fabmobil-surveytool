@@ -13,37 +13,28 @@ function Screen({ onSubmit, data }) {
       <div>
         <p>Was hast du ausprobiert? </p>
       </div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          flex: 1,
-          position: "relative",
-        }}
-      >
-        <MultiplePictoChoiceTool
-          options={[column1, column2, column3]}
-          data={data}
-          onChange={onSubmit}
-          style={{}}
-          styles={[
-            [
-              {}, //Tiefziehen
-              {}, //Calliope
-              {}, //SculptGL
-            ],
-            [
-              {}, //Blender
-              {}, //TinkerCAD
-            ],
-            [
-              {}, //Arduino
-              {}, //Inkscape
-            ],
-          ]}
-        />
-      </div>
 
+      <MultiplePictoChoiceTool
+        options={[column1, column2, column3]}
+        data={data}
+        onChange={onSubmit}
+        style={{}}
+        styles={[
+          [
+            {}, //Tiefziehen
+            {}, //Calliope
+            {}, //SculptGL
+          ],
+          [
+            {}, //Blender
+            {}, //TinkerCAD
+          ],
+          [
+            {}, //Arduino
+            {}, //Inkscape
+          ],
+        ]}
+      />
       <WeiterButton navigateTo="/wiewars/betreuung" />
     </>
   );
