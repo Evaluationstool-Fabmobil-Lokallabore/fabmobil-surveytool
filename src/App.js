@@ -90,10 +90,12 @@ class App extends React.Component {
 
   onFinalSubmitWorkshopStart() {
     this.submitAllWorkshopStartAnswers();
+    this.resetSurveyData();
   }
 
   onFinalSubmitWorkshopEnd() {
     this.submitAllWorkshopEndAnswers();
+    this.resetSurveyData();
   }
 
   render() {
