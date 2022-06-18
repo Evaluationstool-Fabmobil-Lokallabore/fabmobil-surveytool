@@ -1,6 +1,13 @@
+import { useEffect } from "react";
 import FabuttonNext from "../components/FabuttonNext";
+import { preloadPictograms, preloadRoboGifs } from "../helpers/preloadImages";
 
 function Screen() {
+  useEffect(() => {
+    // Anything in here is fired on component mount.
+    preloadPictograms();
+    preloadRoboGifs();
+  }, []);
   return (
     <>
       <div className="flex-vertical-center">
