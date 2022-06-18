@@ -103,7 +103,16 @@ class App extends React.Component {
       <>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Layout />}>
+            <Route
+              path="/"
+              element={
+                <Layout
+                  onLogoClick={() => {
+                    this.resetSurveyData();
+                  }}
+                />
+              }
+            >
               <Route path="" element={<StartScreen />} />
 
               {SURVEY_WORKSHOPSTART.surveyItems.map((item) => (
