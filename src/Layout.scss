@@ -136,7 +136,7 @@
 }
 
 .WeiterButton {
-  width: 172px;
+  width: 135px;
   margin-left: auto;
   margin-bottom: 20px;
   margin-top: auto;
@@ -146,6 +146,12 @@
 .WeiterButton--disabled {
   pointer-events: none;
   color: gray;
+}
+
+@media (min-height: $breakpoint-height) {
+  .WeiterButton {
+    width: 172px;
+  }
 }
 
 @media (min-width: $breakpoint-width-tablet) {
@@ -165,6 +171,7 @@
   flex-grow: 1;
   flex-direction: row;
   overflow: hidden;
+  margin-bottom: 10px;
 }
 
 .MultiplePictoChoiceTool__Column {
@@ -212,6 +219,7 @@
   background-size: contain;
   background-repeat: no-repeat;
   background-position: right;
+  pointer-events: none;
 }
 
 .RobiGifFlexComposite {
@@ -253,13 +261,20 @@
   text-align: center;
   flex-grow: 1;
   height: 100%;
+  margin-bottom: 10px;
 }
 
 .FabSlider__elementTop,
 .FabSlider__elementBottom {
-  width: 63px;
+  width: 40px;
   height: auto;
-  cursor: pointer;
+}
+
+@media (min-height: $breakpoint-height) {
+  .FabSlider__elementTop,
+  .FabSlider__elementBottom {
+    width: 63px;
+  }
 }
 
 .FabSlider__image {
