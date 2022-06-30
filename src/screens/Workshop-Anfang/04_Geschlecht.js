@@ -16,7 +16,15 @@ function changeFreeValue(data, val) {
 }
 
 function Screen({ data, onSubmit }) {
-  console.log(data);
+  const hasUserAnswered = () => {
+    if (data && data.predefinedValues && data.predefinedValues.length > 0) {
+      return true;
+    }
+    if (data && data.freeValue && data.freeValue.length > 0) {
+      return true;
+    }
+    return false;
+  };
   return (
     <>
       <div style={{ marginBottom: 0 }}>
@@ -38,7 +46,7 @@ function Screen({ data, onSubmit }) {
         />
       </DoubleColumnContainer>
 
-      <WeiterButton navigateTo="/losgehts/besuch" />
+      <WeiterButton enabled={hasUserAnswered()} navigateTo="/losgehts/besuch" />
     </>
   );
 }
