@@ -13,6 +13,12 @@ const ANSWER_OPTIONS = [
 ];
 
 function Screen({ onSubmit, data }) {
+  function hasUserAnswered() {
+    if (data && data.length > 0) {
+      return true;
+    }
+    return false;
+  }
   return (
     <>
       <div>
@@ -26,7 +32,11 @@ function Screen({ onSubmit, data }) {
           data={data}
         />
       </VerticalGrid>
-      <WeiterButton text="fertig" navigateTo="/losgehts/nickname" />
+      <WeiterButton
+        text="fertig"
+        enabled={hasUserAnswered()}
+        navigateTo="/losgehts/nickname"
+      />
       <RobiGif
         src={robiTouch}
         style={{
