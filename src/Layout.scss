@@ -4,8 +4,6 @@
   background-color: var(--color-background);
   display: flex;
   flex-direction: column;
-  max-width: 834px;
-  margin: 0 auto;
   min-height: 100vh; /* fall-back */
   min-height: -moz-available;
   min-height: -webkit-stretch-available;
@@ -44,16 +42,27 @@
 .Main {
   position: relative;
   background-color: var(--color-background);
+  height: 100%;
+  overflow: hidden;
+}
+
+.Header__inner,
+.Main__inner {
+  margin: 0 auto;
+  max-width: 834px;
+  height: 100%;
+}
+
+.Main__inner {
   display: flex;
   flex: 1;
   flex-direction: column;
   justify-content: normal;
   padding: 0 15px;
-  overflow: hidden;
 }
 
 @media (min-width: $breakpoint-width-tablet) {
-  .Main {
+  .Main__inner {
     padding: 0 40px 40px;
   }
 }
