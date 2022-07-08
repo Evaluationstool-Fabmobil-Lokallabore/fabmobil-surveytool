@@ -6,6 +6,12 @@ import happyFabmobil from "../../assets/pictograms/FM-Emoji_ohneRand30.png";
 import sadFabmobil from "../../assets/pictograms/FM-Emoji_ohneRand3.png";
 
 function Screen({ onSubmit, data }) {
+  function hasUserAnswered() {
+    if (typeof data === "number") {
+      return true;
+    }
+    return false;
+  }
   return (
     <>
       <div>
@@ -17,7 +23,10 @@ function Screen({ onSubmit, data }) {
         imgTop={happyFabmobil}
         imgBottom={sadFabmobil}
       />
-      <WeiterButton navigateTo="/wiewars/interesse" />
+      <WeiterButton
+        navigateTo="/wiewars/interesse"
+        enabled={hasUserAnswered()}
+      />
       <RobiGif
         src={robiLongarmslide}
         style={{

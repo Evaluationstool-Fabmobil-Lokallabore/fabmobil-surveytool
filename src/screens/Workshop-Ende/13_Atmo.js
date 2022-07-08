@@ -4,6 +4,12 @@ import happyFabmobil from "../../assets/pictograms/FM-Emoji_ohneRand30.png";
 import sadFabmobil from "../../assets/pictograms/FM-Emoji_ohneRand3.png";
 
 function Screen({ onSubmit, data }) {
+  function hasUserAnswered() {
+    if (typeof data === "number") {
+      return true;
+    }
+    return false;
+  }
   return (
     <>
       <div>
@@ -15,7 +21,7 @@ function Screen({ onSubmit, data }) {
         onChange={onSubmit}
         value={isNaN(data) ? 0 : data}
       />
-      <WeiterButton navigateTo="/wiewars/angebot" />
+      <WeiterButton navigateTo="/wiewars/angebot" enabled={hasUserAnswered()} />
     </>
   );
 }

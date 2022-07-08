@@ -6,6 +6,12 @@ import RobiGif from "../../components/RobiGif";
 import robiLookaround from "../../assets/robi-gifs/Robi_lookaround-min.gif";
 
 function Screen({ onSubmit, data }) {
+  function hasUserAnswered() {
+    if (typeof data === "number") {
+      return true;
+    }
+    return false;
+  }
   return (
     <>
       <div>
@@ -21,7 +27,10 @@ function Screen({ onSubmit, data }) {
         src={robiLookaround}
         style={{ width: 500, top: "20%", right: -340 }}
       />
-      <WeiterButton navigateTo="/wiewars/dreiDDruck" />
+      <WeiterButton
+        navigateTo="/wiewars/dreiDDruck"
+        enabled={hasUserAnswered()}
+      />
     </>
   );
 }

@@ -5,6 +5,12 @@ import RobiGif from "../../components/RobiGif";
 import robiGoodBad from "../../assets/robi-gifs/Robi_goodbad-min.gif";
 
 function Screen({ onSubmit, data }) {
+  function hasUserAnswered() {
+    if (typeof data === "number") {
+      return true;
+    }
+    return false;
+  }
   return (
     <>
       <div>
@@ -29,7 +35,10 @@ function Screen({ onSubmit, data }) {
         />
       </div>
 
-      <WeiterButton navigateTo="/wiewars/nextTime" />
+      <WeiterButton
+        navigateTo="/wiewars/nextTime"
+        enabled={hasUserAnswered()}
+      />
     </>
   );
 }

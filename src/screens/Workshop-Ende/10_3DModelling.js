@@ -11,6 +11,12 @@ import robiLongarmslide from "../../assets/robi-gifs/Robi_longarmslide-min.gif";
 function Screen({ onSubmit, data }) {
   const navigate = useNavigate();
   const nextRoute = "/wiewars/erwartungen";
+  function hasUserAnswered() {
+    if (typeof data === "number" || typeof data === "string") {
+      return true;
+    }
+    return false;
+  }
   return (
     <>
       <div>
@@ -33,7 +39,11 @@ function Screen({ onSubmit, data }) {
         >
           nicht benutzt
         </Fabutton>
-        <FabuttonNext to={nextRoute} style={{ flexBasis: "50%" }}>
+        <FabuttonNext
+          to={nextRoute}
+          enabled={hasUserAnswered()}
+          style={{ flexBasis: "50%" }}
+        >
           weiter
         </FabuttonNext>
       </DoubleColumnContainer>
