@@ -373,7 +373,7 @@
   display: grid;
   grid-gap: 10px;
   overflow-y: scroll;
-  margin-bottom: 20px;
+  margin: 0 auto;
   position: relative;
 }
 
@@ -383,13 +383,13 @@
   }
 }
 @media (min-width: $breakpoint-width-tablet) {
-  .vertical-grid {
+  .vertical-grid__outerouter {
     margin: 0 auto;
   }
 }
 
 .vertical-grid__outer {
-  margin: 0 auto;
+  height: 100%;
   overflow: hidden;
   position: relative;
 }
@@ -402,6 +402,11 @@
   position: absolute;
   bottom: 0;
   left: 0;
+}
+
+.vertical-grid__outerouter {
+  overflow: hidden;
+  margin-bottom: 20px;
 }
 
 .flex-vertical-center {

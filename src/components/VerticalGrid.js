@@ -20,14 +20,16 @@ function VerticalGrid({ children, style }) {
   }, []);
 
   return (
-    <div
-      className={classNames("vertical-grid__outer", {
-        "vertical-grid__outer--overflowing": hasOverflow,
-      })}
-      style={style}
-    >
-      <div className="vertical-grid" ref={containerRef}>
-        {children}
+    <div className="vertical-grid__outerouter">
+      <div
+        className={classNames("vertical-grid__outer", {
+          "vertical-grid__outer--overflowing": hasOverflow,
+        })}
+        style={style}
+      >
+        <div className="vertical-grid" ref={containerRef}>
+          {children}
+        </div>
       </div>
     </div>
   );
