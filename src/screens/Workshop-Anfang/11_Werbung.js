@@ -18,6 +18,12 @@ const ANSWER_OPTIONS = [
 const nextRoute = "/losgehts/grund";
 
 function Screen({ onSubmit, data }) {
+  function hasUserAnswered() {
+    if (data && data.length > 0) {
+      return true;
+    }
+    return false;
+  }
   return (
     <>
       <div>
@@ -30,7 +36,7 @@ function Screen({ onSubmit, data }) {
           onChange={onSubmit}
         />
       </VerticalGrid>
-      <WeiterButton navigateTo={nextRoute} />
+      <WeiterButton enabled={hasUserAnswered()} navigateTo={nextRoute} />
       <RobiGif src={robiLongarmslide} style={{ left: -300, top: 300 }} />
     </>
   );

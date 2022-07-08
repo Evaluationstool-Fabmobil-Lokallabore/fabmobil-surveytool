@@ -16,7 +16,7 @@ function changeFreeValue(data, val) {
 }
 
 function Screen({ data, onSubmit }) {
-  const hasUserAnswered = () => {
+  function hasUserAnswered() {
     if (data && data.predefinedValues && data.predefinedValues.length > 0) {
       return true;
     }
@@ -24,7 +24,7 @@ function Screen({ data, onSubmit }) {
       return true;
     }
     return false;
-  };
+  }
   return (
     <>
       <div style={{ marginBottom: 0 }}>
