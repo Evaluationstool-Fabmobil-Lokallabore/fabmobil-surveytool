@@ -6,6 +6,12 @@ import robiThumbsUp from "../../assets/pictograms/robi_thumbsup.png";
 import robiThumbsDown from "../../assets/pictograms/robi_thumbsdown.png";
 
 function Screen({ onSubmit, data }) {
+  function hasUserAnswered() {
+    if (typeof data === "number" || typeof data === "string") {
+      return true;
+    }
+    return false;
+  }
   const nextRoute = "/wiewars/laser";
   return (
     <>
@@ -27,7 +33,11 @@ function Screen({ onSubmit, data }) {
         >
           nicht benutzt
         </Fabutton>
-        <FabuttonNext to={nextRoute} style={{ flexBasis: "50%" }}>
+        <FabuttonNext
+          enabled={hasUserAnswered()}
+          to={nextRoute}
+          style={{ flexBasis: "50%" }}
+        >
           weiter
         </FabuttonNext>
       </DoubleColumnContainer>
