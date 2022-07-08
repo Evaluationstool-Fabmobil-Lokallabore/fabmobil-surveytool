@@ -2,6 +2,7 @@ import MultipleChoiceTool from "../../components/MultipleChoiceTool";
 import WeiterButton from "../../components/WeiterButton";
 import RobiGif from "../../components/RobiGif";
 import robiLongarmslide from "../../assets/robi-gifs/Robi_longarmslide-min.gif";
+import VerticalGrid from "../../components/VerticalGrid";
 
 const ANSWER_OPTIONS = [
   "Freund*innen",
@@ -22,13 +23,13 @@ function Screen({ onSubmit, data }) {
       <div>
         <p>Wie hast du vom Fabmobil gehört?</p>
       </div>
-      <div className="vertical-grid">
+      <VerticalGrid>
         <MultipleChoiceTool
           options={ANSWER_OPTIONS}
           data={data}
           onChange={onSubmit}
         />
-      </div>
+      </VerticalGrid>
       <WeiterButton navigateTo={nextRoute} />
       <RobiGif src={robiLongarmslide} style={{ left: -300, top: 300 }} />
     </>

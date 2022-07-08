@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import SingleChoiceTool from "../../components/SingleChoiceTool";
 import RobiGif from "../../components/RobiGif";
 import robiSprung from "../../assets/robi-gifs/Robi_sprung-min.gif";
+import VerticalGrid from "../../components/VerticalGrid";
 
 const ANSWER_OPTIONS = [
   "Super gern!",
@@ -25,7 +26,7 @@ function Screen({ onSubmit, data }) {
           maxHeight: 300,
         }}
       />
-      <div className="vertical-grid" style={{ marginTop: "auto" }}>
+      <VerticalGrid style={{ marginTop: "auto" }}>
         <SingleChoiceTool
           answer={data}
           options={ANSWER_OPTIONS}
@@ -34,7 +35,7 @@ function Screen({ onSubmit, data }) {
             setTimeout(() => navigate(nextRoute), 500);
           }}
         />
-      </div>
+      </VerticalGrid>
     </>
   );
 }

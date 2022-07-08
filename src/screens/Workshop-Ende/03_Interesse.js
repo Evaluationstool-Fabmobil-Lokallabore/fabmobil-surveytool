@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import SingleChoiceTool from "../../components/SingleChoiceTool";
 import RobiGifFlex from "../../components/RobiGifFlex";
 import robiTastaturAgro from "../../assets/robi-gifs/Robi_tastatur_agro-min.gif";
+import VerticalGrid from "../../components/VerticalGrid";
 
 const ANSWER_OPTIONS = ["Ja voll", "Nö", "Hatte ich vorher schon"];
 
@@ -16,7 +17,7 @@ function Screen({ onSubmit, data }) {
         </p>
       </div>
       <RobiGifFlex src={robiTastaturAgro} style={{ maxHeight: 200 }} />
-      <div className="vertical-grid">
+      <VerticalGrid>
         <SingleChoiceTool
           options={ANSWER_OPTIONS}
           answer={data}
@@ -25,7 +26,7 @@ function Screen({ onSubmit, data }) {
             setTimeout(() => navigate(nextRoute), 500);
           }}
         />
-      </div>
+      </VerticalGrid>
     </>
   );
 }

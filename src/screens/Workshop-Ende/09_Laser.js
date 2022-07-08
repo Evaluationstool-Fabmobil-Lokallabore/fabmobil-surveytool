@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import SingleChoiceTool from "../../components/SingleChoiceTool";
 import RobiGifFlex from "../../components/RobiGifFlex";
 import robiSlider from "../../assets/robi-gifs/Robi_slider-min.gif";
+import VerticalGrid from "../../components/VerticalGrid";
 
 const ANSWER_OPTIONS = [
   "Absolutes Lieblings-Tool",
@@ -19,8 +20,7 @@ function Screen({ onSubmit, data }) {
         <p>Lasercutter....dein Ding?</p>
       </div>
       <RobiGifFlex src={robiSlider} style={{ width: "100%", maxHeight: 300 }} />
-
-      <div className="vertical-grid">
+      <VerticalGrid>
         <SingleChoiceTool
           options={ANSWER_OPTIONS}
           answer={data}
@@ -29,7 +29,7 @@ function Screen({ onSubmit, data }) {
             setTimeout(() => navigate(nextRoute), 500);
           }}
         />
-      </div>
+      </VerticalGrid>
     </>
   );
 }
