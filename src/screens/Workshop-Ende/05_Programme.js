@@ -8,6 +8,12 @@ const column2 = ANSWER_OPTIONS.slice(3, 5);
 const column3 = ANSWER_OPTIONS.slice(5, ANSWER_OPTIONS.length + 1);
 
 function Screen({ onSubmit, data }) {
+  function hasUserAnswered() {
+    if (data && data.length > 0) {
+      return true;
+    }
+    return false;
+  }
   return (
     <>
       <div>
@@ -35,7 +41,10 @@ function Screen({ onSubmit, data }) {
           ],
         ]}
       />
-      <WeiterButton navigateTo="/wiewars/betreuung" />
+      <WeiterButton
+        navigateTo="/wiewars/betreuung"
+        enabled={hasUserAnswered()}
+      />
     </>
   );
 }
