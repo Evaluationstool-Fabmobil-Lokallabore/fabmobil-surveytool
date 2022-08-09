@@ -27,13 +27,13 @@ class Client {
   postAnswersWorkshopEnd(data) {
     const answerListRef = ref(this.db, "answersWorkshopEnd");
     const newAnswerRef = push(answerListRef);
-    set(newAnswerRef, data);
+    return set(newAnswerRef, data);
   }
 
   postAnswersWorkshopStart(data) {
     const answerListRef = ref(this.db, "answersWorkshopStart");
     const newAnswerRef = push(answerListRef);
-    set(newAnswerRef, data);
+    return set(newAnswerRef, data);
   }
 }
 

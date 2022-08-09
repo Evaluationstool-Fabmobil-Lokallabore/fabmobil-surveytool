@@ -76,7 +76,9 @@ class App extends React.Component {
       date: new Date().toLocaleString(),
     };
     console.log("submitted data", data);
-    this.firebaseClient.postAnswersWorkshopStart(data);
+    this.firebaseClient
+      .postAnswersWorkshopStart(data)
+      .catch((err) => alert("Etwas ist schief gelaufen.."));
   }
 
   submitAllWorkshopEndAnswers() {
@@ -85,7 +87,9 @@ class App extends React.Component {
       date: new Date().toLocaleString(),
     };
     console.log("submitted data", data);
-    this.firebaseClient.postAnswersWorkshopEnd(data);
+    this.firebaseClient
+      .postAnswersWorkshopEnd(data)
+      .catch((err) => alert("Etwas ist schief gelaufen.."));
   }
 
   onFinalSubmitWorkshopStart() {
