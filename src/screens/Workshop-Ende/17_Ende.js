@@ -1,7 +1,24 @@
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import WeiterButton from "../../components/WeiterButton";
 import RobiGifFlex from "../../components/RobiGifFlex";
 
 function Screen() {
+  let navigate = useNavigate();
+
+  useEffect(() => {
+    const listener = () => {
+      navigate("/");
+    };
+    window.addEventListener("popstate", listener);
+
+    return () => {
+      window.setTimeout(() => {
+        window.removeEventListener("popstate", listener);
+      }, 100);
+    };
+  }, [navigate]);
+
   return (
     <>
       <div>
