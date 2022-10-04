@@ -207,10 +207,22 @@
 .ClickablePicto {
   cursor: pointer;
   flex-shrink: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   /*height: 10vh;*/
 }
 
 .ClickablePicto--active {
+}
+
+.ClickablePicto__textlayer {
+  background-color: black;
+  color: white;
+  padding: 2px 5px;
+  font-size: 10px;
 }
 
 .RobiGif {

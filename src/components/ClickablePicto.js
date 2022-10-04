@@ -2,16 +2,20 @@ import classNames from "classnames";
 
 function ClickablePicto({ src, srcActive, title, isActive, style, onClick }) {
   return (
-    <img
-      style={style}
-      title={title}
-      alt={title}
-      onClick={onClick}
+    <div
       className={classNames("ClickablePicto", {
         "ClickablePicto--active": isActive,
       })}
-      src={isActive ? srcActive : src}
-    />
+    >
+      <img
+        style={style}
+        title={title}
+        alt={title}
+        onClick={onClick}
+        src={isActive ? srcActive : src}
+      />
+      <span className="ClickablePicto__textlayer">{title}</span>
+    </div>
   );
 }
 
