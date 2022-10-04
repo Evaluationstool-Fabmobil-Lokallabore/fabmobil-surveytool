@@ -197,6 +197,7 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  padding-bottom: 20px;
 }
 
 .MultiplePictoChoiceTool .ClickablePicto {
@@ -219,7 +220,7 @@
 }
 
 .ClickablePicto__image {
-  max-width: 100%;
+  min-height: 0;
 }
 
 .ClickablePicto__textlayer {
