@@ -3,6 +3,7 @@ import SingleChoiceTool from "../../components/SingleChoiceTool";
 import RobiGifFlex from "../../components/RobiGifFlex";
 import robiTastaturAgro from "../../assets/robi-gifs/Robi_tastatur_agro-min.gif";
 import VerticalGrid from "../../components/VerticalGrid";
+import BackButton from "../../components/BackButton";
 
 const ANSWER_OPTIONS = ["Ja voll", "Nö", "Hatte ich vorher schon"];
 
@@ -11,7 +12,8 @@ function Screen({ onSubmit, data }) {
   const nextRoute = "/wiewars/technologie";
   return (
     <>
-      <div>
+      <div className="question-and-back">
+        <BackButton />
         <p>
           Hat das Fabmobil dein Interesse für digitale Technologien geweckt?
         </p>

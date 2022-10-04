@@ -3,6 +3,7 @@ import DoubleColumnContainer from "../../components/DoubleColumnContainer";
 import SingleChoiceTool from "../../components/SingleChoiceTool";
 import RobiGifFlex from "../../components/RobiGifFlex";
 import robiTouch from "../../assets/robi-gifs/Robi_touch-min.gif";
+import BackButton from "../../components/BackButton";
 
 const ANSWER_OPTIONS = [
   "noch nie",
@@ -18,7 +19,8 @@ function Screen({ data, onSubmit }) {
   const navigate = useNavigate();
   return (
     <>
-      <div>
+      <div className="question-and-back">
+        <BackButton />
         <p>
           Konntest du schon mal <br /> im Fabmobil <br /> rumexperimentieren?
         </p>

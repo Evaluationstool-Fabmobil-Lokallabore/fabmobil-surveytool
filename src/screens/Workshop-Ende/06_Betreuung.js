@@ -4,6 +4,7 @@ import imgTop from "../../assets/pictograms/FM-Emoji_ohneRand58.png";
 import imgBottom from "../../assets/pictograms/FM-Emoji_ohneRand57.png";
 import RobiGif from "../../components/RobiGif";
 import robiLookaround from "../../assets/robi-gifs/Robi_lookaround-min.gif";
+import BackButton from "../../components/BackButton";
 
 function Screen({ onSubmit, data }) {
   function hasUserAnswered() {
@@ -14,7 +15,8 @@ function Screen({ onSubmit, data }) {
   }
   return (
     <>
-      <div>
+      <div className="question-and-back">
+        <BackButton />
         <p>Wie fandest du die Betreuung im Fabmobil?</p>
       </div>
       <FabSlider

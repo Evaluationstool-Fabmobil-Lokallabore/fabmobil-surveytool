@@ -4,6 +4,7 @@ import FabTextInput from "../../components/FabTextInput";
 import WeiterButton from "../../components/WeiterButton";
 import RobiGifFlex from "../../components/RobiGifFlex";
 import robiTastatur from "../../assets/robi-gifs/Robi_tastatur-min.gif";
+import BackButton from "../../components/BackButton";
 
 const ANSWER_OPTIONS = ["divers", "weiblich", "männlich", "keine Angabe"];
 
@@ -27,7 +28,8 @@ function Screen({ data, onSubmit }) {
   }
   return (
     <>
-      <div style={{ marginBottom: 0 }}>
+      <div className="question-and-back" style={{ marginBottom: 0 }}>
+        <BackButton />
         <p>
           Was hast du für ein <br /> Geschlecht?
         </p>

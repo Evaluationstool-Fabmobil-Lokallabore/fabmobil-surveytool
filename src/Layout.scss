@@ -447,3 +447,17 @@
     font-size: 30px;
   }
 }
+
+.BackButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.question-and-back {
+  display: flex;
+}
+
+.question-and-back p {
+  margin-left: 13px;
+}

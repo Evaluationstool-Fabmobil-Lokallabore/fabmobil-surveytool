@@ -3,6 +3,7 @@ import VerticalGrid from "../../components/VerticalGrid";
 import SingleChoiceTool from "../../components/SingleChoiceTool";
 import RobiGif from "../../components/RobiGif";
 import robiLongarmslide from "../../assets/robi-gifs/Robi_longarmslide-min.gif";
+import BackButton from "../../components/BackButton";
 
 const ANSWER_OPTIONS = [
   "Grundschule",
@@ -23,7 +24,8 @@ function Screen({ onSubmit, data }) {
   const navigate = useNavigate();
   return (
     <>
-      <div>
+      <div className="question-and-back">
+        <BackButton />
         <p>Wo bist du gerade?</p>
       </div>
 

@@ -3,6 +3,7 @@ import WeiterButton from "../../components/WeiterButton";
 import RobiGif from "../../components/RobiGif";
 import robiLongarmslide from "../../assets/robi-gifs/Robi_longarmslide-min.gif";
 import VerticalGrid from "../../components/VerticalGrid";
+import BackButton from "../../components/BackButton";
 
 const ANSWER_OPTIONS = [
   "Freund*innen",
@@ -26,7 +27,8 @@ function Screen({ onSubmit, data }) {
   }
   return (
     <>
-      <div>
+      <div className="question-and-back">
+        <BackButton />
         <p>Wie hast du vom Fabmobil gehört?</p>
       </div>
       <VerticalGrid>

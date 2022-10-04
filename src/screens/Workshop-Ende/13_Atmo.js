@@ -2,6 +2,7 @@ import FabSlider from "../../components/FabSlider";
 import WeiterButton from "../../components/WeiterButton";
 import happyFabmobil from "../../assets/pictograms/FM-Emoji_ohneRand30.png";
 import sadFabmobil from "../../assets/pictograms/FM-Emoji_ohneRand3.png";
+import BackButton from "../../components/BackButton";
 
 function Screen({ onSubmit, data }) {
   function hasUserAnswered() {
@@ -12,7 +13,8 @@ function Screen({ onSubmit, data }) {
   }
   return (
     <>
-      <div>
+      <div className="question-and-back">
+        <BackButton />
         <p>Wie war die Atmosphäre im Fabmobil?</p>
       </div>
       <FabSlider

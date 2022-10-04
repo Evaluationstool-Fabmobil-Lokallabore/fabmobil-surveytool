@@ -3,6 +3,7 @@ import WeiterButton from "../../components/WeiterButton";
 import heartEmoji from "../../assets/pictograms/herz.png";
 import RobiGif from "../../components/RobiGif";
 import robiGoodBad from "../../assets/robi-gifs/Robi_goodbad-min.gif";
+import BackButton from "../../components/BackButton";
 
 function Screen({ onSubmit, data }) {
   function hasUserAnswered() {
@@ -13,7 +14,8 @@ function Screen({ onSubmit, data }) {
   }
   return (
     <>
-      <div>
+      <div className="question-and-back">
+        <BackButton />
         <p>Wurden deine Erwartungen im Fabmobil erfüllt?</p>
       </div>
       <div className="flex-wrapper">

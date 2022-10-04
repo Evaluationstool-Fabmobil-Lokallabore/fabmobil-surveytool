@@ -7,6 +7,7 @@ import smileyHappy from "../../assets/pictograms/FM-Emoji_ohneRand61.png";
 import smileyBroken from "../../assets/pictograms/FM-Emoji_ohneRand55.png";
 import RobiGif from "../../components/RobiGif";
 import robiLongarmslide from "../../assets/robi-gifs/Robi_longarmslide-min.gif";
+import BackButton from "../../components/BackButton";
 
 function Screen({ onSubmit, data }) {
   const navigate = useNavigate();
@@ -19,7 +20,8 @@ function Screen({ onSubmit, data }) {
   }
   return (
     <>
-      <div>
+      <div className="question-and-back">
+        <BackButton />
         <p>3D-Modelling rockt?</p>
       </div>
       <FabSlider

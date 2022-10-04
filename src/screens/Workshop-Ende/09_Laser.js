@@ -3,6 +3,7 @@ import SingleChoiceTool from "../../components/SingleChoiceTool";
 import RobiGifFlex from "../../components/RobiGifFlex";
 import robiSlider from "../../assets/robi-gifs/Robi_slider-min.gif";
 import VerticalGrid from "../../components/VerticalGrid";
+import BackButton from "../../components/BackButton";
 
 const ANSWER_OPTIONS = [
   "Absolutes Lieblings-Tool",
@@ -16,7 +17,8 @@ function Screen({ onSubmit, data }) {
   const nextRoute = "/wiewars/dreiDModelling";
   return (
     <>
-      <div>
+      <div className="question-and-back">
+        <BackButton />
         <p>Lasercutter....dein Ding?</p>
       </div>
       <RobiGifFlex src={robiSlider} style={{ width: "100%", maxHeight: 300 }} />

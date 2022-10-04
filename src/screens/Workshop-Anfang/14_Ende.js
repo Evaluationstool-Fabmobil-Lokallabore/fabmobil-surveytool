@@ -1,5 +1,6 @@
 import WeiterButton from "../../components/WeiterButton";
 import RobiGifFlex from "../../components/RobiGifFlex";
+import BackButton from "../../components/BackButton";
 
 function Screen() {
   return (

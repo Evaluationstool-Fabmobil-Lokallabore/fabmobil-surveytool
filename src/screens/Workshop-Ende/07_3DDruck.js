@@ -3,6 +3,7 @@ import SingleChoiceTool from "../../components/SingleChoiceTool";
 import RobiGifFlex from "../../components/RobiGifFlex";
 import robiButtons from "../../assets/robi-gifs/Robi_buttons-min.gif";
 import VerticalGrid from "../../components/VerticalGrid";
+import BackButton from "../../components/BackButton";
 
 const ANSWER_OPTIONS = [
   "Mega! Ich liebs",
@@ -16,7 +17,8 @@ function Screen({ onSubmit, data }) {
   const nextRoute = "/wiewars/vr";
   return (
     <>
-      <div>
+      <div className="question-and-back">
+        <BackButton />
         <p>Wie spannend findest du 3D-Druck?</p>
       </div>
       <RobiGifFlex

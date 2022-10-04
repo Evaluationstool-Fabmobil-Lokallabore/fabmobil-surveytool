@@ -3,13 +3,15 @@ import FabTextArea from "../../components/FabTextArea";
 import SubmitButton from "../../components/SubmitButton";
 import RobiGifFlex from "../../components/RobiGifFlex";
 import robiTastatur from "../../assets/robi-gifs/Robi_tastatur-min.gif";
+import BackButton from "../../components/BackButton";
 
 function Screen({ onSubmit, onFinalSubmit, data }) {
   const navigate = useNavigate();
 
   return (
     <>
-      <div>
+      <div className="question-and-back">
+        <BackButton />
         <p>Möchtest du mir noch was anderes sagen?</p>
       </div>
       <RobiGifFlex src={robiTastatur} />

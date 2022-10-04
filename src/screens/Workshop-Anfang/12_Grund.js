@@ -3,6 +3,7 @@ import WeiterButton from "../../components/WeiterButton";
 import RobiGif from "../../components/RobiGif";
 import robiTouch from "../../assets/robi-gifs/Robi_touch-min.gif";
 import VerticalGrid from "../../components/VerticalGrid";
+import BackButton from "../../components/BackButton";
 
 const ANSWER_OPTIONS = [
   "Interesse digitale Technik",
@@ -21,9 +22,12 @@ function Screen({ onSubmit, data }) {
   }
   return (
     <>
-      <div>
-        <p>So viele Fragen...Bald hast dus geschafft.</p>
-        <p>Warum bist du heute hier? </p>
+      <div className="question-and-back">
+        <BackButton />
+        <div>
+          <p>So viele Fragen...Bald hast dus geschafft.</p>
+          <p>Warum bist du heute hier? </p>
+        </div>
       </div>
       <VerticalGrid>
         <MultipleChoiceTool

@@ -3,6 +3,7 @@ import FabTextInput from "../../components/FabTextInput";
 import SubmitButton from "../../components/SubmitButton";
 import RobiGifFlex from "../../components/RobiGifFlex";
 import robiTastatur from "../../assets/robi-gifs/Robi_tastatur-min.gif";
+import BackButton from "../../components/BackButton";
 
 function Screen({ onSubmit, onFinalSubmit, data }) {
   const hasUserAnswered = () => {
@@ -12,7 +13,8 @@ function Screen({ onSubmit, onFinalSubmit, data }) {
   const navigate = useNavigate();
   return (
     <>
-      <div>
+      <div className="question-and-back">
+        <BackButton />
         <p>Was ist dein Nickname?</p>
       </div>
       <RobiGifFlex src={robiTastatur} style={{ maxHeight: 500 }} />

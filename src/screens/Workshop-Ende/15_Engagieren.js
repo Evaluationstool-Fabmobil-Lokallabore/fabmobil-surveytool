@@ -3,6 +3,7 @@ import SingleChoiceTool from "../../components/SingleChoiceTool";
 import RobiGif from "../../components/RobiGif";
 import robiSprung from "../../assets/robi-gifs/Robi_sprung-min.gif";
 import VerticalGrid from "../../components/VerticalGrid";
+import BackButton from "../../components/BackButton";
 
 const ANSWER_OPTIONS = [
   "Super gern!",
@@ -16,7 +17,8 @@ function Screen({ onSubmit, data }) {
   const nextRoute = "/wiewars/anythingElse";
   return (
     <>
-      <div>
+      <div className="question-and-back">
+        <BackButton />
         <p>Hättest du Lust dich in einem regelmäßigen Angebot zu engagieren?</p>
       </div>
       <RobiGif

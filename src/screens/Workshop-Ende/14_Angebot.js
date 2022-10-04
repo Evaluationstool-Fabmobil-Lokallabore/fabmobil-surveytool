@@ -3,6 +3,7 @@ import SingleChoiceTool from "../../components/SingleChoiceTool";
 import RobiGifFlex from "../../components/RobiGifFlex";
 import robiGoodBad from "../../assets/robi-gifs/Robi_onebuttons_langsam-min.gif";
 import VerticalGrid from "../../components/VerticalGrid";
+import BackButton from "../../components/BackButton";
 
 const ANSWER_OPTIONS = [
   "Ja klar!",
@@ -15,7 +16,8 @@ function Screen({ onSubmit, data }) {
   const nextRoute = "/wiewars/engagieren";
   return (
     <>
-      <div>
+      <div className="question-and-back">
+        <BackButton />
         <p>Hättest du gern ein regelmässiges Angebot wie das Fabmobil?</p>
       </div>
       <RobiGifFlex

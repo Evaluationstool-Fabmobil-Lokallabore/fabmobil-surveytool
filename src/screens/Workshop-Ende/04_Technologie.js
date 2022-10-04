@@ -1,6 +1,7 @@
 import WeiterButton from "../../components/WeiterButton";
 import MultiplePictoChoice from "../../components/MultiplePictoChoiceTool";
 import FABMOBIL_TECHNOLOGIES from "../../constants/fabmobil-technologies";
+import BackButton from "../../components/BackButton";
 
 const ANSWER_OPTIONS = FABMOBIL_TECHNOLOGIES;
 const column1 = ANSWER_OPTIONS.slice(0, 3);
@@ -16,7 +17,8 @@ function Screen({ onSubmit, data }) {
   }
   return (
     <>
-      <div>
+      <div className="question-and-back">
+        <BackButton />
         <p>Welche Technologien hast du benutzt?</p>
       </div>
       <MultiplePictoChoice

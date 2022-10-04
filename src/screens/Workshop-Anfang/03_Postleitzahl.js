@@ -2,6 +2,7 @@ import FabTextInput from "../../components/FabTextInput";
 import WeiterButton from "../../components/WeiterButton";
 import RobiGif from "../../components/RobiGif";
 import robiLongarmtouch from "../../assets/robi-gifs/Robi_longarmtouch-min.gif";
+import BackButton from "../../components/BackButton";
 
 function Screen({ data, onSubmit }) {
   const hasUserAnswered = () => {
@@ -10,7 +11,8 @@ function Screen({ data, onSubmit }) {
   };
   return (
     <>
-      <div>
+      <div className="question-and-back">
+        <BackButton />
         <p>Und wie lautet deine Postleitzahl?</p>
       </div>
       <div className="flex-wrapper">

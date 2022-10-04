@@ -4,6 +4,7 @@ import Fabutton from "../../components/Fabutton";
 import FabuttonNext from "../../components/FabuttonNext";
 import robiThumbsUp from "../../assets/pictograms/robi_thumbsup.png";
 import robiThumbsDown from "../../assets/pictograms/robi_thumbsdown.png";
+import BackButton from "../../components/BackButton";
 
 function Screen({ onSubmit, data }) {
   function hasUserAnswered() {
@@ -15,7 +16,8 @@ function Screen({ onSubmit, data }) {
   const nextRoute = "/wiewars/laser";
   return (
     <>
-      <div style={{ marginBottom: "auto" }}>
+      <div className="question-and-back" style={{ marginBottom: "auto" }}>
+        <BackButton />
         <p>Was hälst du von VR?</p>
       </div>
       <FabSlider

@@ -3,6 +3,7 @@ import FabTextArea from "../../components/FabTextArea";
 import WeiterButton from "../../components/WeiterButton";
 import RobiGif from "../../components/RobiGif";
 import robiLongarmtouch from "../../assets/robi-gifs/Robi_longarmtouch-min.gif";
+import BackButton from "../../components/BackButton";
 
 function Screen({ data, onSubmit }) {
   const containerRef = useRef(null);
@@ -20,7 +21,8 @@ function Screen({ data, onSubmit }) {
   }, [data]);
   return (
     <>
-      <div>
+      <div className="question-and-back">
+        <BackButton />
         <p>Welche Erwartungen hast du an deine Zeit bei uns im Fabmobil?</p>
       </div>
       <div className="flex-wrapper" ref={containerRef}>

@@ -4,6 +4,7 @@ import RobiGif from "../../components/RobiGif";
 import robiLongarmslide from "../../assets/robi-gifs/Robi_longarmslide-min.gif";
 import happyFabmobil from "../../assets/pictograms/FM-Emoji_ohneRand30.png";
 import sadFabmobil from "../../assets/pictograms/FM-Emoji_ohneRand3.png";
+import BackButton from "../../components/BackButton";
 
 function Screen({ onSubmit, data }) {
   function hasUserAnswered() {
@@ -14,7 +15,8 @@ function Screen({ onSubmit, data }) {
   }
   return (
     <>
-      <div>
+      <div className="question-and-back">
+        <BackButton />
         <p>Wie viel Spass hattest du während deiner Zeit im Fabmobil?</p>
       </div>
       <FabSlider
