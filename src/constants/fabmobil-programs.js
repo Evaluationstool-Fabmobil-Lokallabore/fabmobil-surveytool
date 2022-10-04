@@ -15,7 +15,7 @@ import pictoInkscapeActive from "../assets/pictograms/FM-Emoji_mitRand19.png";
 
 const fabmobilPrograms = [
   {
-    title: "Tiltbrush",
+    title: "VR/Gravity Sketch",
     picto: pictoTiltbrush,
     pictoActive: pictoTiltbrushActive,
   },
@@ -23,12 +23,20 @@ const fabmobilPrograms = [
   { title: "SculptGL", picto: pictoSculptgl, pictoActive: pictoSculptglActive },
   { title: "Blender", picto: pictoBlender, pictoActive: pictoBlenderActive },
   {
-    title: "TinkerCAD",
+    title: "Tinkercad",
     picto: pictoTinkercad,
     pictoActive: pictoTinkercadActive,
   },
-  { title: "Arduino", picto: pictoArduino, pictoActive: pictoArduinoActive },
-  { title: "Inkscape", picto: pictoInkscape, pictoActive: pictoInkscapeActive },
+  {
+    title: "Arduino/Raspberry Pi",
+    picto: pictoArduino,
+    pictoActive: pictoArduinoActive,
+  },
+  {
+    title: "Inkscape/Illustrator",
+    picto: pictoInkscape,
+    pictoActive: pictoInkscapeActive,
+  },
 ];
 
 export default fabmobilPrograms;

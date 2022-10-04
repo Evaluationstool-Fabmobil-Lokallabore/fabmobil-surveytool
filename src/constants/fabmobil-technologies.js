@@ -17,16 +17,16 @@ import pictoStickmaschineActive from "../assets/pictograms/FM-Emoji_mitRand50.pn
 
 const fabmobilTechnologies = [
   {
-    title: "Tiefziehen",
+    title: "Vakuum Former",
     picto: pictoTiefzieh,
     pictoActive: pictoTiefziehActive,
   },
   { title: "Plotter", picto: pictoPlotter, pictoActive: pictoPlotterActive },
-  { title: "Robo", picto: pictoRobo, pictoActive: pictoRoboActive },
-  { title: "Scan", picto: pictoScan, pictoActive: pictoScanActive },
-  { title: "3D-Print", picto: picto3DPrint, pictoActive: picto3DPrintActive },
-  { title: "VR", picto: pictoVR, pictoActive: pictoVRActive },
-  { title: "Laser", picto: pictoLaser, pictoActive: pictoLaserActive },
+  { title: "Robo-Arm", picto: pictoRobo, pictoActive: pictoRoboActive },
+  { title: "3D-Scanner", picto: pictoScan, pictoActive: pictoScanActive },
+  { title: "3D-Druck", picto: picto3DPrint, pictoActive: picto3DPrintActive },
+  { title: "Virtual Reality", picto: pictoVR, pictoActive: pictoVRActive },
+  { title: "Lasercutter", picto: pictoLaser, pictoActive: pictoLaserActive },
   {
     title: "Stickmaschine",
     picto: pictoStickmaschine,
