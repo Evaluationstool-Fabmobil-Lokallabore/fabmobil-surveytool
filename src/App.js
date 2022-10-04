@@ -8,10 +8,11 @@ import SURVEY_WORKSHOPSTART from "./constants/survey-workshopstart.js";
 import SURVEY_WORKSHOPEND from "./constants/survey-workshopend.js";
 
 function reformatSurveyData(surveyData) {
+  console.log(surveyData);
   const geschlecht = surveyData.geschlecht;
   let geschlechtReformatted = [];
   if (!geschlecht) return surveyData;
-  if (!geschlecht.predefinedValues || geschlecht.predefinedValues.length > 0) {
+  if (geschlecht.predefinedValues && geschlecht.predefinedValues.length > 0) {
     geschlechtReformatted = [...geschlecht.predefinedValues];
   }
   if (geschlecht.freeValue !== undefined) {
