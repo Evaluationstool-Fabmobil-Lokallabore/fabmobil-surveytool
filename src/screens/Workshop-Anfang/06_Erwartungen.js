@@ -5,14 +5,31 @@ import RobiGif from "../../components/RobiGif";
 import robiLongarmtouch from "../../assets/robi-gifs/Robi_longarmtouch-min.gif";
 import BackButton from "../../components/BackButton";
 
+const widthRobi = 491;
+
 function Screen({ data, onSubmit }) {
   const containerRef = useRef(null);
-  const [foobar, setFoobar] = useState(0);
-  useEffect(() => {
+  const [textboxY, setTextboxY] = useState(0);
+  const [textboxX, setTextboxX] = useState(0);
+
+  function updateTextboxX() {
     const textBox = containerRef.current.firstElementChild;
-    setFoobar(textBox.offsetTop + textBox.offsetHeight);
+    const target = textBox.getBoundingClientRect().x + textBox.offsetWidth / 2;
+    setTextboxX(target - widthRobi + 80);
+  }
+
+  function updateTextboxY() {
+    const textBox = containerRef.current.firstElementChild;
+    setTextboxY(textBox.offsetTop + textBox.offsetHeight);
+  }
+
+  useEffect(() => {
+    updateTextboxX();
+    updateTextboxY();
+
     const resizeListener = () => {
-      setFoobar(containerRef.current.offsetHeight);
+      updateTextboxX();
+      updateTextboxY();
     };
     window.addEventListener("resize", resizeListener);
     return () => {
@@ -31,7 +48,7 @@ function Screen({ data, onSubmit }) {
       <WeiterButton navigateTo="/losgehts/interesse" />
       <RobiGif
         src={robiLongarmtouch}
-        style={{ width: 491, left: -123, top: foobar - 40 }}
+        style={{ width: widthRobi, left: textboxX, top: textboxY - 40 }}
       />
     </>
   );
