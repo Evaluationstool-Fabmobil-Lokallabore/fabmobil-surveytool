@@ -32,7 +32,7 @@ function Screen({ onSubmit, data }) {
         style={{}}
         styles={[
           [{}, {}, {}],
-          [{}, {}],
+          [{ marginBottom: "-20%" }, {}],
           [{}, {}, {}],
         ]}
       />
