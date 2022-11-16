@@ -173,9 +173,13 @@ class App extends React.Component {
                       data={
                         this.state.surveyAnswersWorkshopEnd[item.questionId]
                       }
+                      onLogin={
+                        (nickname, geburtstag) => this.logAnswerWorkshopEnd('userID', this.firebaseClient.createUserID(nickname, geburtstag))
+                      }
                       onFinalSubmit={
                         item.isFinal && (() => this.onFinalSubmitWorkshopEnd())
                       }
+                      firebaseClient={this.firebaseClient}
                     ></item.screenComponent>
                   }
                 />
