@@ -48,7 +48,7 @@ class App extends React.Component {
         },
       },
       () => {
-        console.log(this.state);
+        console.log("log answer workshop start", this.state);
       }
     );
   }
@@ -103,6 +103,24 @@ class App extends React.Component {
     this.resetSurveyData();
   }
 
+
+  async createNewUser() {
+    const { nickname, geburtstag } = this.state.surveyAnswersWorkshopStart;
+    const userID = this.firebaseClient.createUserID(nickname, geburtstag);
+
+    const doesExist = await this.firebaseClient.userDoesExist(userID);
+    if (doesExist) {
+      alert(
+        "Dieser Nickname mit diesem Geburtsdatum existiert bereits, bitte denk dir einen anderen Nicknamen aus!"
+      );
+      throw Error("Nickname exists already");
+    } else {
+      await this.firebaseClient.postUser(userID);
+      this.logAnswerWorkshopStart('userID', userID); //include ID in submission answers
+    }
+
+  }
+
   render() {
     return (
       <>
@@ -132,9 +150,11 @@ class App extends React.Component {
                       data={
                         this.state.surveyAnswersWorkshopStart[item.questionId]
                       }
+                      onNicknameSubmit={
+                        () => this.createNewUser()
+                      }
                       onFinalSubmit={
-                        item.isFinal &&
-                        (() => this.onFinalSubmitWorkshopStart())
+                        () => this.onFinalSubmitWorkshopStart()
                       }
                     ></item.screenComponent>
                   }

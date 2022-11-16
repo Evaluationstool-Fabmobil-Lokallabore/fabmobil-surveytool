@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getDatabase, ref, push, set } from "firebase/database"; //import getterFunction of database service
+import { getDatabase, get, ref, push, set, child } from "firebase/database"; //import getterFunction of database service
 import firebaseConfig from "./config.js";
 
 class Client {
@@ -10,19 +10,10 @@ class Client {
     this.dbRef = ref(this.db);
   }
 
-  // get() {
-  //   get(child(this.dbRef, `foo`))
-  //     .then((snapshot) => {
-  //       if (snapshot.exists()) {
-  //         console.log(snapshot.val());
-  //       } else {
-  //         console.log("No data available");
-  //       }
-  //     })
-  //     .catch((error) => {
-  //       console.error(error);
-  //     });
-  // }
+  createUserID(nickname, geburtstag) {
+    if (!nickname || !geburtstag) { throw Error("Can't create nickname") }
+    return `${nickname}${geburtstag.day}${geburtstag.month}${geburtstag.year}`;
+  }
 
   postAnswersWorkshopEnd(data) {
     const answerListRef = ref(this.db, "answersWorkshopEnd");
@@ -34,6 +25,26 @@ class Client {
     const answerListRef = ref(this.db, "answersWorkshopStart");
     const newAnswerRef = push(answerListRef);
     return set(newAnswerRef, data);
+  }
+
+  postUser(userID) {
+    const userListRef = ref(this.db, "users");
+    const newUserRef = push(userListRef);
+    return set(newUserRef, userID).then(() => userID);
+  }
+
+  userDoesExist(userId) {
+    return get(child(this.dbRef, `users`)).then((snapshot) => {
+      if (!userId) throw Error("No userID given");
+      if (snapshot.exists()) {
+        try {
+          return Object.values(snapshot.val()).includes(userId);
+        } catch {
+        }
+      } else {
+        throw Error;
+      }
+    });
   }
 }
 

@@ -3,9 +3,10 @@ import FabTextInput from "../../components/FabTextInput";
 import SubmitButton from "../../components/SubmitButton";
 import RobiGifFlex from "../../components/RobiGifFlex";
 import robiTastatur from "../../assets/robi-gifs/Robi_tastatur-min.gif";
+import WeiterButton from "../../components/WeiterButton";
 import BackButton from "../../components/BackButton";
 
-function Screen({ onSubmit, onFinalSubmit, data }) {
+function Screen({ onSubmit, data }) {
   const hasUserAnswered = () => {
     if (!data || data.length < 1) return false;
     return true;
@@ -23,13 +24,7 @@ function Screen({ onSubmit, onFinalSubmit, data }) {
         (Merke dir diesen Namen. <br /> Du wirst ihn am Ende des Workshops
         nochmal brauchen.)
       </p>
-      <SubmitButton
-        enabled={hasUserAnswered()}
-        onClick={() => {
-          onFinalSubmit();
-          setTimeout(() => navigate("/losgehts/ende"), 500);
-        }}
-      />
+      <WeiterButton enabled={hasUserAnswered()} navigateTo={"/losgehts/geburtstag"} />
     </>
   );
 }
