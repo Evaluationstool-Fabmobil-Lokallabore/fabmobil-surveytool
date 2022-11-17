@@ -11,7 +11,8 @@ import S10Ort from "../screens/Workshop-Anfang/10_Ort";
 import S11Werbung from "../screens/Workshop-Anfang/11_Werbung";
 import S12Grund from "../screens/Workshop-Anfang/12_Grund";
 import S13Nickname from "../screens/Workshop-Anfang/13_Nickname";
-import S14Ende from "../screens/Workshop-Anfang/14_Ende";
+import S14Geburtstag from "../screens/Workshop-Anfang/14_Geburtstag";
+import S15Ende from "../screens/Workshop-Anfang/15_Ende";
 
 const surveyWorkshopStart = {
   baseUrl: "losgehts",
@@ -70,8 +71,14 @@ const surveyWorkshopStart = {
       isFinal: true,
     },
     {
+      questionId: "geburtstag",
+      screenComponent: S14Geburtstag,
+      isFinal: true,
+    },
+    {
       questionId: "ende",
-      screenComponent: S14Ende,
+      screenComponent: S15Ende,
+
     },
   ],
 };
