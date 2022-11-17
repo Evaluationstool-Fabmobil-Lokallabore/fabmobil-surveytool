@@ -16,11 +16,11 @@ function Screen({ onSubmit, onNicknameSubmit, onFinalSubmit, data }) {
         <p>Wann hast du Geburtstag?</p>
       </div>
       <FabTextInput pattern="[0-9]{2}"
-        maxLength={2} placeholder="Tag" value={data && data.day || ""} onChange={(val) => onSubmit({ ...data, day: val })} />
+        maxLength={2} placeholder="Tag" value={(data && data.day) || ""} onChange={(val) => onSubmit({ ...data, day: val })} />
       <FabTextInput pattern="[0-9]{2}"
-        maxLength={2} placeholder="Monat" value={data && data.month || ""} onChange={(val) => onSubmit({ ...data, month: val })} />
+        maxLength={2} placeholder="Monat" value={(data && data.month) || ""} onChange={(val) => onSubmit({ ...data, month: val })} />
       <FabTextInput pattern="[0-9]{4}"
-        maxLength={4} placeholder="Jahr" value={data && data.year || ""} onChange={(val) => onSubmit({ ...data, year: val })} />
+        maxLength={4} placeholder="Jahr" value={(data && data.year) || ""} onChange={(val) => onSubmit({ ...data, year: val })} />
       <SubmitButton
         enabled={hasUserAnswered()}
         onClick={async () => {

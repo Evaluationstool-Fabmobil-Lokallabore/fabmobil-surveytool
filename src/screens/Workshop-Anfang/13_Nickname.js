@@ -1,6 +1,4 @@
-import { useNavigate } from "react-router-dom";
 import FabTextInput from "../../components/FabTextInput";
-import SubmitButton from "../../components/SubmitButton";
 import RobiGifFlex from "../../components/RobiGifFlex";
 import robiTastatur from "../../assets/robi-gifs/Robi_tastatur-min.gif";
 import WeiterButton from "../../components/WeiterButton";
@@ -11,7 +9,6 @@ function Screen({ onSubmit, data }) {
     if (!data || data.length < 1) return false;
     return true;
   };
-  const navigate = useNavigate();
   return (
     <>
       <div className="question-and-back">
