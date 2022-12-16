@@ -2,6 +2,8 @@ import { useNavigate } from "react-router-dom";
 import FabTextInput from "../../components/FabTextInput";
 import SubmitButton from "../../components/SubmitButton";
 import BackButton from "../../components/BackButton";
+import VerticalGrid from "../../components/VerticalGrid";
+
 
 function Screen({ onSubmit, onNicknameSubmit, onFinalSubmit, data }) {
   const hasUserAnswered = () => {
@@ -15,12 +17,14 @@ function Screen({ onSubmit, onNicknameSubmit, onFinalSubmit, data }) {
         <BackButton />
         <p>Wann hast du Geburtstag?</p>
       </div>
-      <FabTextInput pattern="[0-9]{2}"
-        maxLength={2} placeholder="Tag" value={(data && data.day) || ""} onChange={(val) => onSubmit({ ...data, day: val })} />
-      <FabTextInput pattern="[0-9]{2}"
-        maxLength={2} placeholder="Monat" value={(data && data.month) || ""} onChange={(val) => onSubmit({ ...data, month: val })} />
-      <FabTextInput pattern="[0-9]{4}"
-        maxLength={4} placeholder="Jahr" value={(data && data.year) || ""} onChange={(val) => onSubmit({ ...data, year: val })} />
+      <VerticalGrid>
+        <FabTextInput pattern="[0-9]{2}"
+          maxLength={2} placeholder="Tag" value={(data && data.day) || ""} onChange={(val) => onSubmit({ ...data, day: val })} />
+        <FabTextInput pattern="[0-9]{2}"
+          maxLength={2} placeholder="Monat" value={(data && data.month) || ""} onChange={(val) => onSubmit({ ...data, month: val })} />
+        <FabTextInput pattern="[0-9]{4}"
+          maxLength={4} placeholder="Jahr" value={(data && data.year) || ""} onChange={(val) => onSubmit({ ...data, year: val })} />
+      </VerticalGrid>
       <SubmitButton
         enabled={hasUserAnswered()}
         onClick={async () => {
