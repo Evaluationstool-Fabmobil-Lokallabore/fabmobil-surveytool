@@ -5,7 +5,7 @@ import RobiGifComposite from "../../components/RobiGifComposite";
 import { useNavigate } from "react-router-dom";
 
 
-function Screen({ onSubmit, data, firebaseClient, onLogin }) {
+function Screen({ onSubmit, data, firebaseClient, onLogin, reportError }) {
   const navigate = useNavigate();
   const containerRef = useRef(null);
   const [foobar, setFoobar] = useState(0);
@@ -53,7 +53,7 @@ function Screen({ onSubmit, data, firebaseClient, onLogin }) {
         const userID = firebaseClient.createUserID(data.nickname, { day: data.day, month: data.month, year: data.year });
         firebaseClient.userDoesExist(userID).then((doesExist) => {
           if (!doesExist) {
-            alert("Dieser Nickname mit diesem Geburtsdatum existiert nicht!");
+            reportError("USER_EXISTS_NOT");
             return;
           }
           onLogin(data.nickname, { day: data.day, month: data.month, year: data.year });

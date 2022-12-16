@@ -6,6 +6,7 @@ import DataExportScreen from "./screens/X_Data-Export";
 import FirebaseClient from "./firebase/client";
 import SURVEY_WORKSHOPSTART from "./constants/survey-workshopstart.js";
 import SURVEY_WORKSHOPEND from "./constants/survey-workshopend.js";
+import AlertLayer from "./AlertLayer";
 
 function reformatSurveyData(surveyData) {
   console.log(surveyData);
@@ -28,7 +29,16 @@ class App extends React.Component {
     this.state = {
       surveyAnswersWorkshopStart: {},
       surveyAnswersWorkshopEnd: {},
+      error: null,
     };
+  }
+
+  reportError(errorCode) {
+    this.setState({ ...this.state, error: errorCode })
+  }
+
+  clearError() {
+    this.setState({ ...this.state, error: null })
   }
 
   resetSurveyData() {
@@ -110,10 +120,8 @@ class App extends React.Component {
 
     const doesExist = await this.firebaseClient.userDoesExist(userID);
     if (doesExist) {
-      alert(
-        "Dieser Nickname mit diesem Geburtsdatum existiert bereits, bitte denk dir einen anderen Nicknamen aus!"
-      );
-      throw Error("Nickname exists already");
+      this.reportError("USER_EXISTS");
+      throw Error("User exists")
     } else {
       await this.firebaseClient.postUser(userID);
       this.logAnswerWorkshopStart('userID', userID); //include ID in submission answers
@@ -124,6 +132,7 @@ class App extends React.Component {
   render() {
     return (
       <>
+        <AlertLayer error={this.state.error} onCloseClick={() => this.clearError()} onAbandonConfirmClick={() => { this.clearError(); this.resetSurveyData(); window.location = "/" }} />
         <BrowserRouter>
           <Routes>
             <Route
@@ -131,7 +140,7 @@ class App extends React.Component {
               element={
                 <Layout
                   onLogoClick={() => {
-                    this.resetSurveyData();
+                    if (window.location.pathname !== "/") { this.reportError('ABANDON') }
                   }}
                 />
               }
@@ -180,6 +189,7 @@ class App extends React.Component {
                         item.isFinal && (() => this.onFinalSubmitWorkshopEnd())
                       }
                       firebaseClient={this.firebaseClient}
+                      reportError={(errCode) => this.reportError(errCode)}
                     ></item.screenComponent>
                   }
                 />

@@ -18,7 +18,8 @@ html {
 html,
 body {
   height: 100%;
-  overscroll-behavior-y: contain; /* prevent pull-to-refresh in mobile Chrome */
+  overscroll-behavior-y: contain;
+  /* prevent pull-to-refresh in mobile Chrome */
 }
 
 * {
@@ -69,4 +70,16 @@ body {
 
 .overflow-scroll {
   overflow: scroll !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.text-black {
+  color: black;
+}
+
+.font-bold {
+  font-weight: bold;
 }

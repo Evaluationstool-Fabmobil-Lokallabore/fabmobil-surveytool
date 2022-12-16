@@ -4,7 +4,8 @@
   background-color: var(--color-background);
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* fall-back */
+  min-height: 100vh;
+  /* fall-back */
   min-height: -moz-available;
   min-height: -webkit-stretch-available;
   min-height: stretch-available;
@@ -124,28 +125,28 @@
   }
 }
 
-.DoubleColumnContainer > div {
+.DoubleColumnContainer>div {
   flex-basis: 50%;
   flex-shrink: 0;
   margin-bottom: 10px;
 }
 
 @media (min-height: $breakpoint-height) {
-  .DoubleColumnContainer > div {
+  .DoubleColumnContainer>div {
     margin-bottom: 21px;
   }
 }
 
-.DoubleColumnContainer > div:nth-child(even) {
+.DoubleColumnContainer>div:nth-child(even) {
   border-left: none;
 }
 
-.DoubleColumnContainer > div:last-child {
+.DoubleColumnContainer>div:last-child {
   flex-grow: 1;
 }
 
 @media (min-width: $breakpoint-width-tablet) {
-  .DoubleColumnContainer > div {
+  .DoubleColumnContainer>div {
     margin-bottom: 37px;
   }
 }
@@ -216,8 +217,7 @@
   /*height: 10vh;*/
 }
 
-.ClickablePicto--active {
-}
+.ClickablePicto--active {}
 
 .ClickablePicto__image {
   min-height: 0;
@@ -239,7 +239,7 @@
 
 .RobiGif {
   position: fixed;
-  z-index: 999;
+  z-index: 111;
   pointer-events: none;
 }
 
@@ -249,7 +249,7 @@
 
 .RobiGifComposite {
   position: fixed;
-  z-index: 999;
+  z-index: 111;
   pointer-events: none;
 }
 
@@ -310,6 +310,7 @@
 }
 
 @media (min-height: $breakpoint-height) {
+
   .FabSlider__elementTop,
   .FabSlider__elementBottom {
     width: 63px;
@@ -406,6 +407,7 @@
     grid-gap: 26px;
   }
 }
+
 @media (min-width: $breakpoint-width-tablet) {
   .vertical-grid__outerouter {
     margin: 0 auto;
@@ -445,6 +447,7 @@
   font-size: 18px;
   max-width: 500px;
   margin: 0 auto;
+
   h1 {
     font-size: 30px;
   }
@@ -462,4 +465,33 @@
 
 .question-and-back p {
   margin-left: 13px;
+}
+
+
+.Alert {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  color: white;
+  padding: 18px;
+  padding-top: 100px;
+}
+
+.Alert__bg {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 888;
+  background-color: black;
+  opacity: 0.8;
+}
+
+.Alert__close {
+  display: block;
+  margin-left: auto;
 }
