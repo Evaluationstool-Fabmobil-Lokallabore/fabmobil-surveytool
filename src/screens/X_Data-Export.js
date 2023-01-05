@@ -1,27 +1,9 @@
 import { useState } from "react";
 import arrToCsv from "../helpers/arrToCsv";
-import surveyWorkshopStart from "../constants/survey-workshopstart";
-import surveyWorkshopEnd from "../constants/survey-workshopend";
+import doData from "../data-analysis/script";
+import collectAllKeyNames from "../helpers/collectAllKeyNames";
 
 const fileReader = new FileReader();
-
-const COLUMNS = {
-  workshopStart: [
-    "date",
-    ...surveyWorkshopStart.surveyItems.map((item) => item.questionId),
-  ],
-  workshopEnd: [
-    "date",
-    ...surveyWorkshopEnd.surveyItems.map((item) => item.questionId),
-  ],
-};
-
-function objToArr(data) {
-  return Object.keys(data).map((key) => ({
-    id: key,
-    ...data[key],
-  }));
-}
 
 function downloadCsv(csvData, filePath) {
   const link = document.createElement("a");
@@ -37,15 +19,13 @@ function handleFileUpload(e, setInfo, setError) {
     const content = e.target.result;
     const data = JSON.parse(content);
 
-    const dataWorkshopStart = objToArr(data.answersWorkshopStart);
-    const dataWorkshopEnd = objToArr(data.answersWorkshopEnd);
-    const CsvWsStart = arrToCsv(dataWorkshopStart, COLUMNS.workshopStart);
-    const CsvWsEnd = arrToCsv(dataWorkshopEnd, COLUMNS.workshopEnd);
+    const result = doData(data);
+    const sortedHeaderKeys = collectAllKeyNames(result).sort().reverse(); //naive: START_prefixed before END_prefixed
 
-    downloadCsv(CsvWsStart, "Workshop-Start.csv");
-    downloadCsv(CsvWsEnd, "Workshop-End.csv");
+    const csv = arrToCsv(result, sortedHeaderKeys);
+    downloadCsv(csv, "fabmobil-data.csv");
     setInfo(
-      "Success! Check the Download folder of your browser for 2 files with the name Workshop-start.csv and Workshop-End.csv"
+      "Success! Check the Download folder of your browser for a file named fabmobil-data.csv"
     );
   } catch (e) {
     console.error(e);
