@@ -34,11 +34,11 @@ class App extends React.Component {
   }
 
   reportError(errorCode) {
-    this.setState({ ...this.state, error: errorCode })
+    this.setState({ ...this.state, error: errorCode });
   }
 
   clearError() {
-    this.setState({ ...this.state, error: null })
+    this.setState({ ...this.state, error: null });
   }
 
   resetSurveyData() {
@@ -84,7 +84,7 @@ class App extends React.Component {
     );
     const data = {
       ...reformattedSurveyData,
-      date: new Date().toLocaleString(),
+      date: new Date().toISOString(),
     };
     console.log("submitted data", data);
     this.firebaseClient
@@ -95,7 +95,7 @@ class App extends React.Component {
   submitAllWorkshopEndAnswers() {
     const data = {
       ...this.state.surveyAnswersWorkshopEnd,
-      date: new Date().toLocaleString(),
+      date: new Date().toISOString(),
     };
     console.log("submitted data", data);
     this.firebaseClient
@@ -113,7 +113,6 @@ class App extends React.Component {
     this.resetSurveyData();
   }
 
-
   async createNewUser() {
     const { nickname, geburtstag } = this.state.surveyAnswersWorkshopStart;
     const userID = this.firebaseClient.createUserID(nickname, geburtstag);
@@ -121,18 +120,25 @@ class App extends React.Component {
     const doesExist = await this.firebaseClient.userDoesExist(userID);
     if (doesExist) {
       this.reportError("USER_EXISTS");
-      throw Error("User exists")
+      throw Error("User exists");
     } else {
       await this.firebaseClient.postUser(userID);
-      this.logAnswerWorkshopStart('userID', userID); //include ID in submission answers
+      this.logAnswerWorkshopStart("userID", userID); //include ID in submission answers
     }
-
   }
 
   render() {
     return (
       <>
-        <AlertLayer error={this.state.error} onCloseClick={() => this.clearError()} onAbandonConfirmClick={() => { this.clearError(); this.resetSurveyData(); window.location = "/" }} />
+        <AlertLayer
+          error={this.state.error}
+          onCloseClick={() => this.clearError()}
+          onAbandonConfirmClick={() => {
+            this.clearError();
+            this.resetSurveyData();
+            window.location = "/";
+          }}
+        />
         <BrowserRouter>
           <Routes>
             <Route
@@ -140,7 +146,9 @@ class App extends React.Component {
               element={
                 <Layout
                   onLogoClick={() => {
-                    if (window.location.pathname !== "/") { this.reportError('ABANDON') }
+                    if (window.location.pathname !== "/") {
+                      this.reportError("ABANDON");
+                    }
                   }}
                 />
               }
@@ -159,12 +167,8 @@ class App extends React.Component {
                       data={
                         this.state.surveyAnswersWorkshopStart[item.questionId]
                       }
-                      onNicknameSubmit={
-                        () => this.createNewUser()
-                      }
-                      onFinalSubmit={
-                        () => this.onFinalSubmitWorkshopStart()
-                      }
+                      onNicknameSubmit={() => this.createNewUser()}
+                      onFinalSubmit={() => this.onFinalSubmitWorkshopStart()}
                     ></item.screenComponent>
                   }
                 />
@@ -182,8 +186,11 @@ class App extends React.Component {
                       data={
                         this.state.surveyAnswersWorkshopEnd[item.questionId]
                       }
-                      onLogin={
-                        (nickname, geburtstag) => this.logAnswerWorkshopEnd('userID', this.firebaseClient.createUserID(nickname, geburtstag))
+                      onLogin={(nickname, geburtstag) =>
+                        this.logAnswerWorkshopEnd(
+                          "userID",
+                          this.firebaseClient.createUserID(nickname, geburtstag)
+                        )
                       }
                       onFinalSubmit={
                         item.isFinal && (() => this.onFinalSubmitWorkshopEnd())
