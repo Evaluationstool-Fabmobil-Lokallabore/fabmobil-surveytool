@@ -1,6 +1,4 @@
 import FabTextInput from "../../components/FabTextInput";
-import RobiGifFlex from "../../components/RobiGifFlex";
-import robiTastatur from "../../assets/robi-gifs/Robi_tastatur-min.gif";
 import WeiterButton from "../../components/WeiterButton";
 import BackButton from "../../components/BackButton";
 
@@ -28,7 +26,10 @@ function Screen({ onSubmit, data }) {
           <li>Maximal 15 Zeichen!</li>
         </ul>
       </small>
-      <WeiterButton enabled={hasUserAnswered()} navigateTo={"/losgehts/geburtstag"} />
+      <WeiterButton
+        enabled={hasUserAnswered()}
+        navigateTo={"/losgehts/geburtstag"}
+      />
     </>
   );
 }
