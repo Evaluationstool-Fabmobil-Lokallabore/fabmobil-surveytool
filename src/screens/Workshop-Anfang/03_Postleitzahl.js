@@ -6,7 +6,8 @@ import BackButton from "../../components/BackButton";
 
 function Screen({ data, onSubmit }) {
   const hasUserAnswered = () => {
-    if (!data || data.length < 1) return false;
+    if (!data) return false;
+    if (!data.match(/^[0-9]{5}$/)) return false;
     return true;
   };
   return (
