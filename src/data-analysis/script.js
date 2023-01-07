@@ -1,3 +1,5 @@
+import { DateTime } from "luxon";
+
 const groupBy = (array, key) => {
   return array.reduce((result, currentValue) => {
     (result[currentValue[key]] = result[currentValue[key]] || []).push(
@@ -106,6 +108,14 @@ function flatten(list) {
   return flattened;
 }
 
+function convertUTCDatesToSaxonyTime(arr) {
+  arr.forEach((el) => {
+    el.date = DateTime.fromISO(el.date, {
+      zone: "Europe/Paris",
+    });
+  });
+}
+
 function doData(data) {
   console.log("... Fabmobil Data Analysis... ");
   const users = Object.values(data["users"]);
@@ -114,6 +124,8 @@ function doData(data) {
   //sort
   sortByDate(answersWorkshopStart);
   sortByDate(answersWorkshopEnd);
+  convertUTCDatesToSaxonyTime(answersWorkshopStart);
+  convertUTCDatesToSaxonyTime(answersWorkshopEnd);
   analyze(users, answersWorkshopStart, answersWorkshopEnd);
   const list = combineStartandEnd(answersWorkshopStart, answersWorkshopEnd);
   return flatten(list);
