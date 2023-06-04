@@ -14,12 +14,12 @@ function downloadCsv(csvData, filePath) {
   link.click();
 }
 
-function handleFileUpload(e, setInfo, setError) {
+function handleFileUpload(e, setLogs, setInfo, setError) {
   try {
     const content = e.target.result;
     const data = JSON.parse(content);
 
-    const result = doData(data);
+    const result = doData(data, setLogs);
     const sortedHeaderKeys = collectAllKeyNames(result).sort().reverse(); //naive: START_prefixed before END_prefixed
 
     const csv = arrToCsv(result, sortedHeaderKeys);
@@ -28,19 +28,20 @@ function handleFileUpload(e, setInfo, setError) {
       "Success! Check the Download folder of your browser for a file named fabmobil-data.csv"
     );
   } catch (e) {
+    setError(e.toString());
     console.error(e);
-    setError(JSON.stringify(e));
   }
 }
 
 function Screen() {
   const [error, setError] = useState(false);
   const [info, setInfo] = useState("");
+  const [logs, setLogs] = useState([]);
 
   const onFileChange = (event) => {
     const file = event.target.files[0];
     fileReader.onload = function (e) {
-      handleFileUpload(e, setInfo, setError);
+      handleFileUpload(e, setLogs, setInfo, setError);
     };
     fileReader.readAsText(file, "UTF-8");
   };
@@ -51,11 +52,17 @@ function Screen() {
       <input type="file" onChange={onFileChange} />
       {error && (
         <div style={{ color: "red" }}>
-          An error occured. Check the browser devtools console for more
-          information.
+          Upsi. Das hat leider nicht geklappt :-( <br />
+          Das ist der Error: <br />
+          <span>{JSON.stringify(error)}</span>
         </div>
       )}
-      <div>
+      <div style={{ fontSize: 14, backgroundColor: "white", padding: 10 }}>
+        {logs.map((log) => (
+          <p>{log}</p>
+        ))}
+      </div>
+      <div style={{ fontSize: 20 }}>
         <p>{info}</p>
       </div>
     </div>

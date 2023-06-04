@@ -1,4 +1,10 @@
 import { DateTime } from "luxon";
+const logs = [];
+
+function logWhatshappening(content) {
+  console.log(content);
+  logs.push(content);
+}
 
 const groupBy = (array, key) => {
   return array.reduce((result, currentValue) => {
@@ -11,16 +17,18 @@ const groupBy = (array, key) => {
 
 function analyzeAnswerSet(data) {
   const dataLength = data.length;
-  console.log("Number of answers: ", dataLength);
+  logWhatshappening("Number of answers: " + dataLength);
   const mostRecent = data[dataLength - 1];
-  console.log("Most recent answer: ", mostRecent.date);
+  logWhatshappening(
+    "Most recent answer: " + new Date(mostRecent.date).toDateString()
+  );
   //Sanity Checks
-  console.log("-- Sanity checks...");
+  logWhatshappening("-- Sanity checks...");
   //SC1: Are there entries without userID (those cant be matched)?
   const entriesWithUserId = data.filter((el) => "userID" in el);
   const entriesWithoutUserId = data.filter((el) => !("userID" in el));
-  console.log("Entries with user ID: ", entriesWithUserId.length);
-  console.log("Entries without user ID: ", entriesWithoutUserId.length);
+  logWhatshappening("Entries with user ID: " + entriesWithUserId.length);
+  logWhatshappening("Entries without user ID: " + entriesWithoutUserId.length);
   //SC2: How many entries exist by the same user? (we expect 1)
   const entriesPerUserName = groupBy(entriesWithUserId, "userID"); // how many entries exist by the same user? (we expect 1)
   const usersWithMoreThanOneEntry = [];
@@ -31,22 +39,25 @@ function analyzeAnswerSet(data) {
       });
     }
   });
-  console.log("Users with more than 1 entry: ", usersWithMoreThanOneEntry);
+  logWhatshappening(
+    "Users with more than 1 entry: " +
+      usersWithMoreThanOneEntry.map(JSON.stringify)
+  );
 }
 
 function analyze(users, answersWorkshopStart, answersWorkshopEnd) {
-  console.log("Number of users: ", users.length);
-  console.log(
-    "Sum of answersStart + answersEnd: ",
-    answersWorkshopStart.length + answersWorkshopEnd.length
+  logWhatshappening("Number of users: " + users.length);
+  logWhatshappening(
+    "Sum of answersStart + answersEnd = " +
+      (answersWorkshopStart.length + answersWorkshopEnd.length)
   );
   // Start
-  console.log("--------- Analytics Answers/Workshop-Start --------- ");
+  logWhatshappening("--------- Analytics Answers/Workshop-Start --------- ");
   analyzeAnswerSet(answersWorkshopStart);
   //End
-  console.log("--------- Analytics Answers/Workshop-End --------- ");
+  logWhatshappening("--------- Analytics Answers/Workshop-End --------- ");
   analyzeAnswerSet(answersWorkshopEnd);
-  console.log(
+  logWhatshappening(
     "---- Crosslinking datasets by matching userID Workshop-Start & Workshop-End ----- "
   );
 }
@@ -74,7 +85,7 @@ function combineStartandEnd(answersWorkshopStart, answersWorkshopEnd) {
   answersWorkshopEndCopy.forEach((answerRow) => {
     newList.push({ start: null, end: answerRow }); //adding remaining answerRows (aka those without an id, and those without a match in start)
   });
-  console.log("match count", matchCount);
+  logWhatshappening("Match count: " + matchCount);
   return newList;
 }
 
@@ -116,18 +127,20 @@ function convertUTCDatesToSaxonyTime(arr) {
   });
 }
 
-function doData(data) {
-  console.log("... Fabmobil Data Analysis... ");
+function doData(data, setInfo) {
+  logWhatshappening(
+    "FABMOBIL DATA ANALYTICS - Here you can find an overview of the data:"
+  );
   const users = Object.values(data["users"]);
   const answersWorkshopStart = Object.values(data["answersWorkshopStart"]);
   const answersWorkshopEnd = Object.values(data["answersWorkshopEnd"]);
-  //sort
   sortByDate(answersWorkshopStart);
   sortByDate(answersWorkshopEnd);
   convertUTCDatesToSaxonyTime(answersWorkshopStart);
   convertUTCDatesToSaxonyTime(answersWorkshopEnd);
   analyze(users, answersWorkshopStart, answersWorkshopEnd);
   const list = combineStartandEnd(answersWorkshopStart, answersWorkshopEnd);
+  setInfo(logs);
   return flatten(list);
 }
 
