@@ -10,9 +10,7 @@ function convertToStringable(el) {
   } else {
     str = String(el);
   }
-  str.replaceAll(DELIMITER, ";");
-  str.replaceAll("#", "{HASH}"); //a hash (#) in the data cuts off the csv file triggers the download 🙈
-  return str;
+  return str.replaceAll(DELIMITER, ";").replaceAll("#", "{HASH}"); //a hash (#) in the data cuts off the csv file triggers the download 🙈
 }
 
 const arrToCsv = (arr, columns, delimiter = DELIMITER) =>
