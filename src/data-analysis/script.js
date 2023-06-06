@@ -166,7 +166,8 @@ function doData(data, setInfo) {
     answersWorkshopEnd
   );
   setInfo(logs);
-  return flatten(list);
+  const flattenedList = flatten(list);
+  return flattenedList;
 }
 
 export default doData;

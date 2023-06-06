@@ -1,15 +1,21 @@
+const DELIMITER = ",";
+
 function convertToStringable(el) {
   //convert data objects into something useful for the reader
+  let str = "";
   if (Array.isArray(el)) {
-    return `${el}`; //built-in is fine for our case
+    str = `${el}`; //built-in is fine for our case
+  } else if (typeof el === "object") {
+    str = JSON.stringify(el);
+  } else {
+    str = String(el);
   }
-  //if is object
-  if (typeof el === "object") {
-    return JSON.stringify(el);
-  } else return el;
+  str.replaceAll(DELIMITER, ";");
+  str.replaceAll("#", "{HASH}"); //a hash (#) in the data cuts off the csv file triggers the download 🙈
+  return str;
 }
 
-const arrToCsv = (arr, columns, delimiter = ",") =>
+const arrToCsv = (arr, columns, delimiter = DELIMITER) =>
   [
     columns.join(delimiter),
     ...arr.map((obj) =>
@@ -23,7 +29,6 @@ const arrToCsv = (arr, columns, delimiter = ",") =>
     ),
   ].join("\n");
 
-//TODO: escape delimiter?
 //TODO escape quotes?
 
 export default arrToCsv;
