@@ -83,8 +83,11 @@ function matchingMasterAlgorithm(answersWorkshopStart, answersWorkshopEnd) {
       if (matchy) {
         matchCount += 1;
         newList.push({ start: answerRow, end: matchy }); //its a (first) match
-        const i = answersWorkshopEndCopy.indexOf(matchy);
-        answersWorkshopEndCopy.splice(i, 1); //remove (first) match from answer dataset, there might have been more matches tho!
+        //remove (first) match from answer dataset, there might have been more matches tho!
+        const matchyIndex = answersWorkshopEndCopy.indexOf(matchy);
+        if (matchyIndex > -1) {
+          answersWorkshopEndCopy.splice(matchyIndex, 1);
+        }
       } else {
         newList.push({ start: answerRow, end: null }); //no match available in answersEnd
       }
@@ -141,8 +144,18 @@ function doData(data, setInfo) {
     "FABMOBIL DATA ANALYTICS - Here you can find an overview of the data:"
   );
   const users = Object.values(data["users"]);
-  const answersWorkshopStart = Object.values(data["answersWorkshopStart"]);
-  const answersWorkshopEnd = Object.values(data["answersWorkshopEnd"]);
+  const answersWorkshopStart = Object.keys(data["answersWorkshopStart"]).map(
+    (key) => ({
+      ...data["answersWorkshopStart"][key],
+      key: key,
+    })
+  );
+  const answersWorkshopEnd = Object.keys(data["answersWorkshopEnd"]).map(
+    (key) => ({
+      ...data["answersWorkshopEnd"][key],
+      key: key,
+    })
+  );
   sortByDate(answersWorkshopStart);
   sortByDate(answersWorkshopEnd);
   convertUTCDatesToSaxonyTime(answersWorkshopStart);
