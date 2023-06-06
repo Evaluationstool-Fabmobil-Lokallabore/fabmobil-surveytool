@@ -17,7 +17,12 @@ const groupBy = (array, key) => {
 
 function analyzeAnswerSet(data) {
   const dataLength = data.length;
-  logWhatshappening("Number of answers: " + dataLength);
+  if (dataLength < 1) {
+    logWhatshappening("There are no entries for this answer set");
+    return;
+  } else {
+    logWhatshappening("Number of answers: " + dataLength);
+  }
   const mostRecent = data[dataLength - 1];
   logWhatshappening(
     "Most recent answer: " + new Date(mostRecent.date).toDateString()
@@ -41,7 +46,9 @@ function analyzeAnswerSet(data) {
   });
   logWhatshappening(
     "Users with more than 1 entry: " +
-      usersWithMoreThanOneEntry.map(JSON.stringify)
+      (usersWithMoreThanOneEntry.length > 0
+        ? usersWithMoreThanOneEntry.map(JSON.stringify)
+        : "None")
   );
 }
 
@@ -57,33 +64,35 @@ function analyze(users, answersWorkshopStart, answersWorkshopEnd) {
   //End
   logWhatshappening("--------- Analytics Answers/Workshop-End --------- ");
   analyzeAnswerSet(answersWorkshopEnd);
-  logWhatshappening(
-    "---- Crosslinking datasets by matching userID Workshop-Start & Workshop-End ----- "
-  );
 }
 
-function combineStartandEnd(answersWorkshopStart, answersWorkshopEnd) {
+function matchingMasterAlgorithm(answersWorkshopStart, answersWorkshopEnd) {
+  logWhatshappening(
+    "---- Matching Workshop-Start answerset with Workshop-End answerset by matching userIDs ----- "
+  );
   const answersWorkshopEndCopy = answersWorkshopEnd.slice();
   const newList = [];
   let matchCount = 0;
+  //iterating over START dataset
   answersWorkshopStart.forEach((answerRow) => {
     const userId = "userID" in answerRow ? answerRow["userID"] : undefined;
     if (!userId) {
       newList.push({ start: answerRow, end: null }); //cant make a match because userId is missing
     } else {
-      const matchy = answersWorkshopEnd.find((el) => el["userID"] === userId);
+      const matchy = answersWorkshopEnd.find((el) => el["userID"] === userId); //only take first match!
       if (matchy) {
         matchCount += 1;
-        newList.push({ start: answerRow, end: matchy }); //its a match
+        newList.push({ start: answerRow, end: matchy }); //its a (first) match
         const i = answersWorkshopEndCopy.indexOf(matchy);
-        answersWorkshopEndCopy.splice(i, 1); //remove match from answers
+        answersWorkshopEndCopy.splice(i, 1); //remove (first) match from answer dataset, there might have been more matches tho!
       } else {
         newList.push({ start: answerRow, end: null }); //no match available in answersEnd
       }
     }
   });
+  //adding remaining answerRows (aka those without an id, and those without a match in start)
   answersWorkshopEndCopy.forEach((answerRow) => {
-    newList.push({ start: null, end: answerRow }); //adding remaining answerRows (aka those without an id, and those without a match in start)
+    newList.push({ start: null, end: answerRow });
   });
   logWhatshappening("Match count: " + matchCount);
   return newList;
@@ -139,7 +148,10 @@ function doData(data, setInfo) {
   convertUTCDatesToSaxonyTime(answersWorkshopStart);
   convertUTCDatesToSaxonyTime(answersWorkshopEnd);
   analyze(users, answersWorkshopStart, answersWorkshopEnd);
-  const list = combineStartandEnd(answersWorkshopStart, answersWorkshopEnd);
+  const list = matchingMasterAlgorithm(
+    answersWorkshopStart,
+    answersWorkshopEnd
+  );
   setInfo(logs);
   return flatten(list);
 }

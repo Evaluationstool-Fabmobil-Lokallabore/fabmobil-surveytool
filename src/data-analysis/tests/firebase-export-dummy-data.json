@@ -1,0 +1,53 @@
+{
+  "answersWorkshopEnd": {
+    "-NWlayloxFKSVZVJo1Ca": {
+      "angebot": "Naja...gibts hier schon",
+      "anythingElse": "bitte kein golf dings mehr",
+      "atmo": 2,
+      "betreuung": 3,
+      "date": "2023-05-31T11:40:24.559Z",
+      "dreiDDruck": "So mittel",
+      "dreiDModelling": "nicht benutzt",
+      "engagieren": "Könnt ich mir vorstellen...",
+      "erwartungen": 1,
+      "interesse": "Nö",
+      "laser": "Kann man schon machen",
+      "nextTime": ["Virtual Reality", "3D-Druck", "Vakuum Former"],
+      "nickname": {
+        "day": "22",
+        "month": "09",
+        "nickname": "Annanas",
+        "year": "2008"
+      },
+      "programme": ["Tinkercad", "SculptGL"],
+      "spass": 1,
+      "technologie": ["3D-Druck", "Lasercutter"],
+      "userID": "Annanas22092008",
+      "vr": "nicht benutzt"
+    }
+  },
+  "answersWorkshopStart": {
+    "-NWgBEuIh9Ff4Zu5Ykt4": {
+      "alter": "13-16",
+      "anzahlTage": 2,
+      "besuch": "noch nie",
+      "date": "2023-05-30T10:25:30.364Z",
+      "erwartungen": "das wir im computer eine figur machen können und sie dann mit dem 3d drucker drucken",
+      "geburtstag": {
+        "day": "22",
+        "month": "09",
+        "year": "2008"
+      },
+      "geschlecht": ["weiblich"],
+      "grund": ["Hauptsache was los"],
+      "interesse": ["Virtual Reality", "3D-Druck", "3D-Scanner"],
+      "nickname": "Annanas",
+      "ort": "Oberschule",
+      "postleitzahl": "09465",
+      "userID": "Annanas22092008",
+      "vorerfahrung": ["VR/Gravity Sketch"],
+      "werbung": ["Schule"]
+    }
+  },
+  "users": { "-NWgBEorKXyDubF9D39y": "Annanas22092008" }
+}
