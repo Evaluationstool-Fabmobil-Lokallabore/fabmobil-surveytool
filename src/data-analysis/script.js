@@ -1,6 +1,10 @@
 import { DateTime } from "luxon";
 const logs = [];
 
+function formatDuplicateReport(arr) {
+  return JSON.stringify(arr);
+}
+
 function logWhatshappening(content) {
   console.log(content);
   logs.push(content);
@@ -15,10 +19,35 @@ const groupBy = (array, key) => {
   }, {});
 };
 
+function analyzeUserDataset(users) {
+  const usersLength = users.length;
+  if (usersLength < 1) {
+    logWhatshappening("There are no entries in this data set");
+    return;
+  } else {
+    logWhatshappening("Number of entries: " + usersLength);
+  }
+  const mappedUsers = users.map((u) => ({ username: u }));
+  const entriesPerUserName = groupBy(mappedUsers, "username"); // how many entries exist by the same user? (we expect 1)
+
+  const usersWithMoreThanOneEntry = [];
+  Object.keys(entriesPerUserName).forEach((user) => {
+    if (entriesPerUserName[user].length > 1) {
+      usersWithMoreThanOneEntry.push({
+        [user]: entriesPerUserName[user].length,
+      });
+    }
+  });
+  logWhatshappening(
+    "Users with more than 1 entry: " +
+      formatDuplicateReport(usersWithMoreThanOneEntry)
+  );
+}
+
 function analyzeAnswerSet(data) {
   const dataLength = data.length;
   if (dataLength < 1) {
-    logWhatshappening("There are no entries for this answer set");
+    logWhatshappening("There are no entries in this data set");
     return;
   } else {
     logWhatshappening("Number of answers: " + dataLength);
@@ -27,14 +56,12 @@ function analyzeAnswerSet(data) {
   logWhatshappening(
     "Most recent answer: " + new Date(mostRecent.date).toDateString()
   );
-  //Sanity Checks
-  logWhatshappening("-- Sanity checks...");
-  //SC1: Are there entries without userID (those cant be matched)?
+  //Sanity check 1: Are there entries without userID (those cant be matched)?
   const entriesWithUserId = data.filter((el) => "userID" in el);
   const entriesWithoutUserId = data.filter((el) => !("userID" in el));
   logWhatshappening("Entries with user ID: " + entriesWithUserId.length);
   logWhatshappening("Entries without user ID: " + entriesWithoutUserId.length);
-  //SC2: How many entries exist by the same user? (we expect 1)
+  //Sanity check 2: How many entries exist by the same user? (we expect 1)
   const entriesPerUserName = groupBy(entriesWithUserId, "userID"); // how many entries exist by the same user? (we expect 1)
   const usersWithMoreThanOneEntry = [];
   Object.keys(entriesPerUserName).forEach((user) => {
@@ -47,22 +74,20 @@ function analyzeAnswerSet(data) {
   logWhatshappening(
     "Users with more than 1 entry: " +
       (usersWithMoreThanOneEntry.length > 0
-        ? usersWithMoreThanOneEntry.map(JSON.stringify)
+        ? formatDuplicateReport(usersWithMoreThanOneEntry)
         : "None")
   );
 }
 
 function analyze(users, answersWorkshopStart, answersWorkshopEnd) {
-  logWhatshappening("Number of users: " + users.length);
-  logWhatshappening(
-    "Sum of answersStart + answersEnd = " +
-      (answersWorkshopStart.length + answersWorkshopEnd.length)
-  );
-  // Start
-  logWhatshappening("--------- Analytics Answers/Workshop-Start --------- ");
+  // Dataset "Users"
+  logWhatshappening("--------- Analytics Dataset USERS --------- ");
+  logWhatshappening("Number of registered users: " + users.length);
+  analyzeUserDataset(users);
+  logWhatshappening("Duplicates in users: " + "???");
+  logWhatshappening("--------- Analytics Dataset WORKSHOP-START --------- ");
   analyzeAnswerSet(answersWorkshopStart);
-  //End
-  logWhatshappening("--------- Analytics Answers/Workshop-End --------- ");
+  logWhatshappening("--------- Analytics Dataset WORKSHOP-END --------- ");
   analyzeAnswerSet(answersWorkshopEnd);
 }
 
@@ -140,9 +165,7 @@ function convertUTCDatesToSaxonyTime(arr) {
 }
 
 function doData(data, setInfo) {
-  logWhatshappening(
-    "FABMOBIL DATA ANALYTICS - Here you can find an overview of the data:"
-  );
+  logWhatshappening("FABMOBIL DATA ANALYTICS");
   const users = Object.values(data["users"]);
   const answersWorkshopStart = Object.keys(data["answersWorkshopStart"]).map(
     (key) => ({
