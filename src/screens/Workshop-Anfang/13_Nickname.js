@@ -11,7 +11,7 @@ function Screen({ onSubmit, data }) {
     <>
       <div className="question-and-back">
         <BackButton />
-        <p>Was ist dein Nickname?</p>
+        <p>Was ist dein Vorname?</p>
       </div>
       <p>
         Merke dir diesen Namen. <br /> Du wirst ihn am Ende des Workshops
