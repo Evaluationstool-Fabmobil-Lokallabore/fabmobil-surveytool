@@ -20,21 +20,21 @@ function Screen({ onSubmit, onNicknameSubmit, onFinalSubmit, data }) {
         <FabTextInput
           pattern="[0-9]{2}"
           maxLength={2}
-          placeholder="Tag"
+          placeholder="31"
           value={(data && data.day) || ""}
           onChange={(val) => onSubmit({ ...data, day: val })}
         />
         <FabTextInput
           pattern="[0-9]{2}"
           maxLength={2}
-          placeholder="Monat"
+          placeholder="01"
           value={(data && data.month) || ""}
           onChange={(val) => onSubmit({ ...data, month: val })}
         />
         <FabTextInput
           pattern="[0-9]{4}"
           maxLength={4}
-          placeholder="Jahr"
+          placeholder="2001"
           value={(data && data.year) || ""}
           onChange={(val) => onSubmit({ ...data, year: val })}
         />

@@ -30,7 +30,7 @@ function Screen({ onSubmit, data, firebaseClient, onLogin, reportError }) {
     <>
       <div>
         <p>Willkommen zurück!</p>
-        <p>Verrätst du mir deinen Vornamen und Geburtstag?</p>
+        <p>Logge dich mit deinem Vornamen und Geburtsdatum (in Zahlen) ein!</p>
       </div>
 
       <div
@@ -40,27 +40,28 @@ function Screen({ onSubmit, data, firebaseClient, onLogin, reportError }) {
       ></div>
       <VerticalGrid>
         <FabTextInput
+          placeholder="Vorname"
           value={(data && data.nickname) || ""}
           onChange={(val) => onSubmit({ ...data, nickname: val })}
         />
         <FabTextInput
           pattern="[0-9]{2}"
           maxLength={2}
-          placeholder="Tag"
+          placeholder="31"
           value={(data && data.day) || ""}
           onChange={(val) => onSubmit({ ...data, day: val })}
         />
         <FabTextInput
           pattern="[0-9]{2}"
           maxLength={2}
-          placeholder="Monat"
+          placeholder="01"
           value={(data && data.month) || ""}
           onChange={(val) => onSubmit({ ...data, month: val })}
         />
         <FabTextInput
           pattern="[0-9]{4}"
           maxLength={4}
-          placeholder="Jahr"
+          placeholder="2001"
           value={(data && data.year) || ""}
           onChange={(val) => onSubmit({ ...data, year: val })}
         />
