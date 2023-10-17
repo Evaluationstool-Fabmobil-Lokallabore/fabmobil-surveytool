@@ -11,7 +11,9 @@ class Client {
   }
 
   createUserID(nickname, geburtstag) {
-    if (!nickname || !geburtstag) { throw Error("Can't create nickname") }
+    if (!nickname || !geburtstag) {
+      throw Error("Can't create nickname");
+    }
     return `${nickname}${geburtstag.day}${geburtstag.month}${geburtstag.year}`;
   }
 
@@ -40,6 +42,7 @@ class Client {
         try {
           return Object.values(snapshot.val()).includes(userId);
         } catch {
+          alert("Error");
         }
       } else {
         throw Error;
