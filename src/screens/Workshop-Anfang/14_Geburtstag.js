@@ -50,8 +50,8 @@ function Screen({ onSubmit, onNicknameSubmit, onFinalSubmit, data }) {
         />
         <small>
           <ul style={{ listStyle: "none" }}>
-            <li>Oberes Feld = Tag (genau 2 Zahlen)</li>
-            <li>Mittleres Feld = Monat (genau 2 Zahlen)</li>
+            <li>Oberes Feld = Tag (genau 2 Zahlen, z.B. 31, oder 05)</li>
+            <li>Mittleres Feld = Monat (genau 2 Zahlen, z.B. 03 für März)</li>
             <li>Unteres Feld = Jahr (genau 4 Zahlen)</li>
           </ul>
         </small>

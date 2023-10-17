@@ -2,10 +2,11 @@ import FabTextInput from "../../components/FabTextInput";
 import WeiterButton from "../../components/WeiterButton";
 import BackButton from "../../components/BackButton";
 
-const REGULAR_EXPRESSION = /^[a-z, ä,ö,ü]{2,15}$/;
+const REGULAR_EXPRESSION = /^[a-z,ä,ö,ü,-]{2,15}$/;
 
 function Screen({ onSubmit, data }) {
   const hasUserAnswered = () => {
+    if (!data) return false;
     if (!data.match(REGULAR_EXPRESSION)) {
       return false;
     }
@@ -26,6 +27,8 @@ function Screen({ onSubmit, data }) {
         <ul style={{ listStyle: "none" }}>
           <li>Nur Kleinbuchstaben!</li>
           <li>Keine Zahlen / Sonderzeichen!</li>
+          <li>Bindestriche sind okay</li>
+          <li>Keine Leerzeichen</li>
           <li>Mindestens 2 Zeichen!</li>
           <li>Maximal 15 Zeichen!</li>
         </ul>
