@@ -5,8 +5,8 @@ import BackButton from "../../components/BackButton";
 
 const ANSWER_OPTIONS = FABMOBIL_TECHNOLOGIES;
 const column1 = ANSWER_OPTIONS.slice(0, 3);
-const column2 = ANSWER_OPTIONS.slice(3, 5);
-const column3 = ANSWER_OPTIONS.slice(5, ANSWER_OPTIONS.length + 1);
+const column2 = ANSWER_OPTIONS.slice(3, 6);
+const column3 = ANSWER_OPTIONS.slice(6, ANSWER_OPTIONS.length + 1);
 
 function Screen({ onSubmit, data }) {
   return (

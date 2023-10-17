@@ -14,6 +14,8 @@ import pictoLaser from "../assets/pictograms/FM-Emoji_ohneRand34.png";
 import pictoLaserActive from "../assets/pictograms/FM-Emoji_mitRand34.png";
 import pictoStickmaschine from "../assets/pictograms/FM-Emoji_ohneRand50.png";
 import pictoStickmaschineActive from "../assets/pictograms/FM-Emoji_mitRand50.png";
+import pictoKI from "../assets/pictograms/FM-Emoji_ohneRand63.png";
+import pictoKIActive from "../assets/pictograms/FM-Emoji_mitRand63.png";
 
 const fabmobilTechnologies = [
   {
@@ -31,6 +33,11 @@ const fabmobilTechnologies = [
     title: "Stickmaschine",
     picto: pictoStickmaschine,
     pictoActive: pictoStickmaschineActive,
+  },
+  {
+    title: "KI",
+    picto: pictoKI,
+    pictoActive: pictoKIActive,
   },
 ];
 

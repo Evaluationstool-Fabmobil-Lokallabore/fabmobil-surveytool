@@ -3,17 +3,10 @@ import MultiplePictoChoice from "../../components/MultiplePictoChoiceTool";
 import FABMOBIL_TECHNOLOGIES from "../../constants/fabmobil-technologies";
 import BackButton from "../../components/BackButton";
 
-const column1 = [
-  FABMOBIL_TECHNOLOGIES[0],
-  FABMOBIL_TECHNOLOGIES[6],
-  FABMOBIL_TECHNOLOGIES[3],
-];
-const column2 = [FABMOBIL_TECHNOLOGIES[1], FABMOBIL_TECHNOLOGIES[2]];
-const column3 = [
-  FABMOBIL_TECHNOLOGIES[7],
-  FABMOBIL_TECHNOLOGIES[5],
-  FABMOBIL_TECHNOLOGIES[4],
-];
+const ANSWER_OPTIONS = FABMOBIL_TECHNOLOGIES;
+const column1 = ANSWER_OPTIONS.slice(0, 3);
+const column2 = ANSWER_OPTIONS.slice(3, 6);
+const column3 = ANSWER_OPTIONS.slice(6, ANSWER_OPTIONS.length + 1);
 
 function Screen({ onSubmit, data }) {
   return (
