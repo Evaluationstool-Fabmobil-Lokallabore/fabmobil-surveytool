@@ -65,6 +65,14 @@ function Screen({ onSubmit, data, firebaseClient, onLogin, reportError }) {
           value={(data && data.year) || ""}
           onChange={(val) => onSubmit({ ...data, year: val })}
         />
+        <small>
+          <ul style={{ listStyle: "none" }}>
+            <li>Erstes Feld = Dein Vorname</li>
+            <li>Zweites Feld = Tag (genau 2 Zahlen) von deinem Geburtstag</li>
+            <li>Drittes Feld = Monat (genau 2 Zahlen) von deinem Geburtstag</li>
+            <li>Viertes Feld = Jahr (genau 4 Zahlen) von deinem Geburtstag</li>
+          </ul>
+        </small>
       </VerticalGrid>
       <WeiterButton
         enabled={hasUserAnswered()}

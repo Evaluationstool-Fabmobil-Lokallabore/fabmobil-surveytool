@@ -4,9 +4,19 @@ import SubmitButton from "../../components/SubmitButton";
 import BackButton from "../../components/BackButton";
 import VerticalGrid from "../../components/VerticalGrid";
 
+const REGEX_TWO_DIGIT = /^[0-9]{2}$/;
+const REGEX_FOUR_DIGIT = /^[0-9]{4}$/;
+
 function Screen({ onSubmit, onNicknameSubmit, onFinalSubmit, data }) {
   const hasUserAnswered = () => {
     if (!data || !data.day || !data.month || !data.year) return false;
+    if (
+      !data.day.match(REGEX_TWO_DIGIT) ||
+      !data.month.match(REGEX_TWO_DIGIT) ||
+      !data.year.match(REGEX_FOUR_DIGIT)
+    ) {
+      return false;
+    }
     return true;
   };
   const navigate = useNavigate();
@@ -38,6 +48,13 @@ function Screen({ onSubmit, onNicknameSubmit, onFinalSubmit, data }) {
           value={(data && data.year) || ""}
           onChange={(val) => onSubmit({ ...data, year: val })}
         />
+        <small>
+          <ul style={{ listStyle: "none" }}>
+            <li>Oberes Feld = Tag (genau 2 Zahlen)</li>
+            <li>Mittleres Feld = Monat (genau 2 Zahlen)</li>
+            <li>Unteres Feld = Jahr (genau 4 Zahlen)</li>
+          </ul>
+        </small>
       </VerticalGrid>
       <SubmitButton
         enabled={hasUserAnswered()}
