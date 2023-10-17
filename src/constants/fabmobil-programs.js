@@ -15,7 +15,7 @@ import pictoInkscapeActive from "../assets/pictograms/FM-Emoji_mitRand19.png";
 
 const fabmobilPrograms = [
   {
-    title: "VR/Gravity Sketch",
+    title: "VR/Co-Spaces",
     picto: pictoTiltbrush,
     pictoActive: pictoTiltbrushActive,
   },
