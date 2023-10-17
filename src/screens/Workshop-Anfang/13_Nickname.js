@@ -2,9 +2,13 @@ import FabTextInput from "../../components/FabTextInput";
 import WeiterButton from "../../components/WeiterButton";
 import BackButton from "../../components/BackButton";
 
+const REGULAR_EXPRESSION = /^[a-z, ä,ö,ü]{2,15}$/;
+
 function Screen({ onSubmit, data }) {
   const hasUserAnswered = () => {
-    if (!data || data.length < 1) return false;
+    if (!data.match(REGULAR_EXPRESSION)) {
+      return false;
+    }
     return true;
   };
   return (
@@ -19,7 +23,7 @@ function Screen({ onSubmit, data }) {
       </p>
       <FabTextInput value={data || ""} onChange={onSubmit} />
       <small>
-        <ul>
+        <ul style={{ listStyle: "none" }}>
           <li>Nur Kleinbuchstaben!</li>
           <li>Keine Zahlen / Sonderzeichen!</li>
           <li>Mindestens 2 Zeichen!</li>
