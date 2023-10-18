@@ -84,7 +84,7 @@ function analyze(users, answersWorkshopStart, answersWorkshopEnd) {
   logWhatshappening("--------- Analytics Dataset USERS --------- ");
   logWhatshappening("Number of registered users: " + users.length);
   analyzeUserDataset(users);
-  logWhatshappening("Duplicates in users: " + "???");
+  logWhatshappening("Duplicates in users?");
   logWhatshappening("--------- Analytics Dataset WORKSHOP-START --------- ");
   analyzeAnswerSet(answersWorkshopStart);
   logWhatshappening("--------- Analytics Dataset WORKSHOP-END --------- ");
