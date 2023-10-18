@@ -15,7 +15,7 @@ Es gibt 2 Umfrage-Sorten innerhalb der App, die für verschiedene Menschen und S
 
 
 ## User Identifizierung aka Benutzer*innen Login
-Für die Datenauswertung ist es wichtig, mehrere Submission, die von ein und derselben Person stammen, zuordnen zu können.
+Für die Datenauswertung ist es wichtig, mehrere Submissions, die von ein und derselben Person stammen, zuordnen zu können.
 Dafür benutzt die App eine vereinfachte Benutzer*innen Identifizierung. Der "Login" besteht aus dem Namen und dem Geburtsdatum einer Person. Es werden keine Passwörter benutzt.
 
 ## Technisches über React (weiter auf Englisch)
