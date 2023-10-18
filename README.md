@@ -9,6 +9,11 @@ Deployed und gehostet wird die App auf [Netlify](https://www.netlify.com/).
 
 ## Umfrage Ablauf und Logik
 
+Es gibt 2 Umfrage-Sorten innerhalb der App, die für verschiedene Menschen und Situationen gedacht sind:
+- Workshop Start
+- Workshop End
+
+
 ## Benutzer*innen Login/Logout
 Diese App benutzt ein vereinfachtes Benutzer*innen management. Der Login besteht aus dem Namen und dem Geburtsdatum einer Person. Es werden keine Passwörter benutzt.
 
