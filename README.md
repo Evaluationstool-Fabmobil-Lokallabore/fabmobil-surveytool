@@ -9,7 +9,7 @@ Dies ist eine Webapp, die in allen modernen Browsern läuft.
 
 Die App ist mit dem Javascript Framework [React](https://react.dev/) entwickelt worden (mehr siehe unten im README), und benutzt [Firebase](https://firebase.google.com/) als Datenbank.
 
-Deployed und gehostet wird die App auf [Netlify](https://www.netlify.com/).
+Deployed und gehostet wird die App auf [Netlify](https://www.netlify.com/). [![Netlify Status](https://api.netlify.com/api/v1/badges/18013bb0-e951-4cc7-834d-55b576d8e0bf/deploy-status)](https://app.netlify.com/sites/fabmobil-survey/deploys)
 
 
 ## Umfrage Ablauf und Logik
