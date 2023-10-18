@@ -1,4 +1,15 @@
 # Ein Umfragetool für das Fabmobil
+<div class="image-wrapper">
+  <img src="https://github.com/Evaluationstool-Fabmobil-Lokallabore/fabmobil-surveytool/assets/147499884/6ae60f9d-efe5-463d-962d-d8517d86df80"/>
+  <img src="https://github.com/Evaluationstool-Fabmobil-Lokallabore/fabmobil-surveytool/assets/147499884/6616928c-a241-4739-a508-f2917373ff73"/>
+  <img src="https://github.com/Evaluationstool-Fabmobil-Lokallabore/fabmobil-surveytool/assets/147499884/f2f73ee4-33a2-41ee-89de-bb8e795fe624"/>
+</div>
+<style>.image-wrapper{display: flex;}</style>
+
+
+![Screenshot 2023-10-18 at 15-32-51 Figma](https://github.com/Evaluationstool-Fabmobil-Lokallabore/fabmobil-surveytool/assets/147499884/6ae60f9d-efe5-463d-962d-d8517d86df80)
+![Screenshot 2023-10-18 at 15-32-09 Figma](https://github.com/Evaluationstool-Fabmobil-Lokallabore/fabmobil-surveytool/assets/147499884/6616928c-a241-4739-a508-f2917373ff73)
+![Screenshot 2023-10-18 at 15-31-16 Figma](https://github.com/Evaluationstool-Fabmobil-Lokallabore/fabmobil-surveytool/assets/147499884/f2f73ee4-33a2-41ee-89de-bb8e795fe624)
 
 Dies ist eine Webapp, die in allen modernen Browsern läuft.
 
