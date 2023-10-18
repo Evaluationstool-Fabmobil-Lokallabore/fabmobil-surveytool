@@ -1,16 +1,10 @@
 # Ein Umfragetool für das Fabmobil
-<div class="image-wrapper">
-  <img src="https://github.com/Evaluationstool-Fabmobil-Lokallabore/fabmobil-surveytool/assets/147499884/6ae60f9d-efe5-463d-962d-d8517d86df80"/>
-  <img src="https://github.com/Evaluationstool-Fabmobil-Lokallabore/fabmobil-surveytool/assets/147499884/6616928c-a241-4739-a508-f2917373ff73"/>
-  <img src="https://github.com/Evaluationstool-Fabmobil-Lokallabore/fabmobil-surveytool/assets/147499884/f2f73ee4-33a2-41ee-89de-bb8e795fe624"/>
+<div>
+  <img width=200 src="https://github.com/Evaluationstool-Fabmobil-Lokallabore/fabmobil-surveytool/assets/147499884/6ae60f9d-efe5-463d-962d-d8517d86df80"/>
+  <img width=200 src="https://github.com/Evaluationstool-Fabmobil-Lokallabore/fabmobil-surveytool/assets/147499884/6616928c-a241-4739-a508-f2917373ff73"/>
+  <img width=200 src="https://github.com/Evaluationstool-Fabmobil-Lokallabore/fabmobil-surveytool/assets/147499884/f2f73ee4-33a2-41ee-89de-bb8e795fe624"/>
 </div>
-<style>.image-wrapper{display: flex;}</style>
-
-
-![Screenshot 2023-10-18 at 15-32-51 Figma](https://github.com/Evaluationstool-Fabmobil-Lokallabore/fabmobil-surveytool/assets/147499884/6ae60f9d-efe5-463d-962d-d8517d86df80)
-![Screenshot 2023-10-18 at 15-32-09 Figma](https://github.com/Evaluationstool-Fabmobil-Lokallabore/fabmobil-surveytool/assets/147499884/6616928c-a241-4739-a508-f2917373ff73)
-![Screenshot 2023-10-18 at 15-31-16 Figma](https://github.com/Evaluationstool-Fabmobil-Lokallabore/fabmobil-surveytool/assets/147499884/f2f73ee4-33a2-41ee-89de-bb8e795fe624)
-
+<br/>
 Dies ist eine Webapp, die in allen modernen Browsern läuft.
 
 Die App ist mit dem Javascript Framework [React](https://react.dev/) entwickelt worden (mehr siehe unten im README), und benutzt [Firebase](https://firebase.google.com/) als Datenbank.
@@ -27,7 +21,7 @@ Es gibt 2 Umfrage-Sorten innerhalb der App, die für verschiedene Menschen und S
 
 ## User Identifizierung aka Benutzer*innen Login
 Für die Datenauswertung ist es wichtig, mehrere Submissions, die von ein und derselben Person stammen, zuordnen zu können.
-Dafür benutzt die App eine vereinfachte Benutzer*innen Identifizierung. Der "Login" besteht aus dem Namen und dem Geburtsdatum einer Person. Es werden keine Passwörter benutzt.
+Dafür benutzt die App eine vereinfachte Benutzer*innen Identifizierung. Der "Login" besteht aus dem Nicknamen und dem Geburtsdatum einer Person. Es werden keine Passwörter benutzt.
 
 ## Technisches über React (weiter auf Englisch)
 
