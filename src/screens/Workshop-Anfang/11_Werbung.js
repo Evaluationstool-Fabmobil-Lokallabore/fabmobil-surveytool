@@ -13,7 +13,7 @@ const ANSWER_OPTIONS = [
   "Soziale Medien",
   "Soziokultureller Ort",
   "Festival",
-  "Konkurrenz",
+  "Makerspace",
 ];
 
 const nextRoute = "/losgehts/grund";
